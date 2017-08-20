@@ -166,7 +166,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Astral Flow'] = {head="Glyphic Horn"}
     
-    sets.precast.JA['Elemental Siphon'] = {ammo="Sancus Sachet",
+    sets.precast.JA['Elemental Siphon'] = {ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		body="Convoker's Doublet +3",
 		hands="Glyphic Bracers",
@@ -178,7 +178,7 @@ function init_gear_sets()
 
     -- Pact delay reduction gear
     sets.precast.BloodPactWard = { 
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		body="Convoker's Doublet +3",
 		hands="Glyphic Bracers",
@@ -318,7 +318,7 @@ function init_gear_sets()
 
     -- Avatar pact sets.  All pacts are Ability type.
     
-    sets.midcast.Pet.BloodPactWard = {    ammo="Sancus Sachet",
+    sets.midcast.Pet.BloodPactWard = {    ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		body="Beckoner's Doublet",
 		hands="Glyphic Bracers",
@@ -328,7 +328,7 @@ function init_gear_sets()
 		ring2="Evoker's Ring",
 	}
 
-    sets.midcast.Pet.DebuffBloodPactWard = {ammo="Sancus Sachet",
+    sets.midcast.Pet.DebuffBloodPactWard = {ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		hands="Glyphic Bracers",
 		neck="Incanter's Torque",
@@ -340,12 +340,12 @@ function init_gear_sets()
     
     sets.midcast.Pet.PhysicalBloodPactRage = { 
 		sub="Elan Strap",
-		ammo="Sancus Sachet",
-		head=MerlinicHoodBP,
+		ammo="Sancus Sachet +1",
+		head="Apogee Crown +1",
 		body="Convoker's Doublet +3",
 		hands=MerlinicDastanasBP,
-		legs="Apogee Slacks",
-		feet="Convo. Pigaches +2",
+		legs="Apogee Slacks +1",
+		feet="Apogee Pumps +1",
 		neck="Shulmanu Collar",
 		waist="Klouskap Sash",
 		left_ear="Gelos Earring",
@@ -366,7 +366,7 @@ function init_gear_sets()
     sets.midcast.Pet.MagicalBloodPactRage = {
 		--main="Espiritus",
 		--sub="Niobid Strap",
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Apogee Crown +1", 
 		body="Convoker's Doublet +3",
 		hands=MerlinicDastanasBP,
@@ -389,11 +389,11 @@ function init_gear_sets()
 	
 	
 	sets.midcast.Pet.HybridBloodPactRage = {	
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Apogee Crown +1", 
 		body="Convoker's Doublet +3",
 		hands=MerlinicDastanasBP,
-		legs="Apogee Slacks", 
+		legs="Apogee Slacks +1", 
 		feet="Apogee Pumps +1",
 		neck="Shulmanu Collar",
 		waist="Klouskap Sash",
@@ -426,7 +426,7 @@ function init_gear_sets()
     --------------------------------------
     
     -- Resting sets
-    sets.resting = {ammo="Sancus Sachet",
+    sets.resting = {ammo="Sancus Sachet +1",
         head="Convoker's horn +1",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Loquacious Earring",
         body="Amalric Doublet",hands=MerlinicDastanasBP,ring1="Defending Ring",ring2="Dark ring",
         back="Moonbeam Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's gaiters"}
@@ -472,14 +472,14 @@ function init_gear_sets()
     
     -- Can make due without either the head or the body, and use +refresh items in those slots.
     
-    sets.idle.Avatar = {ammo="Sancus Sachet",
+    sets.idle.Avatar = {ammo="Sancus Sachet +1",
 		--main="Nirvana",				--8
 		--sub="Niobid Strap",
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		body="Vrikodara Jupon",
 		legs="Assid. Pants +1",			--3
---		feet="Convoker's Pigaches +2",	--5	
+		feet="Convoker's Pigaches +2",	--5	
 		neck="Empath Necklace",
 		waist="Isa Belt",
 		left_ear="Enmerkar Earring",
@@ -489,10 +489,10 @@ function init_gear_sets()
 		back=CampestresPhysical,
 	}
 
-    sets.idle.Spirit = {ammo="Sancus Sachet",
+    sets.idle.Spirit = {ammo="Sancus Sachet +1",
 		--main="Gridarvor",
 		--sub="Niobid Strap",
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		body="Vrikodara Jupon",
 		hands=MerlinicDastanasBP,
@@ -527,7 +527,7 @@ function init_gear_sets()
 
     
     -- Defense sets
-    sets.defense.PDT = {ammo="Sancus Sachet",
+    sets.defense.PDT = {ammo="Sancus Sachet +1",
         head="Hike Khat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Odnowa Earring +1",
         body="Onca Suit",hands=empty,legs=empty,feet=empty,
 		ring1="Defending Ring",ring2="Dark ring",
@@ -536,7 +536,7 @@ function init_gear_sets()
     sets.defense.MDT = {
 		main="Keraunos", 
 		--sub="Niobid Strap",
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Inyanga Tiara +1",
 		body="Inyanga Jubbah +1",
 		hands=MerlinicDastanasBP,
@@ -561,13 +561,13 @@ function init_gear_sets()
     --------------------------------------
     
     -- Normal melee group
-	sets.engaged = {ammo="Sancus Sachet",
+	sets.engaged = {ammo="Sancus Sachet +1",
 		head="Tali'ah Turban +1",
 		body="Convoker's Doublet +3",
 		hands="Tali'ah Gages +1",
 		legs="Tali'ah Seraweels +1",
 		feet="Convoker's Pigaches +2",	
-		neck="Combatant's Torque",
+		neck="Shulmanu Collar",
 		waist="Klouskap Sash",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
@@ -575,7 +575,7 @@ function init_gear_sets()
 		right_ring="Petrov Ring",
 	}
 	sets.engaged.Perp = {
-		ammo="Sancus Sachet",
+		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn",
 		body="Convoker's Doublet +3",
 		hands="Tali'ah Gages +1",

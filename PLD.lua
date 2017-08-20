@@ -64,26 +64,10 @@ function init_gear_sets()
     -- Precast sets
     --------------------------------------
          -- Augmented gear  
-    ValorousMaskPhalanx={ name="Valorous Mask", augments={'Pet: INT+14','INT+2','Phalanx +4',}}
-	
-    OdysseanChestFC={ name="Odyssean Chestplate", augments={'"Fast Cast"+4','CHR+9',}}
-    OdysseanChestSTP={ name="Odyssean Chestplate", augments={'Accuracy+14','"Store TP"+6','VIT+10','Attack+15',}}
-    ValorousMailDA={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}}
-	
-	OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Attack+27','Weapon skill damage +4%','AGI+7','Accuracy+4',}}
-    OdysseanGauntletsRefresh={ name="Odyssean Gauntlets", augments={'"Conserve MP"+3','Pet: "Dbl. Atk."+1','"Refresh"+1','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
-	
-	OdysseanCuissesSTP={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
-    OdysseanCuissesAcc={ name="Odyssean Cuisses", augments={'Accuracy+24 Attack+24','"Fast Cast"+1','STR+1','Accuracy+12',}}
-    OdysseanCuissesPhalanx={ name="Odyssean Cuisses", augments={'INT+6','STR+3','Phalanx +4',}}
-	ValorousHoseWSD={ name="Valor. Hose", augments={'Attack+18','Weapon skill damage +5%','INT+1',}}
-	ValorousHoseDA={ name="Valor. Hose", augments={'Attack+5','"Dbl.Atk."+5','AGI+6','Accuracy+8',}}
-	ValorousHoseDEX={ name="Valor. Hose", augments={'Accuracy+17 Attack+17','Enmity+6','DEX+15','Accuracy+3',}}	 
-	
-	OdysseanGreavesAcc={ name="Odyssean Greaves", augments={'Crit. hit damage +3%','Accuracy+28','Accuracy+18 Attack+18',}}
-    OdysseanGreavesFC={ name="Odyssean Greaves", augments={'DEX+3','Weapon Skill Acc.+9','"Fast Cast"+4','Accuracy+8 Attack+8','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    OdysseanGreavesMagic={ name="Odyssean Greaves", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','Potency of "Cure" effect received+6%','MND+10','Mag. Acc.+15','"Mag.Atk.Bns."+13',}}
 
+	include('Flannelman_aug-gear.lua')
+	
+	
     -- Precast sets to enhance JAs
     sets.precast.JA['Invincible'] = {legs="Caballarius Breeches"}
     sets.precast.JA['Holy Circle'] = {feet="Reverence Leggings +1"}

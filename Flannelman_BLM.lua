@@ -59,19 +59,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
 	
-	MerlinicHood={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-    MerlinicHoodMBD={ name="Merlinic Hood", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','Magic burst dmg.+9%','CHR+10','Mag. Acc.+2','"Mag.Atk.Bns."+14',}}
-    MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
-	
-    MerlinicHandsFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-	
-    MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
-    MerlinicShalwarMBD={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+10%','CHR+9','Mag. Acc.+7',}}
-    MerlinicShalwarTH={ name="Merlinic Shalwar", augments={'INT+9','Phys. dmg. taken -3%','"Treasure Hunter"+1','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-	
-    MerlinicCrackows={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}}
-    MerlinicCrackowsMBD={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+5%','"Mag.Atk.Bns."+2',}}
-    MerlinicCrackowsFC={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+6','MND+3','Mag. Acc.+4',}}
+	include('Flannelman_aug-gear.lua')
 	
     TaranusFCDeath={ name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
     TaranusElemental={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
@@ -94,7 +82,7 @@ function init_gear_sets()
 		ear1="Etiolation Earring",		--1
 		ear2="Loquacious Earring",		--2
         body="Merlinic Jubbah",			--6
-		hands=MerlinicHandsFC,			--6
+		hands=MerlinicDastanasFC,			--6
 		ring1="Lebeche ring",
 		ring2="Weatherspoon Ring",		--5
 		back=TaranusFCDeath,			--10

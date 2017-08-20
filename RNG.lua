@@ -15,6 +15,7 @@ function get_sets()
 
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+	
 end
 
 
@@ -60,27 +61,8 @@ end
 -- Set up all gear sets.
 function init_gear_sets()
 
-    HercHelmMAB={ name="Herculean Helm", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic burst dmg.+6%','MND+10','"Mag.Atk.Bns."+14',}}
-    HercHelmFC={ name="Herculean Helm", augments={'"Fast Cast"+5','MND+7','"Mag.Atk.Bns."+12',}}
-    HercHelmDT={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+18','Magic Damage +12','Damage taken-4%','Accuracy+10 Attack+10',}}
-    HercHelmWSD={ name="Herculean Helm",  augments={'Attack+22','Weapon skill damage +4%','DEX+8',}}
-    HercHelmTA={ name="Herculean Helm", augments={'"Triple Atk."+4','STR+10','Attack+12',}}
+	include('Flannelman_aug-gear.lua')
 	
-    HercVestWSD={ name="Herculean Vest", augments={'Accuracy+21','Weapon skill damage +3%','STR+7','Attack+11',}}
-    HercVestTH={ name="Herculean Vest", augments={'CHR+6','Weapon Skill Acc.+12','"Treasure Hunter"+1','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
-	
-    HercGlovesDT={ name="Herculean Gloves", augments={'Damage taken-3%','"Mag.Atk.Bns."+24','Accuracy+13 Attack+13',}}
-    HercGlovesTH={ name="Herculean Gloves", augments={'STR+10','"Mag.Atk.Bns."+4','"Treasure Hunter"+1','Accuracy+2 Attack+2',}}
-	
-    HercLegsAcc={ name="Herculean Trousers", augments={'Accuracy+20 Attack+20','Crit. hit damage +3%','DEX+5','Accuracy+12','Attack+15',}}
-	HercLegsWSD={ name="Herculean Trousers", augments={'Weapon skill damage +5%','Rng.Atk.+1',}}
-	HercLegsMAB={ name="Herculean Trousers", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','"Store TP"+1','"Mag.Atk.Bns."+15',}}
-	
-	HercBootsDT={ name="Herculean boots", augments={'Damage taken-4%','AGI+1','Accuracy+12',}}
-	HercBootsDmg={ name="Herculean Boots", augments={'Accuracy+25 Attack+25','Crit.hit rate+2','DEX+11','Accuracy+14','Attack+11',}}
-	HercBootsRefresh={ name="Herculean Boots", augments={'Phys. dmg. taken -2%','AGI+7','"Refresh"+1','Accuracy+18 Attack+18',}}
-    HercBootsDW={ name="Herculean Boots", augments={'Attack+17','"Dual Wield"+6','Accuracy+15',}}
-	HercBootsWSD={ name="Herculean Boots", augments={'Accuracy+11','Weapon skill damage +5%','DEX+4','Attack+14',}}
 	
 	belenus={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}}
 	belenuswsd={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}

@@ -83,22 +83,7 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 	
-	MerlinicHood={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-    MerlinicHoodMBD={ name="Merlinic Hood", augments={'Mag. Acc.+17 "Mag.Atk.Bns."+17','Magic burst dmg.+9%','CHR+10','Mag. Acc.+2','"Mag.Atk.Bns."+14',}}
-    MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
-	 
-    MerlinicHandsFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-    ChironicGlovesMAB={ name="Chironic Gloves", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','MND+9','"Mag.Atk.Bns."+15',}}
-	
-    MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
-    MerlinicShalwarMBD={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+10%','CHR+9','Mag. Acc.+7',}}
-    MerlinicShalwarTH={ name="Merlinic Shalwar", augments={'INT+9','Phys. dmg. taken -3%','"Treasure Hunter"+1','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    ChironicHose={ name="Chironic Hose", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','MND+10','Mag. Acc.+9',}}
-	
-    MerlinicCrackows={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}}
-    MerlinicCrackowsMBD={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+5%','"Mag.Atk.Bns."+2',}}
-    MerlinicCrackowsFC={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+6','MND+3','Mag. Acc.+4',}}
-    ChironicSlippers={ name="Chironic Slippers", augments={'Mag. Acc.+21','Phys. dmg. taken -3%','MND+11','Attack+1',}}
+	include('Flannelman_aug-gear.lua')
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
@@ -125,7 +110,7 @@ function init_gear_sets()
     sets.precast.FC = {ammo="Sapience Orb",--2
         head=MerlinicHoodFC,			--14
         body="Shango Robe",				--8
-		hands=MerlinicHandsFC,			--6
+		hands=MerlinicDastanasFC,			--6
 		legs="Lengo Pants",				--5
 		feet="Academic's Loafers +2",
 		neck="Orunmila's torque",		--5	

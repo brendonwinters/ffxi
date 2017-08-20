@@ -75,23 +75,7 @@ function init_gear_sets()
 --------------------------------------
 -- Augmented gear
 
-	OdysseanHelmWSD={ name="Odyssean Helm", augments={'Accuracy+17 Attack+17','Weapon skill damage +3%','VIT+11',}}
-
-    OdysseanChestFC={ name="Odyssean Chestplate", augments={'"Fast Cast"+4','CHR+9',}}
-    OdysseanChestSTP={ name="Odyssean Chestplate", augments={'Accuracy+14','"Store TP"+6','VIT+10','Attack+15',}}
-    ValorousMailDA={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}}
-	
-	OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Accuracy+27','Weapon skill damage +3%','VIT+8',}}
-	OdysseanGauntletsRefresh={ name="Odyssean Gauntlets", augments={'"Conserve MP"+3','Pet: "Dbl. Atk."+1','"Refresh"+1','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
-    THhands={ name="Valorous Mitts", augments={'Pet: Mag. Acc.+22','Pet: MND+12','"Treasure Hunter"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
-
-	OdysseanCuissesSTP={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
-	OdysseanCuissesPhalanx={ name="Odyssean Cuisses", augments={'INT+6','STR+3','Phalanx +4',}}
-    OdysseanCuissesWSD={ name="Odyssean Cuisses", augments={'Weapon skill damage +3%','VIT+12','Attack+4',}}
-
-	OdysseanGreavesAcc={ name="Odyssean Greaves", augments={'Crit. hit damage +3%','Accuracy+28','Accuracy+18 Attack+18',}}
-	OdysseanGreavesFC={ name="Odyssean Greaves", augments={'DEX+3','Weapon Skill Acc.+9','"Fast Cast"+4','Accuracy+8 Attack+8','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    THfeet={ name="Odyssean Greaves", augments={'"Fast Cast"+1','Accuracy+20','"Treasure Hunter"+1','Accuracy+19 Attack+19',}}
+	include('Flannelman_aug-gear.lua')
 
     AnkouWSD={ name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
     AnkouDA={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
