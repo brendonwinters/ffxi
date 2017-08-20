@@ -228,14 +228,14 @@ function init_gear_sets()
 		head=HercHelmDT,
 		body="Meg. Cuirie +1",
 		hands=HercGlovesDT,
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		legs="Carmine Cuisses +1",
 		feet=HercBootsDT,
 		neck="Sanctity Necklace",
 		waist="Flume Belt +1",
 		left_ear="Hearty Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Defending Ring",
-		right_ring={ name="Dark Ring", augments={'Phys. dmg. taken -6%','Breath dmg. taken -5%','Magic dmg. taken -3%',}},
+		right_ring="Dark Ring",
 		back="Moonbeam Cape",}
 	
 	-- Defense sets
@@ -257,7 +257,7 @@ function init_gear_sets()
 	sets.defense.Meva = {
 		head="Orion Beret +3",
 		body="Mummu Jacket +1",
-		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+		hands="Leyline Gloves",
 		legs="Mummu Kecks +1",
 		feet="Mummu Gamash. +1",
 		neck="Loricate Torque +1",
@@ -276,11 +276,11 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.engaged = {
-		head={ name="Herculean Helm", augments={'"Triple Atk."+4','STR+10','Attack+12',}},
-		body={ name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15',}},
-		hands={ name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15',}},
-		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
-		feet={ name="Herculean Boots", augments={'Attack+17','"Dual Wield"+6','Accuracy+15',}},
+		head=HercHelmTA,
+		body="Adhemar Jacket",
+		hands="Adhemar Wristbands",
+		legs="Samnuha Tights",
+		feet=HercBootsDW,
 		neck="Iskur Gorget",
 		waist="Shetal Stone",
 		left_ear="Sherida Earring",
