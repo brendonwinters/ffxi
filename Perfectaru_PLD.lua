@@ -67,26 +67,35 @@ function init_gear_sets()
     -- Precast sets
     --------------------------------------
          -- Augmented gear  
-
-	include('Flannelman_aug-gear.lua')
 	
+    ValorousMaskMA={ name="Valorous Mask", augments={'MND+3','Accuracy+5 Attack+5','Quadruple Attack +1',}}
+    
+	ValorousMailSTP={ name="Valorous Mail", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Mag. Acc.+28','"Store TP"+9','Accuracy+12 Attack+12','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
+   
+    OdysseanLegsFC={ name="Odyssean Cuisses", augments={'Mag. Acc.+10','"Fast Cast"+5','"Mag.Atk.Bns."+3',}}
+    OdysseanLegsWSD={ name="Odyssean Cuisses", augments={'Accuracy+14','Weapon skill damage +5%','VIT+10',}}
+    OdysseanLegsENM={ name="Odyssean Cuisses", augments={'Attack+9','Enmity+7','DEX+4','Accuracy+14',}}
+    ValorousLegsMA={ name="Valor. Hose", augments={'Accuracy+5 Attack+5','STR+1','Quadruple Attack +2','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
+    ValorousLegsMAB={ name="Valor. Hose", augments={'"Mag.Atk.Bns."+30','AGI+7','Accuracy+17 Attack+17','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
+    
+	OdysseanFeetFC={ name="Odyssean Greaves", augments={'"Fast Cast"+5','Mag. Acc.+8','"Mag.Atk.Bns."+12',}}
 	
     -- Precast sets to enhance JAs
-    sets.precast.JA['Invincible'] = {legs="Caballarius Breeches"}
-    sets.precast.JA['Holy Circle'] = {feet="Reverence Leggings +1"}
-    sets.precast.JA['Shield Bash'] = {hands="Caballarius Gauntlets"}
-    sets.precast.JA['Sentinel'] = {feet="Caballarius Leggings +1"}
-    sets.precast.JA['Rampart'] = {head="Caballarius Coronet"}
-    sets.precast.JA['Fealty'] = {body="Caballarius Surcoat +1"}
-    sets.precast.JA['Divine Emblem'] = {feet="Chevalier's Sabatons"}
+    --sets.precast.JA['Invincible'] = {legs="Caballarius Breeches"}
+    sets.precast.JA['Holy Circle'] = {feet="Reverence Leggings +2"}
+    --sets.precast.JA['Shield Bash'] = {hands="Caballarius Gauntlets"}
+    sets.precast.JA['Sentinel'] = {feet="Caballarius Leggings"}
+    --sets.precast.JA['Rampart'] = {head="Caballarius Coronet"}
+    --sets.precast.JA['Fealty'] = {body="Caballarius Surcoat"}
+    --sets.precast.JA['Divine Emblem'] = {feet="Chevalier's Sabatons"}
 
-    -- add MND for Chivalry
+    -- add MND for Chivalry MND
     sets.precast.JA['Chivalry'] = {    
 		head="Carmine Mask",
-		body="Emet Harness +1",
-		hands="Emicho gauntlets",
+		body="Rev. Surcoat +2",
+		hands="Carmine Fin. Ga. +1",
 		legs="Founder's Hose",
-		feet="Carmine Greaves",
+		feet="Rev. Leggings +2",
 		neck="Phalaina Locket",
 		waist="Latria Sash",
 		ear2="Lifestorm Earring",
@@ -104,26 +113,27 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Sapience orb",--2
+    sets.precast.FC = {--ammo="Sapience orb",
 		head="Carmine Mask",			--12
 		body="Reverence Surcoat +2",	--5
-		neck="Orunmila's torque",		--5
-		ear1="Etiolation Earring",		--1
-		ear2="Odnowa Earring +1",		
+		neck="Voltsurge torque",		--4
+		ear1="Etiolation Earring",
+		ear2="Odnowa Earring +1",
+	--	ear2="Loquacious Earring",		
 		hands="Leyline gloves",			--8
-		ring1="Kishar ring",			--4
-		ring2="weatherspoon ring",		--5
-		legs="Eschite cuisses",			--5
-		feet=OdysseanGreavesFC,			--8
+		ring1="Kishar ring",
+		ring2="Moonbeam Ring",
+	--	ring2="weatherspoon ring",		
+		legs=OdysseanLegsFC,			--5
+		feet=OdysseanFeetFC,			--10
 		waist="Creed Baudrier",
 		back="Moonbeam Cape",
 		--back="Rudianos's Mantle"
-		}								--65
-	sets.precast.FC.HP = set_combine(sets.precast.FC, {
-		legs="Arke Cosciales",
-		back="Moonbeam Cape",})	
+		}								--44
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
+	sets.precast.FC.HP = set_combine(sets.precast.FC, {
+		back="Moonbeam Cape",})	
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -168,58 +178,57 @@ function init_gear_sets()
     -- Midcast sets
     --------------------------------------
 	--not fast recast but spell interruption down set
-    sets.midcast.FastRecast = {
+    sets.midcast.FastRecast = {ammo="Staunch Tathlum",	--10
 		head="Souveran schaller",					--15
-		--body="Eschite breastplate",					--15
+		ear2="Knightly Earring",					--9
+		--body="Eschite breastplate",				
 		hands="Eschite gauntlets",					--15
-		ring1="Defending ring",
-		ring2="Moonbeam ring",
+		ring2="Evanescence ring",					--5
 		legs="Founder's hose",						--30
-		back="Moonbeam Cape",
-		feet=OdysseanGreavesFC}						--20 -> 110
-        
+		--back="Rudianos's Mantle",
+		feet=OdysseanFeetFC}						--20 -> 104
+	
 	sets.midcast.SIRD = {ammo="Staunch Tathlum",	--10
 		head="Souveran schaller",					--15
 		ear2="Knightly Earring",					--9
 		hands="Eschite gauntlets",					--15
 		ring2="Evanescence ring",					--5
 		legs="Founder's hose",						--30
-		feet=OdysseanGreavesFC}						--20 -> 104
-		
-		
-    sets.midcast.Enmity = {
+		feet=OdysseanFeetFC}						--20 -> 104
+        
+    sets.midcast.Enmity = {ammp="Iron Gobbet",		--2
         head="Souveran Schaller",					--7
-		neck="Unmoving collar +1",					--10
+		neck="Unmoving collar",						--9
         body="Souveran cuirass",					--17
-		hands="Macabre gauntlets +1",				--7
+		hands="Macabre gauntlets",					--6
 		ring1="Apeile Ring",						--9
 		ring2="Apeile Ring +1",						--9
-        --back="Weard Mantle",						--4 (up to 7)
+        --back="Agema Cape",							--5
 		waist="Creed Baudrier",						--5
 		legs="Souveran Diechlings",					--7
-		feet="Eschite Greaves"}						--15
-		
-		
+		feet="Eschite Greaves"}						--15	-->91
+
     sets.midcast.Flash = set_combine(sets.midcast.Enmity, {})    
     sets.midcast.Stun = sets.midcast.Flash
     
     sets.midcast.Cure = {
 		head="Souveran Schaller",		--curer10
 		neck="Phalaina locket",			--cure4 curer4
-		--ear1="Mendicant's earring",	
+		--ear1="Mendicant's earring",		--cure 5
 		ear1="Nourishing earring +1",	--cure 6-7
 		ear2="Odnowa Earring +1",
         body="Souveran Cuirass",		--cure10 curer10
-		hands="Macabre gauntlets +1",	--cure 11
+		hands="Macabre gauntlets",		--cure10
 		ring1="Defending Ring",			
 		ring2="Moonbeam Ring",
-		--back="Solemnity cape",			
-		back="Moonbeam cape",	
+		back="Moonbeam cape",			
+		waist="Creed Baudrier",
 		legs="Souveran Diechlings",		--curer17
-		feet=OdysseanGreavesFC}		    --cure7				 cure38		curer31
-		
+		feet=OdysseanFeetFC}		    --cure7			cure37		curer31
 
-    sets.midcast['Phalanx'] = {head=ValorousMaskPhalanx,neck="Incanter's torque",back="Weard Mantle",hands="Souveran handschuhs",waist="Olympus Sash",legs=OdysseanCuissesPhalanx,feet="Souveran Schuhs"}
+    sets.midcast['Phalanx'] = {back="Weard Mantle",hands="Souveran handschuhs",feet="Souveran Schuhs"}
+	sets.midcast['Enlight'] = {head="Jumalik Helm",body="Reverence Surcoat +2",hands="Eschite Gauntlets"}
+	sets.midcast['Enlight II'] = sets.midcast['Enlight']
     sets.midcast.Holy = {ammo="Pemphredo Tathlum",
 		head="jumalik helm",neck="Incanter's torque",ear1="Friomisi earring",ear2="Gwati earring",
 		body="Jumalik mail",hands="Leyline gloves",ring1="acumen ring",ring2="weatherspoon ring",
@@ -237,16 +246,20 @@ function init_gear_sets()
     
 
     -- Idle sets
-    sets.idle = {ammo="Staunch Tathlum",
-        head="Souveran Schaller",neck="Coatl Gorget +1",ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
-        back="Moonbeam Cape",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Souveran Schuhs"}
-   	
-    sets.idle.Weak = sets.idle    
+    sets.idle = {ammo="Homiliary",
+        head="Souveran Schaller",neck="Coatl Gorget +1",
+		ear1="Etiolation Earring",ear2="Odnowa Earring +1",
+        body="Reverence Surcoat +2",hands="Macabre Gauntlets",
+		ring1="Defending Ring",ring2="Shneddick Ring",
+        back="Moonbeam Cape",waist="Creed Baudrier",
+		legs="Souveran Diechlings",feet="Amm greaves"}
+    
+    sets.idle.Weak = set_combine(sets.idle, {ammo="Staunch Tathlum",ring2="Moonbeam Ring"})
+		
+    
     sets.idle.Weak.Reraise = set_combine(sets.idle.Weak, sets.Reraise)
     
-    sets.Kiting = {legs="Carmine Cuisses +1",}
-	--feet="Hippomenes Socks +1"}
+    sets.Kiting = {ring2="Shneddick Ring",}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
@@ -286,17 +299,17 @@ function init_gear_sets()
     sets.engaged = {
 		ammo="Ginsen",
 		head="Flam. Zucchetto +1",
-		body={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}},
+		body=ValorousMailSTP,
 		hands="Sulev. Gauntlets +1",
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		legs=ValorousLegsMA,
 		feet="Flam. Gambieras +1",
-		neck="Ainia Collar",
-		waist="Sailfi Belt +1",
-		left_ear="Brutal Earring",
-		right_ear="Telos Earring",
-		left_ring="Hetairoi Ring",
+		neck="Sanctity Necklace",
+		waist="Sailfi Belt",
+		left_ear="Steelflash Earring",
+		right_ear="Bladeborn Earring",
+		left_ring="Rajas Ring",
 		right_ring="Petrov Ring",
-		back="Lupine Cape",}
+		back="Letalis Mantle",}
 
     sets.engaged.Acc = set_combine(sets.engaged, {
         neck="Combatant's Torque",ear1="dominance earring +1",ear2="Zennaroi earring",
@@ -311,20 +324,20 @@ function init_gear_sets()
 	sets.Charm =	set_combine(sets.Meva,{neck="Unmoving collar +1",legs="Souveran diechlings",back="Solemnity cape"})
 	sets.Stun =		set_combine(sets.Meva,{body="Onca suit",hands=empty,legs=empty,feet=empty,ear2="Dominance earring +1"})
 	
-	sets.Defensive = {ammo="Staunch Tathlum",
-		head="Souveran Schaller",
-		body="Reverence Surcoat +2",
-		hands={ name="Souv. Handschuhs", augments={'HP+50','Shield skill +10','Phys. dmg. taken -3',}},
-		legs={ name="Souveran Diechlings", augments={'HP+80','Enmity+7','Potency of "Cure" effect received +10%',}},
-		feet={ name="Souveran Schuhs", augments={'HP+80','Enmity+7','Potency of "Cure" effect received +10%',}},
-		neck="Loricate Torque +1",
-		waist="Flume Belt +1",
-		left_ear="Odnowa Earring +1",
-		right_ear="Telos Earring",
-		left_ring="Defending Ring",
-		right_ring="Moonbeam Ring",
-		back="Moonbeam Cape",
-	}
+	sets.Defensive = {ammo="Staunch Tathlum",	--2  2
+		head="Souveran Schaller",				--3
+		body="Reverence Surcoat +2",			--10 10
+		hands="Souv. Handschuhs", 				--3  4
+		legs="Souveran Diechlings",				--3  3
+		feet="Souveran Schuhs",					--4
+		neck="Twilight Torque",					--5  5
+		waist="Creed Baudrier",
+		left_ear="Etiolation Earring",			--   3
+		right_ear="Odnowa Earring +1",			--	 2
+		left_ring="Defending Ring",				--10 10
+		right_ring="Moonbeam Ring",				--4  4
+		back="Moonbeam Cape",					--5  5
+	}											--49 48
 	--ammo="homiliary",																--brilliance 3				 3
 --		head="Jumalik helm",neck="Loricate torque +1",ear1="Hearty Earring",ear2="Ethereal Earring",		--pdt  5 6 			 mdt   6
 --        body="Souveran cuirass",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Regal Ring",		--pdt  9 3 10 6 	 mdt 9 4 10 3 
@@ -385,7 +398,7 @@ function init_gear_sets()
     sets.buff.Doom = {ring2="Purity Ring",waist="Gishdubar sash"}
     sets.buff.Cover = {body="Caballarius surcoat +1"}
 	
-	sets.Refresh = {ammo="Homiliary",head="Jumalik helm",body="Jumalik mail",hands=OdysseanGauntletsRefresh,ear1="Ethereal earring",waist="Flume belt +1",back="Rudianos's Mantle"}
+	sets.Refresh = {ammo="Homiliary",feet="Reverence Leggings +2",back="Rudianos's Mantle"}
     sets.Berserker = { neck="Berserker's Torque" }
 end
 
@@ -402,13 +415,13 @@ function job_precast(spell, action, spellMap, eventArgs)
             return	
 	end
 end
-
+	
 function job_post_precast(spell, action, spellMap, eventArgs)
 	if state.HybridMode.value == 'HP' then
 		equip(sets.precast.FC.HP)
 	end
 end
-	
+
  function job_midcast(spell, action, spellMap, eventArgs)
     -- -- If DefenseMode is active, apply that gear over midcast
     -- -- choices.  Precast is allowed through for fast cast on
@@ -437,8 +450,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		end
 	elseif spell.skill == 'Healing Magic' then	
 		if spell.element == world.day_element or spell.element == world.weather_element then		
-				equipSet=set_combine(equipSet,{waist="Hachirin-No-Obi"})
-				add_to_chat(122, "Weather Cure")		
+			equipSet=set_combine(equipSet,{waist="Hachirin-No-Obi"})
+			add_to_chat(122, "Weather Cure")		
 		end
 	elseif spell.english == 'Stun' then
 		equipSet=sets.midcast.Enmity
