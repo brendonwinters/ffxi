@@ -500,18 +500,16 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 			equip(sets.Lugra)
 		end	
 	end
-    if state.Buff.Doom then
-        equip(sets.buff.Doom)
-	elseif spellMap == 'Ninjutsu' then
+	if spellMap == 'Ninjutsu' then
         if spell.element == world.day_element or spell.element == world.weather_element then
 			if state.MagicBurst.value then
 				--equip(sets.magic_burst.CastingMode)
 				equipSet = set_combine(sets.midcast.ElementalNinjutsu, sets.magic_burst)
-				--equipSet = set_combine(equipSet, {back="Twilight cape",waist="Hachirin-No-Obi"})
+				equipSet = set_combine(equipSet, {waist="Hachirin-No-Obi"})
 				equip(equipSet)
 				add_to_chat(122, "Weather Magic Burst")
             else 
-				equip(sets.midcast.Weather)
+				equip({waist="Hachirin-No-Obi"})
 				add_to_chat(122, "Weather Nuke")
 			end
 		elseif state.MagicBurst.value then
