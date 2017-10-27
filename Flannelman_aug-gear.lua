@@ -35,8 +35,9 @@ MerlinicHoodBP={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+16','Blood
 MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
 
 MerlinicDastanasFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-MerlinicDastanasBP={ name="Merlinic Dastanas", augments={'Blood Pact Dmg.+10','Pet: Mag. Acc.+12',}}
-
+MerlinicDastanasPBP={ name="Merlinic Dastanas",  augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+10','Pet: STR+4',}}
+MerlinicDastanasMBP={ name="Merlinic Dastanas", augments={'Blood Pact Dmg.+10','Pet: Mag. Acc.+6','Pet: "Mag.Atk.Bns."+11',}}
+	
 MerlinicShalwarDrain={ name="Merlinic Shalwar", augments={'Mag. Acc.+26','"Drain" and "Aspir" potency +8','MND+3',}}
 MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
 MerlinicShalwarMBD={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+10%','CHR+9','Mag. Acc.+7',}}
@@ -61,7 +62,7 @@ OdysseanHelmWSD={ name="Odyssean Helm", augments={'Accuracy+17 Attack+17','Weapo
 OdysseanChestFC={ name="Odyssean Chestplate", augments={'"Fast Cast"+4','CHR+9',}}
 OdysseanChestSTP={ name="Odyssean Chestplate", augments={'Accuracy+14','"Store TP"+6','VIT+10','Attack+15',}}
 
-OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Attack+27','Weapon skill damage +4%','AGI+7','Accuracy+4',}}
+OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Weapon skill damage +4%','DEX+10','Accuracy+14','Attack+8',}}
 OdysseanGauntletsRefresh={ name="Odyssean Gauntlets", augments={'"Conserve MP"+3','Pet: "Dbl. Atk."+1','"Refresh"+1','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
 
 OdysseanCuissesSTP={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
@@ -79,12 +80,21 @@ THfeet={ name="Odyssean Greaves", augments={'"Fast Cast"+1','Accuracy+20','"Trea
 --Valorous Gear--
 
 ValorousMaskPhalanx={ name="Valorous Mask", augments={'Pet: INT+14','INT+2','Phalanx +4',}}
+ValorousMaskWSD={ name="Valorous Mask", augments={'Accuracy+24','Weapon skill damage +4%','STR+10',}}
 
-ValorousMailDA={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}}
+ValorousMailWSD={ name="Valorous Mail", augments={'Accuracy+5','Weapon skill damage +3%','STR+9',}}
+ValorousMailQA={ name="Valorous Mail", augments={'Mag. Acc.+1','"Dbl.Atk."+3','Quadruple Attack +1',}}
 
 THhands={ name="Valorous Mitts", augments={'Pet: Mag. Acc.+22','Pet: MND+12','"Treasure Hunter"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
+ValorousMittsWSD={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +5%','STR+1','Accuracy+3',}}
 
+ValorousHoseRefresh={ name="Valor. Hose", augments={'Crit.hit rate+1','STR+6','"Refresh"+2','Accuracy+9 Attack+9',}}
+ValorousHoseWSD={ name="Valor. Hose", augments={'Accuracy+14','CHR+9','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
 
+ValorousFeetSTP={ name="Valorous Greaves", augments={'"Store TP"+5','STR+10','Accuracy+12','Attack+13',}}
+ValorousFeetWSD={ name="Valorous Greaves", augments={'Weapon skill damage +3%','STR+10','Accuracy+7','Attack+15',}}
+ValorousFeetRefresh={ name="Valorous Greaves", augments={'Accuracy+30','Mag. Acc.+13','"Refresh"+1','Accuracy+17 Attack+17',}}
+ValorousFeetQA={ name="Valorous Greaves", augments={'"Mag.Atk.Bns."+1','"Dbl.Atk."+2','Quadruple Attack +2',}}
 
 
 

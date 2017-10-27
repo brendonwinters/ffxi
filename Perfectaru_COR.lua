@@ -89,14 +89,19 @@ function init_gear_sets()
         --------------------------------------   
 		HercHelmMAB={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+21','INT+10','Accuracy+12 Attack+12','Mag. Acc.+11 "Mag.Atk.Bns."+11',}}
 		HercHelmWSD={ name="Herculean Helm", augments={'Accuracy+26','Weapon skill damage +5%','STR+4','Attack+4',}}
+		HercHelmACC={ name="Herculean Helm", augments={'Rng.Acc.+22 Rng.Atk.+22','Crit. hit damage +3%','STR+6','Rng.Acc.+14',}}
 		
 		HercTrousersMAB={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+27','Pet: STR+9','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
 		HercTrousersTH={ name="Herculean Trousers", augments={'Damage taken-2%','Pet: "Mag.Atk.Bns."+15','"Treasure Hunter"+1','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
-		HercTrousersWSD={ name="Herculean Trousers", augments={'Weapon skill damage +5%','STR+7','Accuracy+13',}}
-	
-		HercBootsMelee={ name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Store TP"+3','AGI+2','Accuracy+10','Attack+12',}}
+		HercTrousersWSD={ name="Herculean Trousers", augments={'Weapon skill damage +5%','STR+7','Accuracy+13',}}	
+		legs={ name="Herculean Trousers", augments={'Rng.Atk.+20','Weapon skill damage +2%','DEX+15','Rng.Acc.+3',}}			
+		HercTrousersRA={ name="Herculean Trousers", augments={'Rng.Acc.+29','Crit.hit rate+3','AGI+15','Rng.Atk.+13',}}
+		
+		feet={ name="Herculean Boots", augments={'Attack+3','Crit. hit damage +1%','DEX+14','Accuracy+15',}}
+		HercBootsRA={ name="Herculean Boots", augments={'Rng.Acc.+24','"Store TP"+3','STR+15','Accuracy+4','Attack+6',}}
+		HercBootsTA={ name="Herculean Boots", augments={'Accuracy+30','"Triple Atk."+3','AGI+10','Attack+9',}}
 		HercBootsMAB={ name="Herculean Boots", augments={'Mag. Acc.+16 "Mag.Atk.Bns."+16','Mag. Acc.+14','"Mag.Atk.Bns."+14',}}
-		HercBootsWSD={ name="Herculean Boots", augments={'Attack+16','Weapon skill damage +3%','AGI+10','Accuracy+1',}}
+		HercBootsWSD={ name="Herculean Boots", augments={'Accuracy+21','Weapon skill damage +4%','AGI+10',}}
 			
 		CamuRA={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}}
 		CamuWS={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
@@ -161,10 +166,10 @@ function init_gear_sets()
         -- Default set for any weaponskill that isn't any more specifically defined
         sets.precast.WS = {
 			head=HercHelmWSD,
-			body="Meghanada Cuirie +1",
+			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
 			legs="Mummu Kecks +1",
-			feet=HercBootsMelee,
+			feet=HercBootsWSD,
 			neck="Fotia Gorget",
 			waist="Fotia Belt",
 			left_ear="Moonshade Earring",
@@ -184,8 +189,9 @@ function init_gear_sets()
  
         sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
 			head=HercHelmWSD,
+			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
-			legs="Adhemar Kecks",
+			legs=HercTrousersRA,
 			feet=HercBootsWSD,
 			neck="Fotia Gorget",
 			waist="Fotia Belt",
@@ -193,10 +199,10 @@ function init_gear_sets()
 			right_ear="Ishvara Earring",
 			left_ring="Dingir Ring",
 			right_ring="Apate Ring",
-			back=CamuRA}
+			back=CamuWS}
  
         sets.precast.WS['Last Stand'].Acc = {ammo=gear.WSbullet,
-			head="Meghanada Visor +1",
+			head=HercHelmACC,
 			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
 			legs="Laksamana's Trews +3",
@@ -207,7 +213,7 @@ function init_gear_sets()
 			right_ear="Enervating Earring",
 			left_ring="Dingir Ring",
 			right_ring="Cacoethic Ring +1",
-			back=CamuRA}
+			back=CamuWS}
 			
         sets.precast.WS['Last Stand'].Crit = sets.precast.WS['Last Stand'].Acc 
 		
@@ -249,12 +255,27 @@ function init_gear_sets()
 			legs=HercTrousersMAB,
 			feet=HercBootsMAB,
 			neck="Sanctity Necklace",
-			left_ear="Ishvara Earring",
+			left_ear="Moonshade Earring",
 			right_ear="Friomisi Earring",
 			left_ring="Acumen Ring",
 			right_ring="Dingir Ring",
 			back=CamuWS}
-               
+        
+		sets.precast.WS['Hot Shot'] = {ammo=gear.MAbullet,
+			head=HercHelmMAB, 
+			body="Samnuha Coat",
+			hands="Carmine Finger Gauntlets +1",
+			legs=HercTrousersMAB,
+			feet=HercBootsMAB,
+			neck="Sanctity Necklace",
+			waist="Fotia Belt",
+			left_ear="Moonshade Earring",
+			right_ear="Friomisi Earring",
+			left_ring="Acumen Ring",
+			right_ring="Dingir Ring",
+			back=CamuWS}
+		sets.precast.WS['Hot Shot'].Acc = sets.precast.WS['Hot Shot']
+		
         -- Midcast Sets
         sets.midcast.FastRecast = {}
                
@@ -297,12 +318,12 @@ function init_gear_sets()
  
         -- Ranged gear
         sets.midcast.RA = {ammo=gear.RAbullet,
-			head="Meghanada Visor +1",
+			head=HercHelmACC,
 			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
-			legs="Adhemar Kecks",
-			feet="Meg. Jam. +2",
-			neck="Sanctity Necklace",
+			legs=HercTrousersRA,
+			feet=HercBootsRA,
+			neck="Marked Gorget",
 			waist="Kwahu Kachina Belt",
 			left_ear="Neritic Earring",
 			right_ear="Enervating Earring",
@@ -312,12 +333,12 @@ function init_gear_sets()
 		
  
         sets.midcast.RA.Acc = {ammo=gear.RAbullet,
-			head="Meghanada Visor +1",
+			head=HercHelmACC,
 			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
 			legs="Laksamana's Trews +3",
 			feet="Meg. Jam. +2",
-			neck="Sanctity Necklace",
+			neck="Marked Gorget",
 			waist="Kwahu Kachina Belt",
 			left_ear="Neritic Earring",
 			right_ear="Enervating Earring",
@@ -351,7 +372,7 @@ function init_gear_sets()
 			--body="Meghanada Cuirie +1",
 			body="Mekosuchinae Harness",
 			hands="Meghanada Gloves +2",ring1="Defending Ring",ring2="Shneddick ring",
-			back="Xucau Mantle",waist="Flume Belt +1",legs="Mummu Kecks +1",feet="Meg. Jam. +2"}
+			back="Moonbeam Cape",waist="Flume Belt +1",legs="Mummu Kecks +1",feet="Meg. Jam. +2"}
  
         --sets.idle.Town = {ammo=gear.QDbullet,}
                
@@ -359,7 +380,7 @@ function init_gear_sets()
         -- Defense sets
         sets.defense.PDT = {
 			head="Meghanada Visor +1",			--4
-			body="Meg. Cuirie +1",				--7
+			body="Meg. Cuirie +2",				--7
 			hands="Meg. Gloves +2",				--4
 			legs="Mummu Kecks +1",				--4 	4
 			feet="Meg. Jam. +2",				--2
@@ -368,7 +389,7 @@ function init_gear_sets()
 			right_ear="Odnowa Earring +1",		--		2
 			left_ring="Defending Ring", 		--10 	10
 			right_ring="Shneddick Ring",
-			back="Shadow Mantle",}				--36	21
+			back="Moonbeam Cape",}				--36	21
  
         sets.defense.Meva = {
 			head="Herculean Helm",
@@ -400,7 +421,7 @@ function init_gear_sets()
 			body={ name="Adhemar Jacket", augments={'DEX+10','AGI+10','Accuracy+15',}},
 			hands={ name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15',}},
 			legs="Mummu Kecks +1",
-			feet=HercBootsMelee, 
+			feet=HercBootsTA, 
 			neck="Asperity Necklace",
 			waist="Sarissapho. Belt",
 			left_ear="Bladeborn Earring",
@@ -411,10 +432,10 @@ function init_gear_sets()
        
         sets.engaged.Acc = set_combine(sets.engaged,{
 			head="Meghanada Visor +1",
-			body="Meg. Cuirie +1",
+			body="Meg. Cuirie +2",
 			hands="Meg. Gloves +2",
 			legs="Mummu Kecks +1",
-			feet=HercBootsMelee,
+			feet=HercBootsTA,
 			neck="Sanctity Necklace",
 			waist="Kentarch Belt",
 			left_ear="Bladeborn Earring",
@@ -430,10 +451,10 @@ function init_gear_sets()
  
         sets.engaged.DW.Acc = set_combine(sets.engaged.DW,{
 			head="Meghanada Visor +1",
-			body="Meg. Cuirie +1",
+			body="Meg. Cuirie +2",
 			hands="Floral Gauntlets",
 			legs="Mummu Kecks +1",
-			feet=HercBootsMelee,
+			feet=HercBootsTA,
 			neck="Sanctity Necklace",
 			waist="Kentarch Belt",
 			left_ear="Dudgeon Earring",
@@ -444,7 +465,7 @@ function init_gear_sets()
  
         sets.engaged.Ranged = {--ammo=gear.RAbullet,
 			head="Meghanada Visor +1",
-			body="Meg. Cuirie +1",
+			body="Meg. Cuirie +2",
 			hands="Meg. Gloves +2",
 			legs=HercTrousersTH,
 			feet="Meg. Jam. +2",
@@ -454,11 +475,11 @@ function init_gear_sets()
 			right_ear="Odnowa Earring +1",
 			left_ring="Defending Ring",
 			right_ring="Shneddick Ring",
-			back="Xucau Mantle",}
+			back="Moonbeam Cape",}
                
 		sets.engaged.PDT = {
 			head="Meghanada Visor +1",
-			body="Meg. Cuirie +1",
+			body="Meg. Cuirie +2",
 			hands="Meg. Gloves +2",
 			legs="Mummu Kecks +1",
 			feet="Meg. Jam. +2",
@@ -468,7 +489,7 @@ function init_gear_sets()
 			right_ear="Odnowa Earring +1",
 			left_ring="Defending Ring",
 			right_ring="Gelatinous Ring +1",
-			back="Xucau Mantle",
+			back="Moonbeam Cape",
 		}	   
 end
  
@@ -803,6 +824,7 @@ rangeswap = 0;
 use_dualbox=false
 function job_self_command(cmdParams, eventArgs)
 	command = cmdParams[1]:lower()
+	--if player.tp < 1000 then
 	if command=='shoot' then
 		send_command('input /shoot <t>')
 		if player.status == 'Engaged' then
@@ -820,6 +842,7 @@ function job_self_command(cmdParams, eventArgs)
 		midshot = false
 		midshot_real = false	
 	end
+	--end
 end
 
 -- Function to display the current relevant user state when doing an update.

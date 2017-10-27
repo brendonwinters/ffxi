@@ -85,10 +85,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets"}--increases duration 6s/merit
 	sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard"}--increaes drained by 30% equip on ja
-	--    sets.precast.JA['Dark Seal'] = {head="Fallen's Burgonet"}--increases duration of abs 10% per merit only needs equip during midcast
+	sets.precast.JA['Dark Seal'] = {}--head="Fallen's Burgonet"}--increases duration of abs 10% per merit only needs equip during midcast
 	sets.precast.JA['Souleater'] = {head="Ignominy Burgonet +2"}
 	sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass"}
-	sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
+	sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +2"}
 	sets.precast.JA['Last Resort'] = {back="Ankou's Mantle"}
 	sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets +2"}
 	sets.precast.JA['Lunge'] = set_combine(sets.midcast['Elemental Magic'], {head="Pixie Hairpin +1",ring2="Archon Ring"})
@@ -192,7 +192,7 @@ function init_gear_sets()
 	sets.midcast.Aspir.MAcc = sets.midcast.Drain.MAcc
 
 	sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
-		head="carmine mask",
+		--head="carmine mask",
 		hands="Leyline Gloves",
 		legs=OdysseanCuissesSTP,
 		ring2="Kishar Ring",
@@ -248,11 +248,11 @@ function init_gear_sets()
 	-- WEAPONSKILL SETS
 	-- General sets
 	sets.precast.WS = {ammo="Seething Bomblet +1",
-		head="Valorous Mask",
+		head=ValorousMaskWSD,
 		body="Ignominy Cuirass +3",
 		hands=OdysseanGauntletsWSD,
-		legs=OdysseanCuissesWSD,
-		feet="Sulevia's Leggings +1",
+		legs=ValorousHoseWSD,
+		feet="Sulevia's Leggings +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Telos Earring",
@@ -293,13 +293,13 @@ function init_gear_sets()
 		head=OdysseanHelmWSD,
 		body="Ignominy Cuirass +3",
 		hands=OdysseanGauntletsWSD,
-		legs=OdysseanCuissesWSD,
-		feet="Sulevia's Leggings +1",
+		legs=ValorousHoseWSD,
+		feet="Sulevia's Leggings +2",
 		back=AnkouWSD})
 	sets.precast.WS.Torcleaver.Acc25 = set_combine(sets.precast.WS.Torcleaver, {})
 	sets.precast.WS.Torcleaver.Acc50 = set_combine(sets.precast.WS.Torcleaver, {})
 	sets.precast.WS.Torcleaver.Acc100 = set_combine(sets.precast.WS.Acc100, {
-		head="Ignominy Burgonet +2",body="Ignominy Cuirass +3",hands="Sulev. Gauntlets +1",legs="Sulevi. Cuisses +1",feet="Sulev. Leggings +1",back=AnkouWSD})
+		head="Ignominy Burgonet +2",body="Ignominy Cuirass +3",hands="Sulev. Gauntlets +1",legs="Sulevi. Cuisses +1",feet="Sulevia's Leggings +2",back=AnkouWSD})
 	sets.precast.WS.Torcleaver.Suicide = sets.precast.WS.Torcleaver
 	
 	-- SCOURGE
@@ -329,8 +329,8 @@ function init_gear_sets()
 	sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {ammo="Knobkierrie",
 		--body=OdysseanChestWSD,
 		hands=OdysseanGauntletsWSD,
-		legs=OdysseanCuissesWSD,
-		feet="Sulevia's Leggings +1",
+		legs=ValorousHoseWSD,
+		feet="Sulevia's Leggings +2",
 		ear2="Ishvara Earring",
 		back=AnkouWSD})
 	sets.precast.WS.Catastrophe.Acc25 = set_combine(sets.precast.WS.Catastrophe, {})
@@ -340,7 +340,7 @@ function init_gear_sets()
 
 	-- CROSS Reaper
 	-- 60% STR / 60% MND
-	sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS.Catastrophe,{feet="Sulevia's Leggings +1"})
+	sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS.Catastrophe,{feet="Sulevia's Leggings +2"})
 	sets.precast.WS['Cross Reaper'].Acc25 = sets.precast.WS.Catastrophe.Acc25
 	sets.precast.WS['Cross Reaper'].Acc50 = sets.precast.WS.Catastrophe.Acc50
 	sets.precast.WS['Cross Reaper'].Acc100 =  set_combine(sets.precast.WS.Acc100, {back=AnkouDEX})
@@ -422,7 +422,7 @@ function init_gear_sets()
 	--------------------------------------------------------------------------------------------
 
 	sets.idle.Town = {ammo="Staunch Tathlum",
-		head="Valorous mask",
+		head=ValorousMaskWSD,
 		neck="coatl gorget +1",
 		ear1="Hearty Earring",
 		ear2="Odnowa Earring +1",
@@ -956,20 +956,10 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
 
-	if spell.en == 'Resolution' or spell.en == 'Torcleaver' or spell.en == 'Insurgency' then
+	if spell.en == 'Resolution' or spell.en == 'Torcleaver' or spell.en == 'Insurgency' or spell.en == 'Cross Reaper' then
 		if player.tp > 2999 then
 			equip(sets.BrutalLugra)
 		else
-			if world.time >= (17*60) or world.time <= (7*60) then
-				equip(sets.Lugra)
-			else 
-				equip(sets.Brutal)
-			end				
-		end
-	elseif spell.en == 'Torcleaver' or spell.en == 'Cross Reaper' then
-		if player.tp > 2999 then
-			equip(sets.BrutalIshvara)
-		else 
 			if world.time >= (17*60) or world.time <= (7*60) then
 				equip(sets.Lugra)
 			else 
@@ -993,7 +983,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		equip({waist="Hachirin-No-Obi"})
 	end
 	if buffactive['Dark Seal'] and spell.type == 'BlackMagic' then
-		equip({head="Fallen's Burgonet"})
+		equip(sets.precast.JA['Dark Seal'])
 	end
 end
 

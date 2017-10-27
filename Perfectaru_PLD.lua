@@ -34,7 +34,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('Meva', 'Reraise')
     
-    state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'Knockback', 'Terror', 'Charm'}
+    state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'Meva', 'Terror', 'Charm', 'Stun'}
     state.EquipShield = M(false, 'Equip Shield w/Defense')
 	state.RefreshMode = M(false, 'Refresh Mode')
 	state.SIRDMode = M(false, 'SIRD Mode')
@@ -72,6 +72,8 @@ function init_gear_sets()
     
 	ValorousMailSTP={ name="Valorous Mail", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Mag. Acc.+28','"Store TP"+9','Accuracy+12 Attack+12','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
    
+    OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Accuracy+24 Attack+24','Weapon skill damage +2%',}}
+	
     OdysseanLegsFC={ name="Odyssean Cuisses", augments={'Mag. Acc.+10','"Fast Cast"+5','"Mag.Atk.Bns."+3',}}
     OdysseanLegsWSD={ name="Odyssean Cuisses", augments={'Accuracy+14','Weapon skill damage +5%','VIT+10',}}
     OdysseanLegsENM={ name="Odyssean Cuisses", augments={'Attack+9','Enmity+7','DEX+4','Accuracy+14',}}
@@ -97,13 +99,11 @@ function init_gear_sets()
 		legs="Founder's Hose",
 		feet="Rev. Leggings +2",
 		neck="Phalaina Locket",
-		waist="Latria Sash",
-		ear2="Lifestorm Earring",
 		ring2="Sirona's Ring",}
     
 
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {neck="Unmoving collar +1"}
+    sets.precast.Waltz = {neck="Unmoving collar"}
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -138,30 +138,30 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {	ammo="Hasty Pinion +1",
-        head="Valorous mask",neck="Fotia gorget",ear1="Lugra Earring +1",ear2="Brutal Earring",
-        body="Sulevia's Platemail +1",hands="Sulevia's gauntlets +1",ring1="Rajas Ring",ring2="Regal Ring",
-        back="Lupine Cape",waist="Fotia Belt",legs="Sulevia's cuisses +1",feet="Sulevia's leggings +1"}
+        head="Valorous mask",neck="Fotia gorget",ear1="Lugra Earring +1",ear2="Moonshade Earring",
+        body="Sulevia's Platemail +1",hands="Sulevia's gauntlets +1",ring1="Rajas Ring",ring2="Apate Ring",
+        waist="Fotia Belt",legs="Sulevia's cuisses +1",feet="Sulevia's leggings +1"}
 
 
     sets.precast.WS.Acc = set_combine(sets.precast.WS,{ring2="Cacoethic Ring +1",feet=OdysseanGreavesAcc})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ring1="Sangoma ring"})
-    sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS.Acc, {ring1="Sangoma ring"})
+    sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS.Acc, {})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
+		ammo="Ginsen",
 		head="Flam. Zucchetto +1",
-		body={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}},
+		body="Found. Breastplate",
 		hands="Sulev. Gauntlets +1",
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
-		feet={ name="Odyssean Greaves", augments={'Crit. hit damage +3%','Accuracy+28','Accuracy+18 Attack+18',}},
+		legs="Lustratio Subligar",
+		feet="Flam. Gambieras +1",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +25',}},
-		right_ear="Telos Earring",
-		left_ring="Hetairoi Ring",
-		right_ring="Regal Ring",
-		back="Lupine Cape",})
+		left_ear="Digni. Earring",
+		right_ear="Moonshade Earring",
+		left_ring="Rajas Ring",
+		right_ring="Apate Ring",})
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS.Acc, {ear2="moonshade earring",ring1="Apate ring"})
 	sets.precast.WS['Judgment'] = set_combine(sets.precast.WS['Chant du Cygne'], {hands="Odyssean Gauntlets"})
 
@@ -171,9 +171,9 @@ function init_gear_sets()
 		back="toro cape",legs="Eschite cuisses",feet=OdysseanGreavesMagic}
    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Sanguine Blade'], {})
    sets.precast.WS['Atonement'] = {
-		head="Valorous mask",neck="Fotia gorget",
-		hands=OdysseanGauntletsWSD,ring2="weatherspoon ring",
-		waist="Fotia Belt",legs=ValorousHoseWSD,feet="Sulevia's leggings +1"} 
+		neck="Fotia gorget",
+		hands=OdysseanGauntletsWSD,--ring2="weatherspoon ring",
+		waist="Fotia Belt",feet="Sulevia's leggings +1"} 
     --------------------------------------
     -- Midcast sets
     --------------------------------------
@@ -231,8 +231,8 @@ function init_gear_sets()
 	sets.midcast['Enlight II'] = sets.midcast['Enlight']
     sets.midcast.Holy = {ammo="Pemphredo Tathlum",
 		head="jumalik helm",neck="Incanter's torque",ear1="Friomisi earring",ear2="Gwati earring",
-		body="Jumalik mail",hands="Leyline gloves",ring1="acumen ring",ring2="weatherspoon ring",
-		back="toro cape",waist="Eschan stone",legs="Eschite cuisses",feet=OdysseanGreavesMagic}
+		body="Jumalik mail",hands="Leyline gloves",ring1="acumen ring",--ring2="weatherspoon ring",
+		back="toro cape",legs="Eschite cuisses",feet=OdysseanGreavesMagic}
     sets.midcast.Protect = {ear1="Brachyura earring"}
     sets.midcast.Shell = {ear1="Brachyura earring"}
     
@@ -249,10 +249,10 @@ function init_gear_sets()
     sets.idle = {ammo="Homiliary",
         head="Souveran Schaller",neck="Coatl Gorget +1",
 		ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",hands="Macabre Gauntlets",
+        body="Reverence Surcoat +2",hands="Souveran Handschuhs",
 		ring1="Defending Ring",ring2="Shneddick Ring",
         back="Moonbeam Cape",waist="Creed Baudrier",
-		legs="Souveran Diechlings",feet="Amm greaves"}
+		legs="Souveran Diechlings",feet="Souveran Schuhs"}
     
     sets.idle.Weak = set_combine(sets.idle, {ammo="Staunch Tathlum",ring2="Moonbeam Ring"})
 		
@@ -278,18 +278,18 @@ function init_gear_sets()
     -- Basic defense sets.
         
     sets.defense.PDT = {sub="Ochain",ammo="Staunch Tathlum",
-        head="Jumalik helm",neck="Loricate torque +1",ear1="Hearty Earring",ear2="Odnowa Earring +1",
-        body="Souveran cuirass",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Regal Ring",
-        back="Moonbeam Cape",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Amm greaves"}
+        head="Jumalik helm",neck="Twilight Torque",ear1="Hearty Earring",ear2="Odnowa Earring +1",
+        body="Souveran cuirass",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
+        back="Moonbeam Cape",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Souveran Schuhs"}
     sets.defense.Reraise = {ammo="homiliary",
-        head="Twilight Helm",neck="Loricate torque +1",ear2="Odnowa Earring +1",
-        body="Twilight Mail",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Regal Ring",
-        back="Weard Mantle",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Amm greaves"}
+        head="Twilight Helm",neck="Twilight Torque",ear2="Odnowa Earring +1",
+        body="Twilight Mail",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
+        back="Weard Mantle",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Souveran Schuhs"}
     -- To cap MDT with Shell IV (52/256), need 76/256 in gear.
     -- Shellra V can provide 75/256, which would need another 53/256 in gear.
     sets.defense.Meva = {sub="Aegis",ammo="homiliary",
-        head="Souveran schaller",neck="Loricate torque +1",ear1="Hearty Earring",ear2="Ethereal Earring",
-        body="Souveran cuirass",hands="souveran handschuhs",ring1="Defending Ring",ring2="Regal Ring",
+        head="Souveran schaller",neck="Twilight Torque",ear1="Hearty Earring",ear2="Ethereal Earring",
+        body="Souveran cuirass",hands="souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
         back="Engulfer cape +1",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Amm greaves"}
 
     --------------------------------------
@@ -312,17 +312,14 @@ function init_gear_sets()
 		back="Letalis Mantle",}
 
     sets.engaged.Acc = set_combine(sets.engaged, {
-        neck="Combatant's Torque",ear1="dominance earring +1",ear2="Zennaroi earring",
-		hands="Emicho gauntlets",
-		legs={ name="Odyssean Cuisses", augments={'Accuracy+24 Attack+24','"Fast Cast"+1','STR+1','Accuracy+12',}},
-		back="grounded mantle",waist="Kentarch Belt +1"})
+		hands="Emicho gauntlets",waist="Kentarch Belt"})
     
 	-- Extra defense sets.  Apply these on top of melee or defense sets.
-    sets.Knockback = {back="Philidor Mantle"}
+    --sets.Knockback = {back="Philidor Mantle"}
 	sets.Meva = 	{ear1="Hearty earring",ear2="Flashward earring",waist="Asklepian Belt",ring2="Purity ring",back="Rudianos's Mantle"}
 	sets.Terror = 	set_combine(sets.Meva,{feet="Founder's greaves"})
-	sets.Charm =	set_combine(sets.Meva,{neck="Unmoving collar +1",legs="Souveran diechlings",back="Solemnity cape"})
-	sets.Stun =		set_combine(sets.Meva,{body="Onca suit",hands=empty,legs=empty,feet=empty,ear2="Dominance earring +1"})
+	sets.Charm =	set_combine(sets.Meva,{neck="Unmoving collar",legs="Souveran diechlings",back="Solemnity cape"})
+	sets.Stun =		set_combine(sets.Meva,{})--ear2="Dominance earring +1"})
 	
 	sets.Defensive = {ammo="Staunch Tathlum",	--2  2
 		head="Souveran Schaller",				--3
@@ -339,7 +336,7 @@ function init_gear_sets()
 		back="Moonbeam Cape",					--5  5
 	}											--49 48
 	--ammo="homiliary",																--brilliance 3				 3
---		head="Jumalik helm",neck="Loricate torque +1",ear1="Hearty Earring",ear2="Ethereal Earring",		--pdt  5 6 			 mdt   6
+--		head="Jumalik helm",neck="Twilight Torque",ear1="Hearty Earring",ear2="Ethereal Earring",		--pdt  5 6 			 mdt   6
 --        body="Souveran cuirass",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Regal Ring",		--pdt  9 3 10 6 	 mdt 9 4 10 3 
 --        back="Moonbeam Cape",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Souveran Schuhs"}		--pdt    4 3 4 -> 53 mdt     3    -> 38
 		
@@ -350,28 +347,26 @@ function init_gear_sets()
 		hands="Sulev. Gauntlets +1",		--		4			4
 		legs="Sulevi. Cuisses +1",			--		6			6
 		feet="Loyalist Sabatons",			--		2
-		neck="Loricate Torque +1",			--		6			6
-		waist="Sailfi Belt +1",
-		left_ear="Dominance Earring +1",
-		right_ear="Brutal Earring",
+		neck="Twilight Torque",			--		6			6
+		waist="Sailfi Belt",
 		left_ring="Defending Ring",			--		10			10	
 		right_ring="Moonbeam Ring",				--		6			3
 		back="Moonbeam Cape",}				--		3			3	-->50 45
 		
-	sets.Defensive_HP = {
+	sets.Defensive_HP = set_combine(sets.Defensive, {
 		ammo="Staunch Tathlum",
-		head="Arke Zuchetto",
+		--head="Arke Zuchetto",
 		body="Souveran Cuirass",
 		hands="Souv. Handschuhs", 
-		legs="Arke Cosciales",
+		--legs="Arke Cosciales",
 		feet="Souveran Schuhs", 
 		neck="Sanctity Necklace",
-		waist="Eschan Stone",
-		left_ear="Odnowa Earring",
+		waist="Creed Baudrier",
+		left_ear="Etiolation Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Moonbeam Ring",
-		back="Moonbeam Cape",}
+		back="Moonbeam Cape",})
 				
     sets.engaged.Reraise = set_combine(sets.engaged, sets.Reraise)
     sets.engaged.Acc.Reraise = set_combine(sets.engaged.Acc, sets.Reraise)
@@ -379,13 +374,13 @@ function init_gear_sets()
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
-	sets.engaged.Meva = set_combine(sets.Defensive, {head="Souveran Schaller",ring2="Archon Ring",back="Engulfer cape +1",feet="Amm greaves"})	
-	sets.engaged.Acc.Meva = set_combine(sets.Defensive_Acc, {back="Engulfer cape +1",feet="Amm greaves"})
+	sets.engaged.Meva = set_combine(sets.Defensive, {back="Engulfer cape +1",})	
+	sets.engaged.Acc.Meva = set_combine(sets.Defensive_Acc, {back="Engulfer cape +1"})
 			 
      sets.engaged.HP = set_combine(sets.engaged, sets.Defensive_HP)
 	
-	 sets.engaged.DW = set_combine(sets.engaged, {ear1="Brutal earring",ear2="suppanomimi",waist="shetal stone"})
-     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {neck="Combatant's Torque",ring2="Cacoethic Ring +1"})
+	 sets.engaged.DW = set_combine(sets.engaged, {})
+     sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {})
 	 sets.engaged.DW.PDT = set_combine(sets.Defensive, sets.engaged.DW)
 	 sets.engaged.DW.Acc.PDT = set_combine(sets.Defensive_Acc, sets.engaged.DW)
  	 sets.engaged.DW.Meva = set_combine(sets.engaged.Meva, sets.engaged.DW)
@@ -396,7 +391,7 @@ function init_gear_sets()
     --------------------------------------
 
     sets.buff.Doom = {ring2="Purity Ring",waist="Gishdubar sash"}
-    sets.buff.Cover = {body="Caballarius surcoat +1"}
+    sets.buff.Cover = {}--body="Caballarius surcoat +1"}
 	
 	sets.Refresh = {ammo="Homiliary",feet="Reverence Leggings +2",back="Rudianos's Mantle"}
     sets.Berserker = { neck="Berserker's Torque" }
@@ -466,8 +461,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)	
-	if spell.interrupted then
-		send_command('gs c toggle SIRDMode')
+	if spell.interrupted and not state.SIRDMode.value then
+		send_command('gs c toggle SIRDMode')		
 	end	
 	
 	if state.RefreshMode.value then

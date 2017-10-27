@@ -34,7 +34,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('Meva', 'Reraise')
     
-    state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'Knockback', 'Terror', 'Charm'}
+    state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'Meva', 'Terror', 'Charm', 'Stun'}
     state.EquipShield = M(false, 'Equip Shield w/Defense')
 	state.RefreshMode = M(false, 'Refresh Mode')
 	state.SIRDMode = M(false, 'SIRD Mode')
@@ -130,7 +130,7 @@ function init_gear_sets()
     sets.precast.WS = {	ammo="Hasty Pinion +1",
         head="Valorous mask",neck="Fotia gorget",ear1="Lugra Earring +1",ear2="Brutal Earring",
         body="Sulevia's Platemail +1",hands="Sulevia's gauntlets +1",ring1="Rajas Ring",ring2="Regal Ring",
-        back="Lupine Cape",waist="Fotia Belt",legs="Sulevia's cuisses +1",feet="Sulevia's leggings +1"}
+        back="Lupine Cape",waist="Fotia Belt",legs="Sulevia's cuisses +1",feet="Sulevia's Leggings +2"}
 
 
     sets.precast.WS.Acc = set_combine(sets.precast.WS,{ring2="Cacoethic Ring +1",feet=OdysseanGreavesAcc})
@@ -163,7 +163,7 @@ function init_gear_sets()
    sets.precast.WS['Atonement'] = {
 		head="Valorous mask",neck="Fotia gorget",
 		hands=OdysseanGauntletsWSD,ring2="weatherspoon ring",
-		waist="Fotia Belt",legs=ValorousHoseWSD,feet="Sulevia's leggings +1"} 
+		waist="Fotia Belt",legs=ValorousHoseWSD,feet="Sulevia's Leggings +2"} 
     --------------------------------------
     -- Midcast sets
     --------------------------------------
@@ -305,11 +305,11 @@ function init_gear_sets()
 		back="grounded mantle",waist="Kentarch Belt +1"})
     
 	-- Extra defense sets.  Apply these on top of melee or defense sets.
-    sets.Knockback = {back="Philidor Mantle"}
+    --sets.Knockback = {back="Philidor Mantle"}
 	sets.Meva = 	{ear1="Hearty earring",ear2="Flashward earring",waist="Asklepian Belt",ring2="Purity ring",back="Rudianos's Mantle"}
 	sets.Terror = 	set_combine(sets.Meva,{feet="Founder's greaves"})
 	sets.Charm =	set_combine(sets.Meva,{neck="Unmoving collar +1",legs="Souveran diechlings",back="Solemnity cape"})
-	sets.Stun =		set_combine(sets.Meva,{body="Onca suit",hands=empty,legs=empty,feet=empty,ear2="Dominance earring +1"})
+	sets.Stun =		set_combine(sets.Meva,{ear2="Dominance earring +1"})
 	
 	sets.Defensive = {ammo="Staunch Tathlum",
 		head="Souveran Schaller",
@@ -453,7 +453,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)	
-	if spell.interrupted then
+	if spell.interrupted and not state.SIRDMode.value then
 		send_command('gs c toggle SIRDMode')
 	end	
 	

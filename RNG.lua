@@ -102,23 +102,23 @@ function init_gear_sets()
 	-- Ranged sets (snapshot)
 	
 	sets.precast.RA = {--ammo="Chrono Bullet",
-		head="Amini Gapette",					--6
-		body="Amini Caban +1",					--
+		head="Taeon Chapeau",					--9
+		body="Taeon Tabard",					--9
 		hands="Carmine Finger Gauntlets +1",	--8		11
 		legs="Adhemar Kecks",					--9		10
 		feet="Meghanada Jambeaux +2", 			--10
-		waist="Yemaya Belt",					--		5
+		waist="Impulse Belt",					--3
 		left_ring="Defending Ring",
 		back=belenusSnap						--10
-		}										--43(10)26(5)
-	sets.Flurry = set_combine(sets.precast.RA,{head="Orion Beret +3",})
+		}										--58(10)21(5)
+	sets.Flurry = set_combine(sets.precast.RA,{head="Orion Beret +3",waist="Yemaya Belt",})
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {ammo="Chrono Bullet",
 		head="Orion Beret +3",
 		body="Orion Jerkin +2",
-		hands="Meg. Gloves +1",
+		hands="Meghanada Gloves +2",
 		legs=HercLegsWSD,
 		feet=HercBootsWSD,
 		neck="Fotia Gorget",
@@ -139,7 +139,7 @@ function init_gear_sets()
 		body="Samnuha Coat",
 		hands="Carmine Finger Gauntlets +1",
 		legs=HercLegsMAB,
-		feet="Adhemar Gamashes",
+		feet=HercBootsMAB,
 		neck="Sanctity Necklace",
 		waist="Fotia Belt",
 		left_ear="Ishvara Earring",
@@ -184,7 +184,7 @@ function init_gear_sets()
 
 	sets.midcast.RA = {ammo="Chrono Bullet",
 		head={ name="Arcadian Beret +1", augments={'Enhances "Recycle" effect',}},
-		body="Arcadian Jerkin +1",
+		body="Orion Jerkin +2",
 		hands={ name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15',}},
 		legs={ name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}},
 		feet={ name="Adhemar Gamashes", augments={'HP+50','"Store TP"+6','"Snapshot"+8',}},
@@ -280,7 +280,7 @@ function init_gear_sets()
 		body="Adhemar Jacket",
 		hands="Adhemar Wristbands",
 		legs="Samnuha Tights",
-		feet=HercBootsDW,
+		feet=HercBootsTA,
 		neck="Iskur Gorget",
 		waist="Shetal Stone",
 		left_ear="Sherida Earring",
@@ -289,9 +289,11 @@ function init_gear_sets()
 		right_ring="Ilabrat Ring",
 		back=belenus}
 
-	sets.engaged.Acc = {neck="Combatant's Torque"}
+	sets.engaged.Acc = {head="Dampening Tam",neck="Combatant's Torque",waist="Kentarch Belt +1"}
 	sets.engaged.PDT = sets.defense.PDT	
+	sets.engaged.PDT.Acc = sets.defense.PDT	
 	sets.engaged.Meva = sets.defense.Meva
+	sets.engaged.Meva.Acc = sets.defense.Meva
 	
 	--------------------------------------
 	-- Custom buff sets
@@ -371,6 +373,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
 	end
 end
 
+function job_aftercast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' and autora then 
+		send_command('wait 3.4;gs c checkandshoot')
+	end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
@@ -457,6 +464,7 @@ rangeswap = 0;
 use_dualbox=false
 function job_self_command(cmdParams, eventArgs)
 	command = cmdParams[1]:lower()
+	--if player.tp < 1000 then
 	if command=='shoot' then
 		send_command('input /shoot <t>')
 		if player.status == 'Engaged' then
@@ -474,6 +482,7 @@ function job_self_command(cmdParams, eventArgs)
 		midshot = false
 		midshot_real = false	
 	end
+	--end
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -563,18 +572,8 @@ function event_action(raw_actionpacket)
 		if autora and player.tp >= 1000 and state.autows.current == 'on' then
 			send_command('wait 1.5;input /ws "'..default_ws..'" <t>;wait 3.4;gs c checkandshoot')
 			--send_command('wait 1.3;input /ws "'..default_ws..'" <t>;')
-		elseif autora then 
-			--send_command('wait .7;input /shoot <t>')
-			--send_command('wait .8;input /shoot <t>')
-			--send_command('wait .9;input /shoot <t>')
-			--send_command('wait .6;gs c checkandshoot')
-			--send_command('wait .7;gs c checkandshoot')
-			--send_command('wait .8;gs c checkandshoot')
-			--send_command('wait .9;gs c checkandshoot')
-			--send_command('wait 1;gs c checkandshoot')
+		elseif autora and player.tp < 1000 then 
 			send_command('wait 1.3;gs c checkandshoot')
-			--send_command('wait 1;gs c checkandshoot')
-			--send_command('wait 1.3;gs c checkandshoot')
 		end
 	end
 	

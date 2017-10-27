@@ -120,8 +120,8 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head="Meghanada Visor +1",neck="Fotia gorget",ear1="Sherida earring",ear2="moonshade earring",
-        body="Adhemar jacket",hands="Meghanada Gloves +1",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        head=HercHelmTA,neck="Fotia gorget",ear1="Sherida earring",ear2="moonshade earring",
+        body="Adhemar jacket",hands="Meghanada Gloves +2",ring1="Niqmaddu Ring",ring2="Regal Ring",
         back="Ogma's cape",waist="Fotia belt",legs="Samnuha tights",feet=HercBootsDmg}
     	
 	sets.precast.WS.Acc50 = set_combine(sets.precast.WS,{})
@@ -132,7 +132,7 @@ function init_gear_sets()
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {ammo="Knobkierrie",
 		head=HercHelmTA,
 		body="Adhemar Jacket",
-		hands="Meg. Gloves +1",
+		hands="Meghanada Gloves +2",
 		legs="Samnuha Tights", 
 		feet=HercBootsTA,
 		neck="Fotia Gorget",

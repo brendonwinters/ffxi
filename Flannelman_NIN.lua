@@ -43,11 +43,12 @@ function user_setup()
     
 	state.RuneMode = M('None','Lux -- Darkness resist','Tenebrae -- Light resist','Ignis - Ice resist','Gelus -- Wind resist',		-- Winkey + `
 			'Flabra -- Earth resist','Tellus -- Lightning resist','Sulpor -- Water resist','Unda -- Fire resist')							
-	state.MagicBurst = M(false, 'Magic Burst')																						-- Alt + `
+	state.MagicBurst = M(false, 'Magic Burst')		
+    state.DualWield = M(false, 'Dual Wield')																				-- Alt + `
 
     -- Additional local binds
+    send_command('bind ^` gs c toggle DualWield')
     send_command('bind ^z input /targetbnpc')
-	send_command('bind ^` input /ja "Yonin" <me>')
     send_command('bind !` gs c toggle MagicBurst')
 	send_command('bind @` gs c cycle RuneMode')
 	
@@ -79,7 +80,7 @@ function init_gear_sets()
 	include('Flannelman_aug-gear.lua')
 	
 	
-	sets.Lugra  		 = { ear1="Lugra Earring", ear2="Lugra Earring +1" }
+	sets.LugraLugra  		 = { ear1="Lugra Earring", ear2="Lugra Earring +1" }
 	sets.Mache           = { ear1="Mache Earring" }
    --------------------------------------
     -- Precast sets
@@ -89,23 +90,21 @@ function init_gear_sets()
     sets.precast.JA['Mijin Gakure'] = {legs="Mochizuki Hakama"}
     sets.precast.JA['Futae'] = {legs="Hattori Tekko"}
     sets.precast.JA['Sange'] = {legs="Mochizuki Chainmail"}
-	sets.precast.JA['Provoke'] = sets.enmity
 	
 	sets.enmity = {
     ammo="Sapience Orb",
     body="Emet Harness +1",
     hands="Kurys Gloves",
-    legs="Ken. Hakama",
-    feet="Ahosi Leggings",
-    neck="Warder's Charm +1",
+    feet="Mochizuki Kyahan",
+    neck="Unmoving Collar +1",
     waist="Goading Belt",
     left_ear="Cryptic Earring",
     right_ear="Friomisi Earring",
     left_ring="Petrov Ring",
-    right_ring="Provocare Ring",
+    right_ring="Supershear Ring",
     back="Agema Cape",
 	}
-	
+	sets.precast.JA['Provoke'] = sets.enmity
 	
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
@@ -133,7 +132,7 @@ function init_gear_sets()
 		left_ring="Weatherspoon Ring",			--5
 		right_ring="Kishar Ring",				--5
 	}											--52 FC
-    --sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
     -- Snapshot for ranged
     sets.precast.RA = {legs="Adhemar Kecks", feet="Adhemar Gamashes", waist="Yemaya Belt"}
@@ -153,7 +152,9 @@ function init_gear_sets()
 		left_ring="Ilabrat Ring",
 		right_ring="Regal Ring",
 		back="Andartia's Mantle", }
-	sets.precast.WS.Acc = sets.precast.WS 
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {	
+		left_ring="Regal Ring",
+		right_ring="Ilabrat Ring",})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     
@@ -179,7 +180,9 @@ function init_gear_sets()
 		right_ring="Regal Ring",
 		back="Andartia's Mantle", 
 	})
-	sets.precast.WS['Blade: Hi'].Acc = sets.precast.WS['Blade: Hi']
+	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {	
+		left_ring="Regal Ring",
+		right_ring="Ilabrat Ring",})
 	
     -- Blade: Shun	Dex --
 	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
@@ -193,8 +196,8 @@ function init_gear_sets()
 		waist="Fotia Belt",
 		left_ear="Moonshade Earring", 
 		right_ear="Mache Earring",
-		left_ring="Regal Ring",
-		right_ring="Epona's Ring",
+		left_ring="Epona's Ring",
+		right_ring="Regal Ring",
 		back="Andartia's Mantle", 
 		})
 	sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS['Blade: Shun'], {})
@@ -215,7 +218,9 @@ function init_gear_sets()
 		right_ring="Regal Ring",
 		back="Andartia's Mantle",
 	})
-	sets.precast.WS['Blade: Ten'].Acc = sets.precast.WS['Blade: Ten']
+	sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'], {	
+		left_ring="Regal Ring",
+		right_ring="Ilabrat Ring",})
 	
     sets.precast.WS['Aeolian Edge'] = {ammo="Pemphredo Tathlum",
 		head=HercHelmMAB,
@@ -231,6 +236,20 @@ function init_gear_sets()
 		right_ring="Dingir Ring",
 		back="Toro Cape"}
 
+	
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		head="Adhemar Bonnet", 
+		body="Abnoba Kaftan",
+		hands="Ryuo Tekko",
+		legs="Jokushu Haidate", 
+		feet=HercBootsDmg,
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Moonshade Earring", 
+		right_ear="Mache Earring",
+		left_ring="Epona's Ring",
+		right_ring="Regal Ring",})		
+	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})	
     
     --------------------------------------
     -- Midcast sets
@@ -238,7 +257,7 @@ function init_gear_sets()
 
     sets.midcast.FastRecast = {ear2="Loquacious Earring"}
         
-    sets.midcast.Utsusemi = {feet="Hattori Kyahan",	back="Andartia's Mantle",}
+    sets.midcast.Utsusemi = {feet="Hattori Kyahan",neck="Magoraga Beads",back="Andartia's Mantle",}
 	sets.midcast['Utsusemi: San'] = sets.midcast.Utsusemi
 
     sets.midcast.ElementalNinjutsu = {ammo="Pemphredo Tathlum",
@@ -270,7 +289,7 @@ function init_gear_sets()
 		left_ear="Digni. Earring",
 		right_ear="Gwati Earring",
 		left_ring="Weatherspoon Ring",
-		right_ring="Regal Ring",
+		right_ring="Kishar Ring",
 		back="Toro Cape",}
 
     sets.midcast.NinjutsuBuff = {	}
@@ -300,12 +319,12 @@ function init_gear_sets()
     sets.idle = {
 		ammo="Staunch Tathlum",
 		head=HercHelmDT,
-		body="Emet Harness +1",
+		body="Hizamaru Haramaki +1",
 		hands=HercGlovesDT,
 		legs="Mummu Kecks +1",
 		neck="Loricate Torque +1",
 		waist="Flume Belt +1",
-		left_ear="Eabani Earring",
+		left_ear="Odnowa Earring +1",
 		right_ear="Hearty Earring",
 		left_ring="Defending Ring",
 		right_ring="Regal Ring",
@@ -318,7 +337,7 @@ function init_gear_sets()
     
     -- Defense sets
 
-    sets.defense.PDT = {		--shigi --5   5
+    sets.defense.PDT = {		
 		ammo="Staunch Tathlum",			--2   2
 		head=HercHelmDT,				--4   4
 		body="Ken. Samue",			
@@ -327,12 +346,12 @@ function init_gear_sets()
 		feet="Amm Greaves",				--5   5
 		neck="Loricate Torque +1",		--6   6
 		waist="Flume Belt +1",			--4
-		left_ear="Eabani Earring",
+		left_ear="Odnowa Earring +1",	--	  2
 		right_ear="Hearty Earring",
 		left_ring="Defending Ring",		--10  10
-		right_ring="Regal Ring",
+		right_ring="Dark Ring",			--6   3
 		back="Moonbeam Cape",			--5   5
-	}									--50  50
+	}									--51  50
 
     sets.defense.Meva = {		--shigi	--5   5		meva
 		ammo="Staunch Tathlum",			--2   2
@@ -365,37 +384,40 @@ function init_gear_sets()
     
     -- Normal melee group		-- 35% DW --
     sets.engaged = {ammo="Togakushi Shuriken",
-		head=HercHelmTA,
-		body="Adhemar Jacket",
+		head="Kendatsuba Jinpachi",
+		body="Kendatsuba Samue",
 		hands="Adhemar Wristbands",
-		legs="Samnuha Tights",
+		legs="Kendatsuba Hakama",
+		--legs="Samnuha Tights",
 		feet=HercBootsTA,
 		neck="Moonbeam Nodowa",
-		waist="Reiki Yotai",
+		waist="Kentarch Belt +1",
 		left_ear="Cessance Earring",
-		right_ear="Suppanomimi",
-		left_ring="Ilabrat Ring",
-		right_ring="Epona's Ring",
-		back="Andartia's Mantle", 
+		right_ear="Telos Earring",
+		left_ring="Epona's Ring",
+		right_ring="Hetairoi Ring",
+		back="Andartia's Mantle", 		
 	}
-	
-    sets.engaged.Acc = {   ammo="Yamarang",
-		head="Dampening Tam", 
-		body="Adhemar Jacket",
-		hands="Adhemar Wristbands", 
-		legs="Hachiya Hakama +2",
-		feet=HercBootsDmg,
-		neck="Moonbeam Nodowa",
+	sets.DualWield = set_combine(sets.engaged, {
+		head="Ryuo Somen", 
+		body="Adhemar Jacket", 
+		feet=HercBootsDW,
 		waist="Reiki Yotai",
-		left_ear="Telos Earring",
-		right_ear="Dignitary's Earring",
-		left_ring="Ilabrat Ring",
-		right_ring="Regal Ring",
-		back="Andartia's Mantle",
-	}
+		left_ear="Eabani Earring",
+		right_ear="Suppanomimi",
+	})
 	
-    sets.engaged.PDT = sets.defense.PDT
-    sets.engaged.Acc.PDT = sets.defense.PDT
+    sets.engaged.Acc = set_combine(sets.engaged, {ammo="Yamarang",
+		right_ear="Telos Earring",
+		right_ring="Ilabrat Ring",	})
+	sets.DualWield.Acc = set_combine(sets.engaged.Acc, {
+		head="Ryuo Somen", 
+		body="Adhemar Jacket",
+		waist="Reiki Yotai",
+		left_ear="Suppanomimi", })
+	
+    sets.engaged.PDT = set_combine(sets.defense.PDT, {ear2="Telos Earring"})
+    sets.engaged.Acc.PDT = sets.engaged.PDT
 	sets.engaged.Meva = sets.defense.Meva
     sets.engaged.Acc.Meva = sets.defense.Meva
 
@@ -490,15 +512,21 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 			equip(sets.Mache)
 		else
 			if world.time >= (17*60) or world.time <= (7*60) then
-				equip(sets.Lugra)
+				equip(sets.LugraLugra)
 			else 
 				equip(sets.Mache)
 			end				
 		end
-	elseif spell.en == 'Blade: Hi' or spell.en == 'Blade: Shun' then		
-		if world.time >= (17*60) or world.time <= (7*60) then
-			equip(sets.Lugra)
-		end	
+	elseif spell.en == 'Blade: Hi' or spell.en == 'Blade: Shun' or spell.en == 'Evisceration' then	
+		if player.tp > 2999 then
+			equip(sets.LugraLugra)
+		else	
+			if world.time >= (17*60) or world.time <= (7*60) then
+				equip(sets.LugraLugra)
+			else 
+				equip(sets.Mache)
+			end	
+		end
 	end
 	if spellMap == 'Ninjutsu' then
         if spell.element == world.day_element or spell.element == world.weather_element then
@@ -542,6 +570,13 @@ function job_buff_change(buff, gain)
 		equip(sets.engaged.PDT)
 		add_to_chat(122, "TP set to PDT")
 	end
+	if state.HybridMode.value == "Normal" then
+		if string.lower(buff) == "slow" and gain and not state.DualWield.value then
+			send_command('gs c toggle DualWield')
+		elseif string.lower(buff) == "slow" and state.DualWield.value and not gain then
+			send_command('gs c toggle DualWield')
+		end
+	end
 end
 
 -- Get custom spell maps
@@ -571,6 +606,13 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.DualWield.value and state.HybridMode.value == 'Normal' then	
+		if state.OffenseMode.current == 'Acc' then
+			meleeSet = set_combine(meleeSet, sets.DualWield.Acc)
+		else	
+			meleeSet = set_combine(meleeSet, sets.DualWield)
+		end	
+	end
     if state.Buff.Migawari then
         --meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end

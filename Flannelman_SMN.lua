@@ -51,6 +51,8 @@ end
 function job_setup()
     state.Buff["Avatar's Favor"] = buffactive["Avatar's Favor"] or false
     state.Buff["Astral Conduit"] = buffactive["Astral Conduit"] or false
+	state.Buff['Haste'] = buffactive['Haste'] or false
+	state.ConduitMode = M(false, 'ConduitMode')
 
     spirits = S{"LightSpirit", "Caller's Pigaches +1Spirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
     avatars = S{"Carbuncle", "Fenrir", "Diabolos", "Ifrit", "Titan", "Leviathan", "Garuda", "Shiva", "Ramuh", "Odin", "Alexander", "Cait Sith"}
@@ -121,6 +123,7 @@ function job_setup()
     wards.flag = false
     wards.spell = ''
     
+    send_command('bind !` gs c toggle ConduitMode')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -137,25 +140,31 @@ function user_setup()
 end
 
 
+function user_unload()
+    send_command('unbind !`')
+end	
+
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 	sets.precast.Item = {}
 	sets.precast.Item['Holy Water'] = {ring1="Purity Ring"} 
 
-	MerlinicHood={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-    MerlinicHoodBP={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+16','Blood Pact Dmg.+10','Pet: DEX+2','Pet: Mag. Acc.+6',}}
-    MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
+	include('Flannelman_aug-gear.lua')
 	
-    MerlinicDastanasFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-	MerlinicDastanasBP={ name="Merlinic Dastanas", augments={'Blood Pact Dmg.+10','Pet: Mag. Acc.+12',}}
+	-- MerlinicHood={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
+    -- MerlinicHoodBP={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+16','Blood Pact Dmg.+10','Pet: DEX+2','Pet: Mag. Acc.+6',}}
+    -- MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
+	
+    -- MerlinicDastanasFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
+	-- MerlinicDastanasBP={ name="Merlinic Dastanas", augments={'Blood Pact Dmg.+10','Pet: Mag. Acc.+12',}}
 		
-	MerlinicShalwarDrain={ name="Merlinic Shalwar", augments={'Mag. Acc.+26','"Drain" and "Aspir" potency +8','MND+3',}}
-    MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
-    MerlinicShalwarMBD={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+10%','CHR+9','Mag. Acc.+7',}}
+	-- MerlinicShalwarDrain={ name="Merlinic Shalwar", augments={'Mag. Acc.+26','"Drain" and "Aspir" potency +8','MND+3',}}
+    -- MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
+    -- MerlinicShalwarMBD={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+10%','CHR+9','Mag. Acc.+7',}}
 	
-    MerlinicCrackowsMBD={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+27','Magic burst dmg.+8%','INT+10',}}
-    MerlinicCrackows={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}}
-    MerlinicCrackowsFC={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+6','MND+3','Mag. Acc.+4',}}
+    -- MerlinicCrackowsMBD={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+27','Magic burst dmg.+8%','INT+10',}}
+    -- MerlinicCrackows={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}}
+    -- MerlinicCrackowsFC={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+6','MND+3','Mag. Acc.+4',}}
 
     CampestresPhysical={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',}}	
     CampestresMagical={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20',}}
@@ -343,11 +352,11 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head="Apogee Crown +1",
 		body="Convoker's Doublet +3",
-		hands=MerlinicDastanasBP,
+		hands=MerlinicDastanasPBP,
 		legs="Apogee Slacks +1",
 		feet="Apogee Pumps +1",
 		neck="Shulmanu Collar",
-		waist="Klouskap Sash",
+		waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
 		left_ring="Varar Ring",
@@ -369,7 +378,7 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head="Apogee Crown +1", 
 		body="Convoker's Doublet +3",
-		hands=MerlinicDastanasBP,
+		hands=MerlinicDastanasMBP,
 		legs="Enticer's Pants", 
 		feet="Apogee Pumps +1",
 		neck="Adad Amulet",
@@ -382,7 +391,7 @@ function init_gear_sets()
 	
     sets.midcast.Pet.MagicalBloodPactRage.Acc = set_combine(sets.midcast.Pet.MagicalBloodPactRage,{	
 		head="Apogee Crown +1",
-		hands="Tali'ah Gages +1",
+		hands="Apogee Mitts",
 		legs="Tali'ah Seraweels +1",
 		left_ear="Enmerkar Earring",
 	})
@@ -392,11 +401,11 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head="Apogee Crown +1", 
 		body="Convoker's Doublet +3",
-		hands=MerlinicDastanasBP,
+		hands=MerlinicDastanasMBP,
 		legs="Apogee Slacks +1", 
 		feet="Apogee Pumps +1",
 		neck="Shulmanu Collar",
-		waist="Klouskap Sash",
+		waist="Incarnation Sash",
 		left_ear="Gelos Earring",
 		right_ear="Lugalbanda Earring",
 		left_ring="Varar Ring",
@@ -405,7 +414,7 @@ function init_gear_sets()
 	}
 	sets.midcast.Pet.HybridBloodPactRage.Acc = set_combine(sets.midcast.Pet.HybridBloodPactRage,{
 		head="Apogee Crown +1",
-		hands="Tali'ah Gages +1",
+		hands="Apogee Mitts",
 		legs="Tali'ah Seraweels +1",	
 		feet="Convo. Pigaches +2",
 		left_ear="Enmerkar Earring",
@@ -428,7 +437,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {ammo="Sancus Sachet +1",
         head="Convoker's horn +1",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Loquacious Earring",
-        body="Amalric Doublet",hands=MerlinicDastanasBP,ring1="Defending Ring",ring2="Dark ring",
+        body="Amalric Doublet",hands=MerlinicDastanasMBP,ring1="Defending Ring",ring2="Dark ring",
         back="Moonbeam Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's gaiters"}
     
     -- Idle sets
@@ -495,7 +504,7 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head="Con. Horn +1",
 		body="Vrikodara Jupon",
-		hands=MerlinicDastanasBP,
+		hands=MerlinicDastanasMBP,
 		legs="Assid. Pants +1",
 --		feet="Convoker's Pigaches +2",		
 		neck="Empath Necklace",
@@ -510,7 +519,7 @@ function init_gear_sets()
 
     -- Favor uses Caller's Horn instead of Summoners Horn for refresh
     sets.idle.Avatar.Favor = {head="Beckoner's horn"}
-    sets.idle.Avatar.Melee = {waist="Klouskap Sash"}
+    sets.idle.Avatar.Melee = {waist="Incarnation Sash"}
         
     sets.perp = {}
     -- Caller's Bracer's halve the perp cost after other costs are accounted for.
@@ -539,8 +548,8 @@ function init_gear_sets()
 		ammo="Sancus Sachet +1",
 		head="Inyanga Tiara +1",
 		body="Inyanga Jubbah +1",
-		hands=MerlinicDastanasBP,
-		legs="Inyanga Shalwar +1",
+		hands=MerlinicDastanasMBP,
+		legs="Inyanga Shalwar +2",
 		feet="Convoker's Pigaches +2",		
 		neck="Empath Necklace",
 		waist="Fucho-no-Obi",
@@ -568,7 +577,7 @@ function init_gear_sets()
 		legs="Tali'ah Seraweels +1",
 		feet="Convoker's Pigaches +2",	
 		neck="Shulmanu Collar",
-		waist="Klouskap Sash",
+		waist="Incarnation Sash",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
 		left_ring="Rajas Ring",
@@ -582,7 +591,7 @@ function init_gear_sets()
 		legs="Assid. Pants +1",
 		feet="Convoker's Pigaches +2",		
 		neck="Empath Necklace",
-		waist="Klouskap Sash",
+		waist="Incarnation Sash",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
 		left_ring="Defending Ring",
@@ -597,9 +606,9 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    if state.Buff['Astral Conduit'] and pet_midaction() then
-        eventArgs.handled = true
-    end
+   --if state.Buff['Astral Conduit'] and pet_midaction() then
+   --     eventArgs.handled = true
+   -- end
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
@@ -665,6 +674,15 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
+	--if state.Buff['Astral Conduit'] then
+	if state.ConduitMode.value then
+		if state.Buff['Astral Conduit'] then
+			equip(sets.midcast.Pet.PhysicalBloodPactRage)
+			add_to_chat(122, "Conduit Goes")
+			disable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		else enable('ammo','head','neck','ear1','ear2','body','hands','ring1','ring2','back','waist','legs','feet')
+		end
+	end
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
     elseif storms:contains(buff) then
