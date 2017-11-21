@@ -137,9 +137,9 @@ function init_gear_sets()
 
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		head=HercHelmTA,
+		head="Adhemar Bonnet +1",
 		body=HercVestWSD,
-		hands="Adhemar Wristbands", 
+		hands="Adhemar Wristbands +1", 
 		legs="Samnuha Tights",
 		feet=HercBootsTA,
 		neck="Fotia Gorget",
@@ -159,15 +159,15 @@ function init_gear_sets()
 		feet=HercBootsWSD,
 		left_ear="Ishvara Earring",})
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {})
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"], {})
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {head="Adhemar Bonnet +1",})
+    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"], {head="Adhemar Bonnet +1",})
     sets.precast.WS["Rudra's Storm"].SATA = sets.precast.WS["Rudra's Storm"].SA
 	
 	--Exenterator AGI ~85% ftp carry
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
 		head=HercHelmTA,
-		body="Adhemar Jacket",
-		hands="Adhemar Wristbands", 
+		body="Adhemar Jacket +1",
+		hands="Adhemar Wristbands +1", 
 		legs="Samnuha Tights",
 		feet=HercBootsTA,
 		neck="Fotia Gorget",
@@ -177,14 +177,14 @@ function init_gear_sets()
 		left_ring="Regal Ring",
 		right_ring="Ilabrat Ring",})
     sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {})
-    sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'], {})
-    sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'], {})
-    sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'], {})
+    sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'], {head="Adhemar Bonnet +1",})
+    sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'], {head="Adhemar Bonnet +1",})
+    sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'], {head="Adhemar Bonnet +1",})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-		head="Adhemar Bonnet",
+		head="Adhemar Bonnet +1",
 		body="Abnoba Kaftan",
-		hands="Adhemar Wristbands", 
+		hands="Adhemar Wristbands +1", 
 		legs="Samnuha Tights",
 		feet=HercBootsDmg,
 		neck="Fotia Gorget",
@@ -194,14 +194,14 @@ function init_gear_sets()
 		left_ring="Regal Ring",
 		right_ring="Ilabrat Ring",})
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {})
-    sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {})
-    sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'], {})
-    sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'], {head="Adhemar Bonnet"})
+    sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {head="Adhemar Bonnet +1",})
+    sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'], {head="Adhemar Bonnet +1",})
+    sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'], {head="Adhemar Bonnet +1"})
 
     sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {})
-    sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {})
-    sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'], {})
-    sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'], {})
+    sets.precast.WS['Mandalic Stab'].Acc = set_combine(sets.precast.WS['Mandalic Stab'], {head="Adhemar Bonnet +1",})
+    sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'], {head="Adhemar Bonnet +1",})
+    sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'], {head="Adhemar Bonnet +1",})
 
     sets.precast.WS['Aeolian Edge'] = {
 		head=HercHelmMAB,
@@ -297,9 +297,9 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-		head=HercHelmTA,
-		body="Adhemar Jacket", 
-		hands="Adhemar Wristbands", 
+		head="Adhemar Bonnet +1",
+		body="Adhemar Jacket +1", 
+		hands="Adhemar Wristbands +1", 
 		legs="Samnuha Tights", 
 		feet=HercBootsTA,
 		neck="Iskur Gorget",

@@ -19,7 +19,7 @@ function job_setup()
 	-- Set the default to false if you'd rather SE always stay acitve
 
 	-- Greatswords you use. 
-	gsList = S{'Ragnarok'}
+	gsList = S{'Ragnarok','Caladbolg'}
 	-- Offhand weapons used to activate DW mode
 	drk_sub_weapons = S{"Sangarius", "tramontane axe"}
 	
@@ -39,10 +39,10 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	state.OffenseMode:options('Normal','Acc25','Acc50','Acc100','Suicide')
+	state.OffenseMode:options('Normal','Acc25','Acc100','Acc200')
 
 	state.HybridMode:options('Normal','PDT','Meva')
-	state.WeaponskillMode:options('Normal','Acc25','Acc50','Acc100')
+	state.WeaponskillMode:options('Normal','Acc25','Acc100','Acc200')
 	state.CastingMode:options('Normal', 'MAcc')
 	state.IdleMode:options('Normal')
 	state.RestingMode:options('Normal')
@@ -123,7 +123,7 @@ function init_gear_sets()
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {body="jumalik mail",ear1="Mendicant's earring"})
 	-- Midcast Sets
-	sets.midcast.FastRecast = {ammo="Sapience Orb",	--10
+	sets.midcast.FastRecast = {ammo="Staunch Tathlum",	--10
 --		body="Eschite breastplate",					--15
 --		hands="Eschite gauntlets",					--15
 		ring2="Evanescence ring",					--5
@@ -141,8 +141,8 @@ function init_gear_sets()
 		neck="Incanter's torque",		
 		ear1="Gwati Earring", 		--macc8
 		ear2="Dignitary's Earring",--macc10
-		ring1="Sangoma Ring", 
-		ring2="Metamorph Ring +1",
+		ring1="Regal Ring", 
+		ring2="Weatherspoon Ring",
 		waist="Eschan Stone",
 		back="Toro cape",				
 	}
@@ -261,31 +261,29 @@ function init_gear_sets()
 		right_ring="Niqmaddu Ring",
 		back=AnkouDA,}
 	sets.precast.WS.Acc25 = set_combine(sets.precast.WS, {})
-	sets.precast.WS.Acc50 = set_combine(sets.precast.WS, {})
-	sets.precast.WS.Acc100 = set_combine(sets.precast.WS.Acc50, {  ammo="Seething Bomblet +1",  
+	sets.precast.WS.Acc100 = set_combine(sets.precast.WS, {})
+	sets.precast.WS.Acc200 = set_combine(sets.precast.WS.Acc100, {  ammo="Seething Bomblet +1",  
 		head="Ignominy Burgonet +2", 
 		body="Ignominy Cuirass +3",
-		hands="Sulevia's Gauntlets +1",
+		hands="Sulevia's Gauntlets +2",
 		legs="Argosy Breeches +1",
 		feet="Argosy Sollerets +1",
 		left_ear="Telos Earring",
 		right_ear="Dignitary's Earring",
 		back=AnkouDEX
 	})
-	sets.precast.WS.Suicide = set_combine(sets.precast.WS, {})
 
 	-- RESOLUTION
 	-- 86-100% STR
 	sets.precast.WS.Resolution =  set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",
 		head="Argosy Celata +1", 
-		body="Ignominy Cuirass +3",
+		body="Argosy Hauberk +1",
 		hands="Argosy Mufflers +1",
 		legs="Argosy Breeches +1",
 		feet="Argosy Sollerets +1",})
 	sets.precast.WS.Resolution.Acc25 = set_combine(sets.precast.WS.Resolution, {}) 
-	sets.precast.WS.Resolution.Acc50 = set_combine(sets.precast.WS.Resolution, {}) 
-	sets.precast.WS.Resolution.Acc100 = set_combine(sets.precast.WS.Acc100, {hands="Argosy Mufflers +1",back=AnkouDEX}) 
-	sets.precast.WS.Resolution.Suicide = sets.precast.WS.Resolution
+	sets.precast.WS.Resolution.Acc100 = set_combine(sets.precast.WS.Resolution, {}) 
+	sets.precast.WS.Resolution.Acc200 = set_combine(sets.precast.WS.Acc200, {hands="Argosy Mufflers +1",back=AnkouDEX}) 
 
 	-- TORCLEAVER 
 	-- VIT 80%
@@ -297,32 +295,30 @@ function init_gear_sets()
 		feet="Sulevia's Leggings +2",
 		back=AnkouWSD})
 	sets.precast.WS.Torcleaver.Acc25 = set_combine(sets.precast.WS.Torcleaver, {})
-	sets.precast.WS.Torcleaver.Acc50 = set_combine(sets.precast.WS.Torcleaver, {})
-	sets.precast.WS.Torcleaver.Acc100 = set_combine(sets.precast.WS.Acc100, {
-		head="Ignominy Burgonet +2",body="Ignominy Cuirass +3",hands="Sulev. Gauntlets +1",legs="Sulevi. Cuisses +1",feet="Sulevia's Leggings +2",back=AnkouWSD})
-	sets.precast.WS.Torcleaver.Suicide = sets.precast.WS.Torcleaver
+	sets.precast.WS.Torcleaver.Acc100 = set_combine(sets.precast.WS.Torcleaver, {})
+	sets.precast.WS.Torcleaver.Acc200 = set_combine(sets.precast.WS.Acc200, {
+		head="Ignominy Burgonet +2",body="Ignominy Cuirass +3",hands="Sulevia's Gauntlets +2",legs="Sulevia's Cuisses +2",feet="Sulevia's Leggings +2",back=AnkouWSD})
 	
 	-- SCOURGE
 	-- STR/VIT 40% 
 	sets.precast.WS['Scourge'] = set_combine(sets.precast.WS.Torcleaver, {ear2="Ishvara Earring"})
 	sets.precast.WS['Scourge'].Acc25 = set_combine(sets.precast.WS.Torcleaver.Acc25,{ear2="Ishvara Earring"})
-	sets.precast.WS['Scourge'].Acc50 = set_combine(sets.precast.WS.Torcleaver.Acc50,{ear2="Ishvara Earring"})
-	sets.precast.WS['Scourge'].Acc100 = set_combine(sets.precast.WS.Torcleaver.Acc100,{back=AnkouWSD})
-	sets.precast.WS['Scourge'].Suicide = sets.precast.WS['Scourge']
+	sets.precast.WS['Scourge'].Acc100 = set_combine(sets.precast.WS.Torcleaver.Acc100,{ear2="Ishvara Earring"})
+	sets.precast.WS['Scourge'].Acc200 = set_combine(sets.precast.WS.Torcleaver.Acc200,{back=AnkouWSD})
 
 	-- ENTROPY
 	-- 86-100% INT 
 	sets.precast.WS.Entropy = set_combine(sets.precast.WS, {})
 	sets.precast.WS.Entropy.Acc25 = set_combine(sets.precast.WS.Entropy, {})
-	sets.precast.WS.Entropy.Acc50 = set_combine(sets.precast.WS.Entropy, {})
-	sets.precast.WS.Entropy.Acc100 = set_combine(sets.precast.WS.Acc100, {})
+	sets.precast.WS.Entropy.Acc100 = set_combine(sets.precast.WS.Entropy, {})
+	sets.precast.WS.Entropy.Acc200 = set_combine(sets.precast.WS.Acc200, {})
 	
 	-- INSURGENCY
 	-- 20% STR / 20% INT 
 	sets.precast.WS.Insurgency = set_combine(sets.precast.WS.Entropy, sets.precast.WS)
 	sets.precast.WS.Insurgency.Acc25 = set_combine(sets.precast.WS.Entropy.Acc25, {})
-	sets.precast.WS.Insurgency.Acc50 = set_combine(sets.precast.WS.Entropy.Acc50, {})
-	sets.precast.WS.Insurgency.Acc100 = set_combine(sets.precast.WS.Acc100, {})
+	sets.precast.WS.Insurgency.Acc100 = set_combine(sets.precast.WS.Entropy.Acc100, {})
+	sets.precast.WS.Insurgency.Acc200 = set_combine(sets.precast.WS.Acc200, {})
 
 	--CATASTROPHE
 	--40% STR 40% INT	 
@@ -334,31 +330,31 @@ function init_gear_sets()
 		ear2="Ishvara Earring",
 		back=AnkouWSD})
 	sets.precast.WS.Catastrophe.Acc25 = set_combine(sets.precast.WS.Catastrophe, {})
-	sets.precast.WS.Catastrophe.Acc50 = set_combine(sets.precast.WS.Catastrophe, {})
-	sets.precast.WS.Catastrophe.Acc100 = set_combine(sets.precast.WS.Acc100, {back=AnkouWSD})
+	sets.precast.WS.Catastrophe.Acc100 = set_combine(sets.precast.WS.Catastrophe, {})
+	sets.precast.WS.Catastrophe.Acc200 = set_combine(sets.precast.WS.Acc200, {back=AnkouWSD})
 
 
 	-- CROSS Reaper
 	-- 60% STR / 60% MND
 	sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS.Catastrophe,{feet="Sulevia's Leggings +2"})
 	sets.precast.WS['Cross Reaper'].Acc25 = sets.precast.WS.Catastrophe.Acc25
-	sets.precast.WS['Cross Reaper'].Acc50 = sets.precast.WS.Catastrophe.Acc50
-	sets.precast.WS['Cross Reaper'].Acc100 =  set_combine(sets.precast.WS.Acc100, {back=AnkouDEX})
+	sets.precast.WS['Cross Reaper'].Acc100 = sets.precast.WS.Catastrophe.Acc100
+	sets.precast.WS['Cross Reaper'].Acc200 =  set_combine(sets.precast.WS.Acc200, {back=AnkouDEX})
 
 
 	-- Quietus
 	-- 60% STR / MND 
 	sets.precast.WS.Quietus = sets.precast.WS.Catastrophe
 	sets.precast.WS.Quietus.Acc25 = sets.precast.WS.Catastrophe.Acc25
-	sets.precast.WS.Quietus.Acc50 = sets.precast.WS.Catastrophe.Acc50
 	sets.precast.WS.Quietus.Acc100 = sets.precast.WS.Catastrophe.Acc100
+	sets.precast.WS.Quietus.Acc200 = sets.precast.WS.Catastrophe.Acc200
 
 	-- SPIRAL HELL
 	-- 50% STR / 50% INT 
 	sets.precast.WS['Spiral Hell'] = sets.precast.WS
 	sets.precast.WS['Spiral Hell'].Acc25 = sets.precast.WS.Acc25
-	sets.precast.WS['Spiral Hell'].Acc50 = sets.precast.WS.Acc50
 	sets.precast.WS['Spiral Hell'].Acc100 = sets.precast.WS.Acc100
+	sets.precast.WS['Spiral Hell'].Acc200 = sets.precast.WS.Acc200
 
 	-- SHADOW OF DEATH
 	-- 40% STR 40% INT - Darkness Elemental
@@ -376,44 +372,44 @@ function init_gear_sets()
 		back=AnkouWSD
 	})
 	sets.precast.WS['Shadow of Death'].Acc25 = sets.precast.WS['Shadow of Death']
-	sets.precast.WS['Shadow of Death'].Acc50 = sets.precast.WS['Shadow of Death']
 	sets.precast.WS['Shadow of Death'].Acc100 = sets.precast.WS['Shadow of Death']
+	sets.precast.WS['Shadow of Death'].Acc200 = sets.precast.WS['Shadow of Death']
 
 	sets.precast.WS['Infernal Scythe'] = sets.precast.WS['Shadow of Death']
 	sets.precast.WS['Infernal Scythe'].Acc25 = sets.precast.WS['Shadow of Death']
-	sets.precast.WS['Infernal Scythe'].Acc50 = sets.precast.WS['Shadow of Death']
 	sets.precast.WS['Infernal Scythe'].Acc100 = sets.precast.WS['Shadow of Death']
+	sets.precast.WS['Infernal Scythe'].Acc200 = sets.precast.WS['Shadow of Death']
 	-- DARK HARVEST 
 	-- 40% STR 40% INT - Darkness Elemental
 	sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
 	sets.precast.WS['Dark Harvest'].Acc25 = sets.precast.WS['Shadow of Death']
-	sets.precast.WS['Dark Harvest'].Acc50 = sets.precast.WS['Shadow of Death']
 	sets.precast.WS['Dark Harvest'].Acc100 = sets.precast.WS['Shadow of Death']
+	sets.precast.WS['Dark Harvest'].Acc200 = sets.precast.WS['Shadow of Death']
 
 	--Herculean Slash
 	--80% VIT
 	sets.precast.WS['Herculean Slash'] = set_combine(sets.precast.WS['Shadow of Death'], {head="Jumalik helm" })
 	sets.precast.WS['Herculean Slash'].Acc25 = sets.precast.WS['Herculean Slash']
-	sets.precast.WS['Herculean Slash'].Acc50 = sets.precast.WS['Herculean Slash']
 	sets.precast.WS['Herculean Slash'].Acc100 = sets.precast.WS['Herculean Slash']
+	sets.precast.WS['Herculean Slash'].Acc200 = sets.precast.WS['Herculean Slash']
 
 	-- Sword WS's
 	-- SANGUINE BLADE
 	-- 50% MND / 50% STR Darkness Elemental
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS['Shadow of Death'], { })
 	sets.precast.WS['Sanguine Blade'].Acc25 = sets.precast.WS['Sanguine Blade']
-	sets.precast.WS['Sanguine Blade'].Acc50 = sets.precast.WS['Sanguine Blade']
 	sets.precast.WS['Sanguine Blade'].Acc100 = sets.precast.WS['Sanguine Blade']
+	sets.precast.WS['Sanguine Blade'].Acc200 = sets.precast.WS['Sanguine Blade']
 
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Resolution'], { })
 	sets.precast.WS['Savage Blade'].Acc25 = sets.precast.WS['Resolution'].Acc25
-	sets.precast.WS['Savage Blade'].Acc50 = sets.precast.WS['Resolution'].Acc50
 	sets.precast.WS['Savage Blade'].Acc100 = sets.precast.WS['Resolution'].Acc100
+	sets.precast.WS['Savage Blade'].Acc200 = sets.precast.WS['Resolution'].Acc200
 
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Shadow of Death'], {head="jumalik helm",})
 	sets.precast.WS['Aeolian Edge'].Acc25 = sets.precast.WS['Aeolian Edge']
-	sets.precast.WS['Aeolian Edge'].Acc50 = sets.precast.WS['Aeolian Edge']
 	sets.precast.WS['Aeolian Edge'].Acc100 = sets.precast.WS['Aeolian Edge']
+	sets.precast.WS['Aeolian Edge'].Acc200 = sets.precast.WS['Aeolian Edge']
 
 	--------------------------------------------------------------------------------------------
 
@@ -422,7 +418,7 @@ function init_gear_sets()
 	--------------------------------------------------------------------------------------------
 
 	sets.idle.Town = {ammo="Staunch Tathlum",
-		head=ValorousMaskWSD,
+		head=ValorousMaskQA,
 		neck="coatl gorget +1",
 		ear1="Hearty Earring",
 		ear2="Odnowa Earring +1",
@@ -463,17 +459,17 @@ function init_gear_sets()
 
 	-- Defense sets
 	sets.defense.PDT = {ammo="Staunch Tathlum",--2		2
-		--head="Odyssean Helm",				--2
-		body="Sulevia's Platemail +1",		--8			8
-		hands="Sulevia's Gauntlets +1",		--4			4
-		legs="Sulevia's Cuisses +1",		--6			6
-		feet="Amm Greaves",					--4			4
+		head=ValorousMaskQA,
+		body="Sulevia's Platemail +2",		--9			9
+		hands="Sulevia's Gauntlets +2",		--5			5
+		legs="Sulevia's Cuisses +2",		--7			7
+		feet="Amm Greaves",					--5			5
 		neck="Loricate Torque +1",			--6			6
 		left_ear="Hearty Earring",
 		right_ear="Odnowa Earring +1",		
 		left_ring="Defending Ring",			--10		10
-		right_ring="Moonbeam Ring",			--4			4
-		back="Solemnity Cape",				--4			4		
+		right_ring="Regal Ring",			
+		back="Moonbeam Cape",				--5			5		
 	}
 	sets.defense.Reraise = sets.idle.Weak
 
@@ -484,28 +480,41 @@ function init_gear_sets()
 
 	
 	-- Apocalypse 
-	sets.engaged = {ammo="Ginsen",
-		head="Flamma Zucchetto +1",
-		body=ValorousMailDA, 
-		hands="Argosy Mufflers +1",
+	sets.engaged = {ammo="Yetshila",
+		head=ValorousMaskQA,
+		body=ValorousMailQA, 
+		hands="Flamma Manopolas +1",
 		legs=OdysseanCuissesSTP,
-		feet="Flamma Gambieras +1",
+		feet=ValorousFeetQA,
 		neck="Ganesha's Mala",
-		waist="Ioskeha Belt",
+		waist="Windbuffet Belt",
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
 		left_ring="Hetairoi Ring",
 		right_ring="Niqmaddu Ring",
-		back=AnkouDA
+		back=AnkouDEX,
 	}
-	sets.engaged.Acc25 = set_combine(sets.engaged, {neck="Combatant's Torque", ring1="Chirich Ring"})
-	sets.engaged.Acc50 = set_combine(sets.engaged.Acc25, {hands="Emicho Gauntlets",right_ear="Telos Earring",})
-	sets.engaged.Acc100 = set_combine(sets.engaged, {ammo="Seething Bomblet +1",	
-		head="Flamma Zucchetto +1",
+	sets.engaged.Acc25 = set_combine(sets.engaged, {
+		head="Flamma Zucchetto +2",
+		legs=OdysseanCuissesSTP,
+		left_ear="Telos Earring",
+		neck="Combatant's Torque",
+		waist="Ioskeha Belt", 
+		left_ring="Petrov Ring",
+		back=AnkouDEX,})	
+	sets.engaged.Acc100 = set_combine(sets.engaged.Acc25, {
+		body="Flamma Korazin +1",
+		hands="Flamma Manopolas +1",
+		feet="Flamma Gambieras +1",
+		ring1="Flamma Ring",
+		back=AnkouDEX,
+		})
+	sets.engaged.Acc200 = set_combine(sets.engaged, {ammo="Seething Bomblet +1",	
+		head=ValorousMaskQA,
 		body="Ignominy Cuirass +3",
-		hands="Emicho Gauntlets", 
+		hands="Ignominy Gauntlets +2", 
 		legs="Carmine Cuisses +1",
-		feet=OdysseanGreavesAcc,
+		feet=ValorousFeetRefresh,
 		neck="Combatant's Torque",
 		waist="Ioskeha Belt",
 		left_ear="Dignitary's Earring",
@@ -514,44 +523,44 @@ function init_gear_sets()
 		right_ring="Niqmaddu Ring",
 		back=AnkouDEX,
 	})	
-	sets.engaged.Suicide = set_combine(sets.engaged, {ammo="Ginsen",
-		head="Flamma Zucchetto +1",
-		body=ValorousMailDA, 
-		hands="Argosy Mufflers +1",
-		legs=OdysseanCuissesSTP,
-		feet="Argosy Sollerets +1",
-		neck="Ganesha's Mala",
-		waist="Ioskeha Belt",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Hetairoi Ring",
-		right_ring="Niqmaddu Ring",
-		back=AnkouDA})
 	
 	-- Ragnarok
-	-- base acc 1033
-	sets.engaged.GreatSword = {ammo="Ginsen",
-		head="Flamma Zucchetto +1",
-		body=ValorousMailDA, 
-		hands="Argosy Mufflers +1",
+	-- base acc 1065
+	sets.engaged.GreatSword = {ammo="Yetshila",
+		head=ValorousMaskQA,
+		body=ValorousMailQA, 
+		hands="Flamma Manopolas +1",
 		legs=OdysseanCuissesSTP,
-		feet="Flamma Gambieras +1",
+		feet=ValorousFeetQA,
 		neck="Ganesha's Mala",
-		waist="Ioskeha Belt",
+		waist="Windbuffet Belt",
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
 		left_ring="Hetairoi Ring",
 		right_ring="Niqmaddu Ring",
-		back=AnkouDA
+		back=AnkouDEX,
 	}
-	sets.engaged.GreatSword.Acc25 =  set_combine(sets.engaged.GreatSword, {neck="Combatant's Torque", ring1="Chirich Ring"})	
-	sets.engaged.GreatSword.Acc50 =  set_combine(sets.engaged.GreatSword.Acc25, {hands="Emicho Gauntlets",right_ear="Telos Earring",})
-	sets.engaged.GreatSword.Acc100 =  set_combine(sets.engaged.GreatSword, {ammo="Seething Bomblet +1",	
-		head="Flamma Zucchetto +1",
+	sets.engaged.GreatSword.Acc25 =  set_combine(sets.engaged.GreatSword, {
+		head="Flamma Zucchetto +2",
+		legs=OdysseanCuissesSTP,
+		left_ear="Telos Earring",
+		neck="Combatant's Torque",
+		waist="Ioskeha Belt", 
+		left_ring="Petrov Ring",
+		back=AnkouDEX,})	
+	sets.engaged.GreatSword.Acc100 =  set_combine(sets.engaged.GreatSword.Acc25, {
+		body="Flamma Korazin +1",
+		hands="Flamma Manopolas +1",
+		feet="Flamma Gambieras +1",
+		ring1="Flamma Ring",
+		back=AnkouDEX,
+		})
+	sets.engaged.GreatSword.Acc200 =  set_combine(sets.engaged.GreatSword, {ammo="Seething Bomblet +1",	
+		head=ValorousMaskQA,
 		body="Ignominy Cuirass +3",
-		hands="Emicho Gauntlets", 
+		hands="Ignominy Gauntlets +2", 
 		legs="Carmine Cuisses +1",
-		feet=OdysseanGreavesAcc,
+		feet=ValorousFeetRefresh,
 		neck="Combatant's Torque",
 		waist="Ioskeha Belt",
 		left_ear="Dignitary's Earring",
@@ -560,68 +569,58 @@ function init_gear_sets()
 		right_ring="Niqmaddu Ring",
 		back=AnkouDEX,
 	})	
-	sets.engaged.GreatSword.Suicide = set_combine(sets.engaged.GreatSword, {ammo="Ginsen",
-		head="Flamma Zucchetto +1",
-		body=ValorousMailDA, 
-		hands="Argosy Mufflers +1",
-		legs=OdysseanCuissesSTP,
-		feet="Argosy Sollerets +1",
-		neck="Ganesha's Mala",
-		waist="Ioskeha Belt",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Hetairoi Ring",
-		right_ring="Niqmaddu Ring",
-		back=AnkouDA})
 	
 	-- Defensive sets to combine with various weapon-specific sets below
 	-- These allow hybrid acc/pdt sets for difficult content
 	sets.Defensive = {						--pdt		mdt
 		ammo="Staunch Tathlum",				--2			2
-		head="Sulevia's Mask +1",			--5			5
-		body="Sulevia's Platemail +1",		--8			8
-		hands="Sulevia's Gauntlets +1",		--4			4
-		legs="Sulevia's Cuisses +1",		--6			6
-		feet="Amm Greaves",					--4			4
+		head="Flamma Zucchetto +2",		
+		body="Sulevia's Platemail +2",		--9			9
+		hands="Sulevia's Gauntlets +2",		--5			5
+		legs="Sulevia's Cuisses +2",		--7			7
+		feet="Amm Greaves",					--5			5
 		neck="Loricate Torque +1",			--6			6
 		left_ear="Hearty Earring",
 		right_ear="Telos Earring",
 		left_ring="Defending Ring",			--10		10
-		right_ring="Moonbeam Ring",			--4			4
-		back="Moonbeam Cape",				--3			3	
-	}										--52DT		
+		right_ring="Niqmaddu Ring",			
+		back="Moonbeam Cape",				--5			5	
+	}										--49DT		
 
-	sets.Defensive_Acc25 = set_combine(sets.Defensive,{left_ear="Dignitary's Earring",})
-	sets.Defensive_Acc50 = set_combine(sets.Defensive_Acc25,{neck="Combatant's Torque",back=AnkouDEX})
+	sets.Defensive_Acc25 = set_combine(sets.Defensive,{left_ear="Dignitary's Earring",feet="Sulevia's Leggings +2"})
+	sets.Defensive_Acc100 = set_combine(sets.Defensive_Acc25,{back=AnkouDEX,ring2="Moonbeam Ring"})
 		
 	sets.Defensive_Meva = set_combine(sets.Defensive,{
-		head="Jumalik Helm",
-		ammo="Staunch Tathlum",
-		body="Carmine Scale Mail",
-		hands="Leyline Gloves",
-		legs=OdysseanCuissesSTP,
-		feet=OdysseanGreavesAcc,
+		ammo="Staunch Tathlum",			--2   2   
+		head="Flamma Zucchetto +2",		--        	53
+		body="Ratri Breastplate",		--+13  13  	107
+		hands="Leyline Gloves",			--			62
+		legs=OdysseanCuissesSTP,		--			86
+		feet="Founder's Greaves",		--			95
+		neck="Loricate Torque +1",		--6   6
 		ear1="Hearty earring",
-		ear2="Eabani earring",
-		ring2="Purity ring"
-	})
+		ear2="Eabani earring",			--			8
+		ring1="Defending Ring",			--10  10
+		ring2="Purity ring",				--	  4		10
+		back="Moonbeam Cape",			--5   5
+	})									--10  14	421
 	
 	sets.engaged.PDT = sets.Defensive
 	sets.engaged.Acc25.PDT = sets.Defensive_Acc25
-	sets.engaged.Acc50.PDT = sets.Defensive_Acc50
-	sets.engaged.Acc100.PDT = sets.Defensive_Acc50
+	sets.engaged.Acc100.PDT = sets.Defensive_Acc100
+	sets.engaged.Acc200.PDT = sets.Defensive_Acc100
 	sets.engaged.Meva = set_combine(sets.engaged, sets.Defensive_Meva)
 	sets.engaged.Acc25.Meva = set_combine(sets.engaged.Acc25, sets.Defensive_Meva)
-	sets.engaged.Acc50.Meva = set_combine(sets.engaged.Acc50, sets.Defensive_Meva)
 	sets.engaged.Acc100.Meva = set_combine(sets.engaged.Acc100, sets.Defensive_Meva)
+	sets.engaged.Acc200.Meva = set_combine(sets.engaged.Acc200, sets.Defensive_Meva)
 	sets.engaged.GreatSword.PDT = sets.Defensive
 	sets.engaged.GreatSword.Acc25.PDT = sets.Defensive_Acc25
-	sets.engaged.GreatSword.Acc50.PDT = sets.Defensive_Acc50
-	sets.engaged.GreatSword.Acc100.PDT = sets.Defensive_Acc50
+	sets.engaged.GreatSword.Acc100.PDT = sets.Defensive_Acc100
+	sets.engaged.GreatSword.Acc200.PDT = sets.Defensive_Acc100
 	sets.engaged.GreatSword.Meva = set_combine(sets.engaged.GreatSword, sets.Defensive_Meva)
 	sets.engaged.GreatSword.Acc25.Meva = set_combine(sets.engaged.GreatSword.Acc25, sets.Defensive_Meva)
-	sets.engaged.GreatSword.Acc50.Meva = set_combine(sets.engaged.GreatSword.Acc50, sets.Defensive_Meva)
 	sets.engaged.GreatSword.Acc100.Meva = set_combine(sets.engaged.GreatSword.Acc100, sets.Defensive_Meva)
+	sets.engaged.GreatSword.Acc200.Meva = set_combine(sets.engaged.GreatSword.Acc200, sets.Defensive_Meva)
 	
 	-- dual wield
 	sets.engaged.DW = set_combine(sets.engaged, {

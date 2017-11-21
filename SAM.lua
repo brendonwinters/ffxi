@@ -122,7 +122,7 @@ function init_gear_sets()
 		head="Flam. Zucchetto +2",
 		body="Found. Breastplate", 
 		hands="Wakido Kote +2",
-		legs="Flamma Dirs +1",
+		--legs="Flamma Dirs +1",
 		feet="Flam. Gambieras +1",
 		right_ear="Digni. Earring",
 		left_ring="Weather. Ring",
@@ -205,7 +205,7 @@ function init_gear_sets()
 		right_ring="Hetairoi Ring",
 		back="Takaha Mantle",}
     sets.engaged.Acc = set_combine(sets.engaged, {
-		legs="Flamma Dirs +1",
+		--legs="Flamma Dirs +1",
 		feet="Flam. Gambieras +1",
 		neck="Moonbeam Nodowa",
 		right_ring="Regal Ring",})

@@ -94,7 +94,7 @@ function init_gear_sets()
     -- add MND for Chivalry MND
     sets.precast.JA['Chivalry'] = {    
 		head="Carmine Mask",
-		body="Rev. Surcoat +2",
+		body="Reverence Surcoat +3",
 		hands="Carmine Fin. Ga. +1",
 		legs="Founder's Hose",
 		feet="Rev. Leggings +2",
@@ -115,7 +115,7 @@ function init_gear_sets()
     
     sets.precast.FC = {--ammo="Sapience orb",
 		head="Carmine Mask",			--12
-		body="Reverence Surcoat +2",	--5
+		body="Reverence Surcoat +3",	--10
 		neck="Voltsurge torque",		--4
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
@@ -129,7 +129,7 @@ function init_gear_sets()
 		waist="Creed Baudrier",
 		back="Moonbeam Cape",
 		--back="Rudianos's Mantle"
-		}								--44
+		}								--49
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 	sets.precast.FC.HP = set_combine(sets.precast.FC, {
@@ -199,14 +199,15 @@ function init_gear_sets()
     sets.midcast.Enmity = {ammp="Iron Gobbet",		--2
         head="Souveran Schaller",					--7
 		neck="Unmoving collar",						--9
+		ear1="Cryptic Earring",						--4
         body="Souveran cuirass",					--17
 		hands="Macabre gauntlets",					--6
 		ring1="Apeile Ring",						--9
 		ring2="Apeile Ring +1",						--9
-        --back="Agema Cape",							--5
+        back="Reiki Cloak",							--6
 		waist="Creed Baudrier",						--5
-		legs="Souveran Diechlings",					--7
-		feet="Eschite Greaves"}						--15	-->91
+		legs=OdysseanLegsENM,						--11
+		feet="Eschite Greaves"}						--15	-->100
 
     sets.midcast.Flash = set_combine(sets.midcast.Enmity, {})    
     sets.midcast.Stun = sets.midcast.Flash
@@ -227,7 +228,7 @@ function init_gear_sets()
 		feet=OdysseanFeetFC}		    --cure7			cure37		curer31
 
     sets.midcast['Phalanx'] = {back="Weard Mantle",hands="Souveran handschuhs",feet="Souveran Schuhs"}
-	sets.midcast['Enlight'] = {head="Jumalik Helm",body="Reverence Surcoat +2",hands="Eschite Gauntlets"}
+	sets.midcast['Enlight'] = {head="Jumalik Helm",body="Reverence Surcoat +3",hands="Eschite Gauntlets"}
 	sets.midcast['Enlight II'] = sets.midcast['Enlight']
     sets.midcast.Holy = {ammo="Pemphredo Tathlum",
 		head="jumalik helm",neck="Incanter's torque",ear1="Friomisi earring",ear2="Gwati earring",
@@ -249,7 +250,7 @@ function init_gear_sets()
     sets.idle = {ammo="Homiliary",
         head="Souveran Schaller",neck="Coatl Gorget +1",
 		ear1="Etiolation Earring",ear2="Odnowa Earring +1",
-        body="Reverence Surcoat +2",hands="Souveran Handschuhs",
+        body="Reverence Surcoat +3",hands="Souveran Handschuhs",
 		ring1="Defending Ring",ring2="Shneddick Ring",
         back="Moonbeam Cape",waist="Creed Baudrier",
 		legs="Souveran Diechlings",feet="Souveran Schuhs"}
@@ -279,7 +280,7 @@ function init_gear_sets()
         
     sets.defense.PDT = {sub="Ochain",ammo="Staunch Tathlum",
         head="Jumalik helm",neck="Twilight Torque",ear1="Hearty Earring",ear2="Odnowa Earring +1",
-        body="Souveran cuirass",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
+        body="Reverence Surcoat +3",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
         back="Moonbeam Cape",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Souveran Schuhs"}
     sets.defense.Reraise = {ammo="homiliary",
         head="Twilight Helm",neck="Twilight Torque",ear2="Odnowa Earring +1",
@@ -289,7 +290,7 @@ function init_gear_sets()
     -- Shellra V can provide 75/256, which would need another 53/256 in gear.
     sets.defense.Meva = {sub="Aegis",ammo="homiliary",
         head="Souveran schaller",neck="Twilight Torque",ear1="Hearty Earring",ear2="Ethereal Earring",
-        body="Souveran cuirass",hands="souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
+        body="Reverence Surcoat +3",hands="souveran handschuhs",ring1="Defending Ring",ring2="Moonbeam Ring",
         back="Engulfer cape +1",waist="Flume Belt +1",legs="Souveran Diechlings",feet="Amm greaves"}
 
     --------------------------------------
@@ -323,7 +324,7 @@ function init_gear_sets()
 	
 	sets.Defensive = {ammo="Staunch Tathlum",	--2  2
 		head="Souveran Schaller",				--3
-		body="Reverence Surcoat +2",			--10 10
+		body="Reverence Surcoat +3",			--11 11
 		hands="Souv. Handschuhs", 				--3  4
 		legs="Souveran Diechlings",				--3  3
 		feet="Souveran Schuhs",					--4
@@ -334,7 +335,7 @@ function init_gear_sets()
 		left_ring="Defending Ring",				--10 10
 		right_ring="Moonbeam Ring",				--4  4
 		back="Moonbeam Cape",					--5  5
-	}											--49 48
+	}											--50 49
 	--ammo="homiliary",																--brilliance 3				 3
 --		head="Jumalik helm",neck="Twilight Torque",ear1="Hearty Earring",ear2="Ethereal Earring",		--pdt  5 6 			 mdt   6
 --        body="Souveran cuirass",hands="Souveran handschuhs",ring1="Defending Ring",ring2="Regal Ring",		--pdt  9 3 10 6 	 mdt 9 4 10 3 
@@ -356,7 +357,7 @@ function init_gear_sets()
 	sets.Defensive_HP = set_combine(sets.Defensive, {
 		ammo="Staunch Tathlum",
 		--head="Arke Zuchetto",
-		body="Souveran Cuirass",
+		body="Reverence Surcoat +3",
 		hands="Souv. Handschuhs", 
 		--legs="Arke Cosciales",
 		feet="Souveran Schuhs", 

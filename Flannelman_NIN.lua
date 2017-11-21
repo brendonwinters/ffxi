@@ -121,7 +121,7 @@ function init_gear_sets()
     
     sets.precast.FC = { ammo="Sapience Orb",	--2
 		head=HercHelmFC,						--12
-		body="Samnuha Coat", 					--4
+		body="Adhemar Jacket", 					--7
 		hands="Leyline Gloves",					--7
 		legs="Gyve Trousers",					--4
 		feet=HercBootsFC,						--5
@@ -131,7 +131,7 @@ function init_gear_sets()
 		right_ear="Loquac. Earring",			--2
 		left_ring="Weatherspoon Ring",			--5
 		right_ring="Kishar Ring",				--5
-	}											--52 FC
+	}											--55 FC
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
     -- Snapshot for ranged
@@ -141,8 +141,8 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = { ammo="Seeth. Bomblet +1",
 		head=HercHelmWSD,
-		body="Adhemar Jacket", 
-		hands="Adhemar Wristbands", 
+		body="Adhemar Jacket +1", 
+		hands="Adhemar Wristbands +1", 
 		legs=HercLegsWSD,
 		feet=HercBootsWSD,
 		neck="Fotia Gorget",
@@ -160,14 +160,14 @@ function init_gear_sets()
     
 	-- Blade: Jin 	Str & Dex  --
 	sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, {
-		head="Adhemar bonnet",
-		body="Adhemar Jacket",hands="Adhemar wristbands",ring2="Epona's Ring",ring1="Hetairoi Ring",
+		head="Adhemar Bonnet +1",
+		body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",ring2="Epona's Ring",ring1="Hetairoi Ring",
 		waist="Fotia belt",legs="Samnuha tights",feet=HercBootsTA})
 
     -- Blade: Hi	Agi --
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS,	{
-		--ammo="Yetshila",
-		head="Adhemar Bonnet",
+		ammo="Yetshila",
+		head="Adhemar Bonnet +1",
 		body="Abnoba Kaftan",
 		hands="Ryuo Tekko", 
 		legs=HercLegsAcc,
@@ -187,9 +187,9 @@ function init_gear_sets()
     -- Blade: Shun	Dex --
 	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
-		head="Adhemar Bonnet",
-		body="Adhemar Jacket",
-		hands="Adhemar Wristbands",
+		head="Adhemar Bonnet +1",
+		body="Adhemar Jacket +1",
+		hands="Adhemar Wristbands +1",
 		legs="Samnuha Tights",
 		feet=HercBootsTA,
 		neck="Fotia Gorget",
@@ -238,7 +238,7 @@ function init_gear_sets()
 
 	
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-		head="Adhemar Bonnet", 
+		head="Adhemar Bonnet +1", 
 		body="Abnoba Kaftan",
 		hands="Ryuo Tekko",
 		legs="Jokushu Haidate", 
@@ -386,7 +386,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Togakushi Shuriken",
 		head="Kendatsuba Jinpachi",
 		body="Kendatsuba Samue",
-		hands="Adhemar Wristbands",
+		hands="Adhemar Wristbands +1",
 		legs="Kendatsuba Hakama",
 		--legs="Samnuha Tights",
 		feet=HercBootsTA,
@@ -400,7 +400,7 @@ function init_gear_sets()
 	}
 	sets.DualWield = set_combine(sets.engaged, {
 		head="Ryuo Somen", 
-		body="Adhemar Jacket", 
+		body="Adhemar Jacket +1", 
 		feet=HercBootsDW,
 		waist="Reiki Yotai",
 		left_ear="Eabani Earring",
@@ -412,7 +412,7 @@ function init_gear_sets()
 		right_ring="Ilabrat Ring",	})
 	sets.DualWield.Acc = set_combine(sets.engaged.Acc, {
 		head="Ryuo Somen", 
-		body="Adhemar Jacket",
+		body="Adhemar Jacket +1",
 		waist="Reiki Yotai",
 		left_ear="Suppanomimi", })
 	

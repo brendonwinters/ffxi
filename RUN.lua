@@ -120,8 +120,8 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie",
-        head=HercHelmTA,neck="Fotia gorget",ear1="Sherida earring",ear2="moonshade earring",
-        body="Adhemar jacket",hands="Meghanada Gloves +2",ring1="Niqmaddu Ring",ring2="Regal Ring",
+        head="Adhemar Bonnet +1",neck="Fotia gorget",ear1="Sherida earring",ear2="moonshade earring",
+        body="Adhemar Jacket +1",hands="Meghanada Gloves +2",ring1="Niqmaddu Ring",ring2="Regal Ring",
         back="Ogma's cape",waist="Fotia belt",legs="Samnuha tights",feet=HercBootsDmg}
     	
 	sets.precast.WS.Acc50 = set_combine(sets.precast.WS,{})
@@ -130,8 +130,8 @@ function init_gear_sets()
 		
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {ammo="Knobkierrie",
-		head=HercHelmTA,
-		body="Adhemar Jacket",
+		head="Adhemar Bonnet +1",
+		body="Adhemar Jacket +1",
 		hands="Meghanada Gloves +2",
 		legs="Samnuha Tights", 
 		feet=HercBootsTA,
@@ -172,9 +172,9 @@ function init_gear_sets()
     sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {head=HercHelmMAB,ring2="Weatherspoon ring"})
 	sets.precast.WS['Seraph Blade'] = sets.precast.WS['Flash Nova']
 	
-	sets.precast.WS['Vorpal Blade'] = set_combine(sets.precast.WS, {head="Adhemar Bonnet",body="Abnoba kaftan",feet="Thereoid Greaves",ring1="Apate ring"})
-	sets.precast.WS['Vorpal Blade'].Acc50 = set_combine(sets.precast.WS, {head="Adhemar Bonnet",body="Abnoba kaftan",feet="Thereoid Greaves",ring1="Apate ring"})
-	sets.precast.WS['Vorpal Blade'].Acc100 = set_combine(sets.precast.WS, {head="Adhemar Bonnet",body="Abnoba kaftan",feet=HercBootsDmg,ring1="Apate ring"})
+	sets.precast.WS['Vorpal Blade'] = set_combine(sets.precast.WS, {head="Adhemar Bonnet +1",body="Abnoba kaftan",feet="Thereoid Greaves",ring1="Apate ring"})
+	sets.precast.WS['Vorpal Blade'].Acc50 = set_combine(sets.precast.WS, {head="Adhemar Bonnet +1",body="Abnoba kaftan",feet="Thereoid Greaves",ring1="Apate ring"})
+	sets.precast.WS['Vorpal Blade'].Acc100 = set_combine(sets.precast.WS, {head="Adhemar Bonnet +1",body="Abnoba kaftan",feet=HercBootsDmg,ring1="Apate ring"})
 	sets.precast.WS['Vorpal Blade'].Acc150 = set_combine(sets.precast.WS.Acc100, {ring1="Apate Ring",ring2="Epona's Ring"})
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Resolution'], {head=HercHelmWSD,feet=HercBootsWSD})
@@ -291,9 +291,9 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-		head=HercHelmTA,
-		body="Adhemar Jacket",
-		hands="Adhemar Wristbands", 
+		head="Adhemar Bonnet +1",
+		body="Adhemar Jacket +1",
+		hands="Adhemar Wristbands +1", 
 		legs="Samnuha Tights", 
 		feet=HercBootsTA,
 		neck="Anu Torque",
@@ -305,7 +305,7 @@ function init_gear_sets()
 		back="Ogma's cape"}
 
     sets.engaged.Acc50 = set_combine(sets.engaged,{feet=HercBootsDmg})
-    sets.engaged.Acc100 = set_combine(sets.engaged.Acc100,{head="Dampening Tam"})
+    sets.engaged.Acc100 = set_combine(sets.engaged.Acc100,{head="Adhemar Bonnet +1",})
     sets.engaged.Acc150 = set_combine(sets.engaged.Acc150,{ammo="Falcon Eye",neck="Combatant's Torque",ear2="Telos Earring",ring2="Ilabrat Ring"})
     sets.engaged.Refresh = set_combine(sets.engaged,{head="rawhide mask",body="Runeist Coat +1",feet=HercBootsRefresh})
 
@@ -335,12 +335,12 @@ function init_gear_sets()
 	sets.engaged.DW.Refresh.HP = set_combine(sets.engaged.DW.Refresh.PDT, {back="Moonbeam Cape",})
 	
 	sets.engaged.Meva = sets.defense.Meva
---	sets.engaged.Acc50.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket",back="Lupine cape"})
+--	sets.engaged.Acc50.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket +1",back="Lupine cape"})
 	sets.engaged.Refresh.Meva = sets.defense.Meva
 	sets.engaged.DW.Meva = sets.defense.Meva
-	sets.engaged.DW.Acc50.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket",})
-	sets.engaged.DW.Acc100.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket",})
-	sets.engaged.DW.Acc150.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket",})
+	sets.engaged.DW.Acc50.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket +1",})
+	sets.engaged.DW.Acc100.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket +1",})
+	sets.engaged.DW.Acc150.Meva = set_combine(sets.defense.Meva, {body="Adhemar Jacket +1",})
 	sets.engaged.DW.Refresh.Meva = sets.defense.Meva
 	
 	sets.latent_refresh = {waist="Fucho-no-obi"}	

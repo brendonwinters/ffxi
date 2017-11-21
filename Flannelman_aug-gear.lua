@@ -81,6 +81,7 @@ THfeet={ name="Odyssean Greaves", augments={'"Fast Cast"+1','Accuracy+20','"Trea
 
 ValorousMaskPhalanx={ name="Valorous Mask", augments={'Pet: INT+14','INT+2','Phalanx +4',}}
 ValorousMaskWSD={ name="Valorous Mask", augments={'Accuracy+24','Weapon skill damage +4%','STR+10',}}
+ValorousMaskQA={ name="Valorous Mask", augments={'"Mag.Atk.Bns."+3','Accuracy+24','Quadruple Attack +3','Accuracy+18 Attack+18',}}
 
 ValorousMailWSD={ name="Valorous Mail", augments={'Accuracy+5','Weapon skill damage +3%','STR+9',}}
 ValorousMailQA={ name="Valorous Mail", augments={'Mag. Acc.+1','"Dbl.Atk."+3','Quadruple Attack +1',}}

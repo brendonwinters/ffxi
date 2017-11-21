@@ -185,7 +185,7 @@ function init_gear_sets()
 	sets.midcast.RA = {ammo="Chrono Bullet",
 		head={ name="Arcadian Beret +1", augments={'Enhances "Recycle" effect',}},
 		body="Orion Jerkin +2",
-		hands={ name="Adhemar Wristbands", augments={'DEX+10','AGI+10','Accuracy+15',}},
+		hands="Adhemar Wristbands",
 		legs={ name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}},
 		feet={ name="Adhemar Gamashes", augments={'HP+50','"Store TP"+6','"Snapshot"+8',}},
 		neck="Iskur Gorget",
@@ -277,8 +277,8 @@ function init_gear_sets()
 
 	sets.engaged = {
 		head=HercHelmTA,
-		body="Adhemar Jacket",
-		hands="Adhemar Wristbands",
+		body="Adhemar Jacket +1",
+		hands="Adhemar Wristbands +1",
 		legs="Samnuha Tights",
 		feet=HercBootsTA,
 		neck="Iskur Gorget",

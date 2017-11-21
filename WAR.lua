@@ -110,7 +110,7 @@ function init_gear_sets()
 	sets.precast.WS = {
 		ammo="Seething Bomblet +1",
 		head=ValorousMaskWSD,
-		body="Argosy Hauberk",
+		body="Argosy Hauberk +1",
 		hands=OdysseanGauntletsWSD,
 		legs=OdysseanCuissesWSD,
 		feet="Sulevia's Leggings +2",
@@ -136,7 +136,7 @@ function init_gear_sets()
 	-- 86-100% STR
 	sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
 		head="Argosy Celata +1", 
-		body="Argosy Hauberk",
+		body="Argosy Hauberk +1",
 		hands="Argosy Mufflers +1",
 		legs="Argosy Breeches +1",
 		feet="Argosy Sollerets +1",})

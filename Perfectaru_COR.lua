@@ -112,7 +112,7 @@ function init_gear_sets()
         sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac"}
         sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +2"}
         --sets.precast.JA['Fold'] = {legs="Commodore Gants +2"}
-        sets.precast.JA['Wild Card'] = {feet="Lanun Bottes"}
+        sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +2"}
         sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
 		 
        
@@ -169,7 +169,7 @@ function init_gear_sets()
 			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
 			legs="Mummu Kecks +1",
-			feet=HercBootsWSD,
+			feet="Lanun Bottes +2",
 			neck="Fotia Gorget",
 			waist="Fotia Belt",
 			left_ear="Moonshade Earring",
@@ -185,14 +185,14 @@ function init_gear_sets()
         sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {})
  
         sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
-        sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {body="Laksamana's Frac +3",legs=HercTrousersWSD,feet=HercBootsWSD,})
+        sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {body="Laksamana's Frac +3",legs=HercTrousersWSD,feet="Lanun Bottes +2",})
  
         sets.precast.WS['Last Stand'] = {ammo=gear.WSbullet,
 			head=HercHelmWSD,
 			body="Laksamana's Frac +3",
 			hands="Meg. Gloves +2",
 			legs=HercTrousersRA,
-			feet=HercBootsWSD,
+			feet="Lanun Bottes +2",
 			neck="Fotia Gorget",
 			waist="Fotia Belt",
 			left_ear="Moonshade Earring",
@@ -222,7 +222,7 @@ function init_gear_sets()
 			body="Samnuha Coat",
 			hands="Carmine Finger Gauntlets +1",
 			legs=HercTrousersMAB,
-			feet=HercBootsMAB,
+			feet="Lanun Bottes +2",
 			neck="Sanctity Necklace",
 			waist="Fotia Belt",
 			left_ear="Ishvara Earring",
@@ -238,7 +238,7 @@ function init_gear_sets()
 			body="Samnuha Coat",
 			hands="Carmine Finger Gauntlets +1",
 			legs=HercTrousersMAB,
-			feet=HercBootsMAB,
+			feet="Lanun Bottes +2",
 			neck="Sanctity Necklace",
 			waist="Fotia Belt",
 			left_ear="Moonshade Earring",
@@ -253,7 +253,7 @@ function init_gear_sets()
 			body="Samnuha Coat",
 			hands="Carmine Finger Gauntlets +1",
 			legs=HercTrousersMAB,
-			feet=HercBootsMAB,
+			feet="Lanun Bottes +2",
 			neck="Sanctity Necklace",
 			left_ear="Moonshade Earring",
 			right_ear="Friomisi Earring",
@@ -266,7 +266,7 @@ function init_gear_sets()
 			body="Samnuha Coat",
 			hands="Carmine Finger Gauntlets +1",
 			legs=HercTrousersMAB,
-			feet=HercBootsMAB,
+			feet="Lanun Bottes +2",
 			neck="Sanctity Necklace",
 			waist="Fotia Belt",
 			left_ear="Moonshade Earring",
@@ -290,7 +290,7 @@ function init_gear_sets()
         sets.midcast.CorsairShot = {ammo=gear.QDbullet,
 			head=HercHelmMAB,neck="sanctity necklace",ear1="Friomisi Earring",ear2="Moldavite Earring",
 			body="Samnuha Coat",hands="Carmine Finger Gauntlets +1",ring1="Dingir Ring",ring2="Apate Ring",
-			back=CamuWS,waist="Kwahu Kachina Belt",legs=HercTrousersWS,feet=HercBootsMAB}
+			back=CamuWS,waist="Kwahu Kachina Belt",legs=HercTrousersWS,feet="Lanun Bottes +2"}
  
 		sets.midcast.CorsairShot.Mod = set_combine(sets.midcast.CorsairShot, {ammo=gear.QDbullet,--STP + Magic weakness
 			body="Mummu Jacket +1",
@@ -310,7 +310,7 @@ function init_gear_sets()
 			body="Mummu Jacket +1",
 			hands="herculean gloves",
 			legs="Mummu Kecks +1",
-			feet=HercBootsMAB,
+			feet="Lanun Bottes +2",
 			back=CamuWS}) 
         sets.midcast.CorsairShot['Light Shot'] = set_combine(sets.midcast.CorsairShot,{head="Carmine Mask",hands="herculean gloves",feet="Mummu Gamash. +1",ear1="Lifestorm Earring",ear2="Psystorm Earring"}) 
         sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']

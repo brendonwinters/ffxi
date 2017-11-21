@@ -203,28 +203,28 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Falcon eye",
         head="Dampening tam",neck="Fotia gorget",ear1="Moonshade earring",ear2="Brutal earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar wristbands",ring1="Hetairoi Ring",ring2="Epona's Ring",
+        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
         back=RosmertaCrit,waist="Fotia belt",legs="Samnuha tights",feet=HercBootsDmg}
     	
 	sets.precast.WS.Acc50 = {ammo="Falcon eye",
         head="Dampening tam",neck="Fotia gorget",ear1="Moonshade earring",ear2="Brutal earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar wristbands",ring1="Ilabrat Ring",ring2="Epona's Ring",
+        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=RosmertaCrit,waist="Fotia belt",legs=HercLegsAcc,feet=HercBootsDmg}
 
 	sets.precast.WS.Acc100 = {ammo="Falcon eye",
         head="Dampening tam",neck="Fotia gorget",ear1="Moonshade earring",ear2="Telos earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar wristbands",ring1="Ilabrat Ring",ring2="Cacoethic Ring +1",
+        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Cacoethic Ring +1",
         back=RosmertaCrit,waist="Fotia belt",legs=HercLegsAcc,feet=HercBootsDmg}	
 		
 	sets.precast.WS.Acc150 = {ammo="Falcon eye",
         head="Dampening tam",neck="Fotia gorget",ear1="Dignitary's Earring",ear2="Telos earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar wristbands",ring1="Ilabrat Ring",ring2="Chirich Ring",
+        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Chirich Ring",
         back=RosmertaCrit,waist="Fotia belt",legs="Carmine Cuisses +1",feet=HercBootsDmg}
 		
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {head="Adhemar Bonnet",body="Abnoba kaftan",feet="Thereoid Greaves",ear2="Telos earring",ring1="Ilabrat Ring"})
-	sets.precast.WS['Chant du Cygne'].Acc50 = set_combine(sets.precast.WS.Acc50, {head="Adhemar Bonnet",body="Assimilator's Jubbah +3",ear2="Telos earring",ring1="Ilabrat Ring"})
-	sets.precast.WS['Chant du Cygne'].Acc100 = set_combine(sets.precast.WS.Acc100, {body="Assimilator's Jubbah +3",ring2="Ilabrat Ring"})--ring switch, its fine
+	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {head="Adhemar Bonnet +1",body="Abnoba kaftan",feet="Thereoid Greaves",ear2="Telos earring",ring1="Ilabrat Ring"})
+	sets.precast.WS['Chant du Cygne'].Acc50 = set_combine(sets.precast.WS.Acc50, {head="Adhemar Bonnet +1",body="Assimilator's Jubbah +3",ear2="Telos earring",ring1="Ilabrat Ring"})
+	sets.precast.WS['Chant du Cygne'].Acc100 = set_combine(sets.precast.WS.Acc100, {head="Adhemar Bonnet +1",body="Assimilator's Jubbah +3",ring2="Ilabrat Ring"})--ring switch, its fine
 	sets.precast.WS['Chant du Cygne'].Acc150 = set_combine(sets.precast.WS.Acc150, {body="Assimilator's Jubbah +3",ring2="Ilabrat Ring"})
 	sets.precast.WS['Chant du Cygne'].Defending = set_combine(sets.precast.WS['Chant du Cygne'], {ring1="Defending Ring",ring2="Epona's Ring"})
 	
@@ -453,35 +453,35 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {ammo="Ginsen",
-        head=HercHelmTA,body="Adhemar jacket",hands="Adhemar wristbands",legs="Samnuha Tights",feet=HercBootsTA,
+        head="Adhemar Bonnet +1",body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",legs="Samnuha Tights",feet=HercBootsTA,
 		neck="Ainia collar",waist="Kentarch Belt +1",ear1="Brutal Earring",ear2="Telos Earring",
         ring1="Hetairoi Ring",ring2="Epona's Ring",back=RosmertaSTP,}
 	sets.DualWield = set_combine(sets.engaged,{
 		feet=HercBootsDW,ear1="Suppanomimi",ear2="Eabani earring",waist="Reiki Yotai",})
 		
 	sets.engaged.Acc50 = {ammo="Falcon Eye",	
-		head="Dampening Tam",body="Adhemar Jacket",hands="Adhemar Wristbands",legs="Samnuha Tights", feet=HercBootsTA,
+		head="Adhemar Bonnet +1",body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",legs="Samnuha Tights", feet=HercBootsTA,
 		neck="Combatant's Torque",waist="Kentarch Belt +1",ear1="Brutal Earring",ear2="Telos Earring",
 		left_ring="Ilabrat Ring",right_ring="Epona's Ring",back=RosmertaSTP, }
 	sets.DualWield.Acc50 = set_combine(sets.engaged.Acc50,{
 		feet=HercBootsDW,ear1="Suppanomimi",ear2="Telos earring",waist="Reiki Yotai",})
 
 	sets.engaged.Acc100 = {ammo="Falcon Eye",
-		head="Dampening Tam",body="Adhemar Jacket",hands="Adhemar Wristbands",legs="Carmine Cuisses +1", feet=HercBootsDmg,
+		head="Adhemar Bonnet +1",body="Adhemar Jacket +1",hands="Adhemar Wristbands +1",legs="Carmine Cuisses +1", feet=HercBootsDmg,
 		neck="Combatant's Torque",waist="Kentarch Belt +1",ear1="Brutal Earring",ear2="Telos Earring",
 		left_ring="Ilabrat Ring",right_ring="Epona's Ring",back=RosmertaSTP, }
 	sets.DualWield.Acc100 = set_combine(sets.engaged.Acc100,{
 		feet=HercBootsDW,ear1="Suppanomimi",ear2="Telos earring",waist="Reiki Yotai",})
 		
 	sets.engaged.Acc150 = {ammo="Falcon Eye",
-		head="Dampening Tam",body="Assimilator's Jubbah +3",hands="Adhemar Wristbands",legs="Carmine Cuisses +1", feet=HercBootsDmg,
+		head="Dampening Tam",body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",legs="Carmine Cuisses +1", feet=HercBootsDmg,
 		neck="Combatant's Torque",waist="Kentarch Belt +1",left_ear="Dignitary's Earring",right_ear="Telos earring",
 		left_ring="Ilabrat Ring",right_ring="Cacoethic Ring +1",back=RosmertaSTP,}
 	sets.DualWield.Acc150 = set_combine(sets.engaged.Acc150,{})
 	
     sets.engaged.Refresh = {ammo="Ginsen",
         head="rawhide mask",neck="Sanctity necklace",ear1="Suppanomimi",ear2="Eabani earring",
-        body="Assimilator's Jubbah +3",hands="Adhemar wristbands",ring1="Hetairoi Ring",ring2="Epona's Ring",
+        body="Assimilator's Jubbah +3",hands="Adhemar Wristbands +1",ring1="Hetairoi Ring",ring2="Epona's Ring",
         back=RosmertaSTP,waist="fucho-no-obi",legs="Lengo Pants",feet=HercBootsRefresh}
 
 		
