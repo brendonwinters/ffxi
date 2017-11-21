@@ -99,7 +99,7 @@ function init_gear_sets()
 		right_ring="Regal Ring",
 		back="Smertrios's Mantle"}
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-		hands="Wakido Kote +2",})
+		body="Kendatsuba Samue",hands="Wakido Kote +2",ear2="Telos Earring"})
 
     -- Specific weaponskill sets. 
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {})
@@ -119,11 +119,11 @@ function init_gear_sets()
 
     sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
 		ammo="Pemphredo Tathlum",
-		head="Flam. Zucchetto +2",
+		head="Flamma Zucchetto +2",
 		body="Found. Breastplate", 
-		hands="Wakido Kote +2",
+		hands="Flamma Manopolas +2",
 		--legs="Flamma Dirs +1",
-		feet="Flam. Gambieras +1",
+		feet="Flamma Gambieras +1",
 		right_ear="Digni. Earring",
 		left_ring="Weather. Ring",
 		right_ring="Regal Ring",})
@@ -173,13 +173,16 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = set_combine(sets.idle.Town, {
 		head="Genmei Kabuto",
+		body="Kendatsuba Samue",
 		feet="Amm Greaves",})		
 		
     sets.defense.Reraise = set_combine(sets.idle.Town, {
         head="Twilight Helm",
         body="Twilight Mail",})
 
-    sets.defense.MDT = sets.defense.PDT
+    sets.defense.MDT = set_combine(sets.defense.PDT, {
+		head="Kendatsuba Jinpachi",
+		legs="Kendatsuba Hakama",})
 
     sets.Kiting = {feet="Danzo Sune-ate"}
 
@@ -191,7 +194,7 @@ function init_gear_sets()
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
     sets.engaged = {ammo="Ginsen",
 		head="Flamma Zucchetto +2",
-		body=ValorousMailQA,
+		body="Kendatsuba Samue",
 		hands="Wakido Kote +2",
 		legs="Ryuo Hakama",
 		--feet=ValorousFeetSTP,
@@ -205,13 +208,17 @@ function init_gear_sets()
 		right_ring="Hetairoi Ring",
 		back="Takaha Mantle",}
     sets.engaged.Acc = set_combine(sets.engaged, {
-		--legs="Flamma Dirs +1",
-		feet="Flam. Gambieras +1",
+		body="Kendatsuba Samue",
+		hands="Flamma Manopolas +2",
+		legs="Kendatsuba Hakama",
+		feet="Flamma Gambieras +1",
 		neck="Moonbeam Nodowa",
-		right_ring="Regal Ring",})
+		right_ring="Ilabrat Ring",})
 	
     sets.engaged.PDT = sets.defense.PDT
-    sets.engaged.Acc.PDT = sets.defense.PDT
+    sets.engaged.Acc.PDT = set_combine(sets.defense.PDT, {head=ValorousMaskQA,hands="Wakido Kote +2",legs="Kendatsuba Hakama"})	
+    sets.engaged.MDT = sets.defense.MDT
+    sets.engaged.Acc.MDT = set_combine(sets.defense.MDT, {head=ValorousMaskQA,hands="Wakido Kote +2",})	
     sets.engaged.Reraise = sets.defense.PDT
     sets.engaged.Acc.Reraise = sets.defense.PDT
         
