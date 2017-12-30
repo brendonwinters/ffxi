@@ -207,7 +207,12 @@ function init_gear_sets()
 		legs="Mummu Kecks +1",
 		feet="Mummu Gamash. +1", 
 		ring1="Begrudging Ring"})
-
+	
+	sets.DoubleShot = {
+		head="Oshosi Mask",
+		body="Oshosi Vest",
+		legs="Oshosi Trousers",
+		feet="Oshosi Leggings",}
 	
 	--sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA)
 --	sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc)
@@ -366,10 +371,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
-function job_midcast(spell, action, spellMap, eventArgs)
-	if spell.action_type == 'Ranged Attack' and state.Buff.Barrage then
-		equip(sets.buff.Barrage)
-		eventArgs.handled = true
+function job__post_midcast(spell, action, spellMap, eventArgs)
+	if spell.action_type == 'Ranged Attack' then
+		if state.Buff.Barrage then
+			equip(sets.buff.Barrage)
+			eventArgs.handled = true	
+		if buffactive['Double Shot'] then
+			equip(sets.DoubleShot)
 	end
 end
 

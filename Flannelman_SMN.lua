@@ -54,7 +54,7 @@ function job_setup()
 	state.Buff['Haste'] = buffactive['Haste'] or false
 	state.ConduitMode = M(false, 'ConduitMode')
 
-    spirits = S{"LightSpirit", "Caller's Pigaches +1Spirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
+    spirits = S{"LightSpirit", "DarkSpirit", "FireSpirit", "EarthSpirit", "WaterSpirit", "AirSpirit", "IceSpirit", "ThunderSpirit"}
     avatars = S{"Carbuncle", "Fenrir", "Diabolos", "Ifrit", "Titan", "Leviathan", "Garuda", "Shiva", "Ramuh", "Odin", "Alexander", "Cait Sith"}
 
     magicalRagePacts = S{
@@ -151,20 +151,6 @@ function init_gear_sets()
 
 	include('Flannelman_aug-gear.lua')
 	
-	-- MerlinicHood={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}}
-    -- MerlinicHoodBP={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+16','Blood Pact Dmg.+10','Pet: DEX+2','Pet: Mag. Acc.+6',}}
-    -- MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
-	
-    -- MerlinicDastanasFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-	-- MerlinicDastanasBP={ name="Merlinic Dastanas", augments={'Blood Pact Dmg.+10','Pet: Mag. Acc.+12',}}
-		
-	-- MerlinicShalwarDrain={ name="Merlinic Shalwar", augments={'Mag. Acc.+26','"Drain" and "Aspir" potency +8','MND+3',}}
-    -- MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
-    -- MerlinicShalwarMBD={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+10%','CHR+9','Mag. Acc.+7',}}
-	
-    -- MerlinicCrackowsMBD={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+27','Magic burst dmg.+8%','INT+10',}}
-    -- MerlinicCrackows={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}}
-    -- MerlinicCrackowsFC={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+6','MND+3','Mag. Acc.+4',}}
 
     CampestresPhysical={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',}}	
     CampestresMagical={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20',}}
@@ -176,7 +162,7 @@ function init_gear_sets()
     sets.precast.JA['Astral Flow'] = {head="Glyphic Horn"}
     
     sets.precast.JA['Elemental Siphon'] = {ammo="Sancus Sachet +1",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		body="Convoker's Doublet +3",
 		hands="Glyphic Bracers",
 		feet="Caller's Pigaches +2",
@@ -188,7 +174,7 @@ function init_gear_sets()
     -- Pact delay reduction gear
     sets.precast.BloodPactWard = { 
 		ammo="Sancus Sachet +1",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		body="Convoker's Doublet +3",
 		hands="Glyphic Bracers",
 	}
@@ -233,21 +219,21 @@ function init_gear_sets()
 		head="Pixie Hairpin +1",
 		body="Convoker's Doublet +3",
 		hands="Apogee Mitts", 
-		legs="Amalric Slops", 
+		legs="Amalric Slops +1", 
 		feet="Convoker's Pigaches +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Gelos Earring",
 		right_ear="Moonshade Earring", 
 		left_ring="Mephitas's Ring +1",
-		right_ring="Sangoma Ring",
+		right_ring="Kishar Ring",
 		back="Conveyance Cape",
 	}
 	sets.precast.WS['Garland of Bliss'] = {
 		ammo="Pemphredo Tathlum",
 		head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}},
 		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Drain" and "Aspir" potency +5','MND+10','"Mag.Atk.Bns."+12',}},
-		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+		hands={ name="Amalric Gages +1", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}},
 		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}},
 		neck="Fotia Gorget",
@@ -277,20 +263,20 @@ function init_gear_sets()
 
 	sets.midcast.Cure = set_combine(sets.midcast.FastRecast,{
 		neck="Phalaina locket",ear1="Mendicant's earring",--4 5
-        body="Vrikodara Jupon",ring1="ephedra ring",ring2="sirona's ring",--13					
-        back="Solemnity cape",legs="Gyve Trousers",feet="medium's sabots"})--6+10+12 = 50
+        body="Vrikodara Jupon",hands="Telchine Gloves",ring1="ephedra ring",ring2="sirona's ring",--13 10
+        back="Solemnity cape",feet="medium's sabots"})--6+12 = 50
 		
     sets.midcast.Curaga = sets.midcast.Cure	
-    sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {head="Telchine Cap",neck="Phalaina locket",ring1="Kunaji Ring"})
+    sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {head="Telchine Cap",neck="Phalaina locket",ring1="Kunaji Ring",waist="Gishdubar Sash"})
 	
 	sets.midcast['Enhancing Magic'] = {
         head="Telchine cap",neck="Incanter's torque",
         body="Telchine Chasuble",hands="Telchine Gloves",
 		waist="Olympus Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
-    sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{head="Amalric Coif",feet="Inspirited Boots",waist="Gishdubar Sash"})	
+    sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{head="Amalric Coif +1",feet="Inspirited Boots",waist="Gishdubar Sash"})	
 	
     sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
-		head="Amalric Coif",
+		head="Amalric Coif +1",
 		body="Zendik Robe",
 		hands="Hagondes Cuffs +1",
 		legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}},
@@ -307,7 +293,7 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {
         head="Pixie Hairpin +1",neck="Incanter's torque",ear1="Dignitary's Earring",ear2="Gwati Earring",
-        body="Amalric Doublet",hands="Amalric gages",ring1="Sangoma ring",ring2="Weatherspoon Ring",
+        body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Kishar ring",ring2="Weatherspoon Ring",
         back="Toro Cape",waist="Eschan stone",legs="Merlinic shalwar",feet="Medium's sabots"}
 		    
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'],{
@@ -319,7 +305,7 @@ function init_gear_sets()
 	
     sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
         head=MerlinicHood,neck="Sanctity necklace",ear1="Barkarole earring",ear2="Friomisi Earring",
-        body="Merlinic Jubbah",hands="Amalric gages",ring1="Metamorph Ring +1",ring2="Acumen Ring",
+        body="Merlinic Jubbah",hands="Amalric Gages +1",ring1="Metamorph Ring +1",ring2="Acumen Ring",
         back="Toro Cape",waist="Eschan stone",legs=MerlinicShalwar,feet=MerlinicCrackows}
 
     sets.midcast['Summon Magic'] = {}
@@ -328,7 +314,7 @@ function init_gear_sets()
     -- Avatar pact sets.  All pacts are Ability type.
     
     sets.midcast.Pet.BloodPactWard = {    ammo="Sancus Sachet +1",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		body="Beckoner's Doublet",
 		hands="Glyphic Bracers",
 		legs="Beckoner's Spats",
@@ -338,7 +324,7 @@ function init_gear_sets()
 	}
 
     sets.midcast.Pet.DebuffBloodPactWard = {ammo="Sancus Sachet +1",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		hands="Glyphic Bracers",
 		neck="Incanter's Torque",
 		right_ring="Evoker's Ring",
@@ -348,7 +334,7 @@ function init_gear_sets()
     sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
     
     sets.midcast.Pet.PhysicalBloodPactRage = { 
-		sub="Elan Strap",
+		sub="Elan Strap +1",
 		ammo="Sancus Sachet +1",
 		head="Apogee Crown +1",
 		body="Convoker's Doublet +3",
@@ -391,7 +377,7 @@ function init_gear_sets()
 	
     sets.midcast.Pet.MagicalBloodPactRage.Acc = set_combine(sets.midcast.Pet.MagicalBloodPactRage,{	
 		head="Apogee Crown +1",
-		hands="Apogee Mitts",
+		--hands="Apogee Mitts",
 		legs="Tali'ah Seraweels +1",
 		left_ear="Enmerkar Earring",
 	})
@@ -414,7 +400,7 @@ function init_gear_sets()
 	}
 	sets.midcast.Pet.HybridBloodPactRage.Acc = set_combine(sets.midcast.Pet.HybridBloodPactRage,{
 		head="Apogee Crown +1",
-		hands="Apogee Mitts",
+		--hands="Apogee Mitts",
 		legs="Tali'ah Seraweels +1",	
 		feet="Convo. Pigaches +2",
 		left_ear="Enmerkar Earring",
@@ -436,15 +422,15 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {ammo="Sancus Sachet +1",
-        head="Convoker's horn +1",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Loquacious Earring",
-        body="Amalric Doublet",hands=MerlinicDastanasMBP,ring1="Defending Ring",ring2="Dark ring",
+        head="Convoker's horn +2",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Loquacious Earring",
+        body="Amalric Doublet +1",hands=MerlinicDastanasMBP,ring1="Defending Ring",ring2="Dark ring",
         back="Moonbeam Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's gaiters"}
     
     -- Idle sets
     sets.idle = {ammo="Staunch Tathlum",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		body="Vrikodara Jupon", 
-		hands="Hagondes Cuffs +1", 
+		hands="Raetic Bangles", 
 		legs="Assid. Pants +1",
 		feet="Herald's Gaiters",
 		neck="Sanctity Necklace",
@@ -457,7 +443,7 @@ function init_gear_sets()
 	}
 
     sets.idle.PDT = {ammo="Staunch Tathlum",
-        head="Convoker's horn +1",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Etiolation Earring",
+        head="Convoker's horn +2",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Etiolation Earring",
         body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",
         back="Moonbeam Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's Gaiters"}
 
@@ -485,7 +471,7 @@ function init_gear_sets()
 		--main="Nirvana",				--8
 		--sub="Niobid Strap",
 		ammo="Sancus Sachet +1",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		body="Vrikodara Jupon",
 		legs="Assid. Pants +1",			--3
 		feet="Convoker's Pigaches +2",	--5	
@@ -502,7 +488,7 @@ function init_gear_sets()
 		--main="Gridarvor",
 		--sub="Niobid Strap",
 		ammo="Sancus Sachet +1",
-		head="Con. Horn +1",
+		head="Convoker's horn +2",
 		body="Vrikodara Jupon",
 		hands=MerlinicDastanasMBP,
 		legs="Assid. Pants +1",
@@ -537,8 +523,7 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {ammo="Sancus Sachet +1",
-        head="Hike Khat +1",neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Odnowa Earring +1",
-        body="Onca Suit",hands=empty,legs=empty,feet=empty,
+        neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Odnowa Earring +1",
 		ring1="Defending Ring",ring2="Dark ring",
         back="Moonbeam Cape",waist="Fucho-no-Obi"}
 

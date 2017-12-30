@@ -193,7 +193,6 @@ function init_gear_sets()
 		
     sets.midcast.self_healing = set_combine(sets.midcast.Cure,{
 		neck="Phalaina locket",		--4
-		hands="Buremte Gloves",		--13
 		ring1="Kunaji Ring",		--5
 		waist="Gishdubar sash"})	--10		
 	
@@ -309,9 +308,9 @@ function init_gear_sets()
     sets.engaged.Acc150 = set_combine(sets.engaged.Acc150,{ammo="Falcon Eye",neck="Combatant's Torque",ear2="Telos Earring",ring2="Ilabrat Ring"})
     sets.engaged.Refresh = set_combine(sets.engaged,{head="rawhide mask",body="Runeist Coat +1",feet=HercBootsRefresh})
 
-    sets.engaged.DW = set_combine(sets.engaged,{ear1="Eabani Earring",ear2="Suppanomimi",waist="Shetal Stone",feet=HercBootsDW})
-    sets.engaged.DW.Acc50 = set_combine(sets.engaged,{ear1="Eabani Earring",ear2="Suppanomimi",waist="Shetal Stone",feet=HercBootsDW})
-    sets.engaged.DW.Acc100 = set_combine(sets.engaged.Acc100,{ear1="Eabani Earring",ear2="Suppanomimi",waist="Shetal Stone",feet=HercBootsDW})
+    sets.engaged.DW = set_combine(sets.engaged,{ear1="Eabani Earring",ear2="Suppanomimi",waist="Reiki Yotai",feet=HercBootsDW})
+    sets.engaged.DW.Acc50 = set_combine(sets.engaged,{ear1="Eabani Earring",ear2="Suppanomimi",waist="Reiki Yotai",feet=HercBootsDW})
+    sets.engaged.DW.Acc100 = set_combine(sets.engaged.Acc100,{ear1="Eabani Earring",ear2="Suppanomimi",waist="Reiki Yotai",feet=HercBootsDW})
     sets.engaged.DW.Acc150 = set_combine(sets.engaged.Acc150,{feet=HercBootsDW})
     sets.engaged.DW.Refresh = set_combine(sets.engaged,{head="rawhide mask",body="Runeist Coat +1",feet=HercBootsRefresh})
 

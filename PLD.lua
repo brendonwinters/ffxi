@@ -140,7 +140,7 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS.Acc, {ring1="Sangoma ring"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
-		head="Flam. Zucchetto +1",
+		head="Flamma Zucchetto +1",
 		body={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}},
 		hands="Sulev. Gauntlets +1",
 		legs={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
@@ -285,11 +285,11 @@ function init_gear_sets()
     
     sets.engaged = {
 		ammo="Ginsen",
-		head="Flam. Zucchetto +1",
+		head="Flamma Zucchetto +1",
 		body={ name="Valorous Mail", augments={'Accuracy+18','"Dbl.Atk."+4','DEX+7',}},
 		hands="Sulev. Gauntlets +1",
 		legs={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
-		feet="Flam. Gambieras +1",
+		feet="Flamma Gambieras +1",
 		neck="Ainia Collar",
 		waist="Sailfi Belt +1",
 		left_ear="Brutal Earring",
@@ -371,7 +371,7 @@ function init_gear_sets()
 			 
      sets.engaged.HP = set_combine(sets.engaged, sets.Defensive_HP)
 	
-	 sets.engaged.DW = set_combine(sets.engaged, {ear1="Brutal earring",ear2="suppanomimi",waist="shetal stone"})
+	 sets.engaged.DW = set_combine(sets.engaged, {ear1="Brutal earring",ear2="suppanomimi",waist="Reiki Yotai"})
      sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {neck="Combatant's Torque",ring2="Cacoethic Ring +1"})
 	 sets.engaged.DW.PDT = set_combine(sets.Defensive, sets.engaged.DW)
 	 sets.engaged.DW.Acc.PDT = set_combine(sets.Defensive_Acc, sets.engaged.DW)

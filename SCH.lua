@@ -124,7 +124,7 @@ function init_gear_sets()
 		}								--58
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {legs="Amalric Slops",ear1="Barkarole earring"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {legs="Amalric Slops +1",ear1="Barkarole earring"})
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {ear1="Mendicant's earring"})
     sets.precast.FC.Curaga = sets.precast.FC.Cure
     sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})	
@@ -139,18 +139,18 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Myrkr'] = {ammo="Ghastly Tathlum +1",
 		head="Pixie Hairpin +1",
-        body="Amalric Doublet",
+        body="Amalric Doublet +1",
 		hands="Telchine Gloves", 
-		legs="Amalric Slops",
+		legs="Amalric Slops +1",
 		feet="medium's sabots",
 		left_ear="Loquacious Earring",right_ear="moonshade Earring",
-		left_ring="Metamorph Ring +1",right_ring="Sangoma Ring",
+		left_ring="Metamorph Ring +1",right_ring="Kishar Ring",
         neck="Fotia gorget",
         waist="Shinjutsu-no-obi +1",}
 	
 	sets.precast.WS['Omnicience'] = {ammo="Pemphredo Tathlum",
 		head="Pixie Hairpin +1",neck="Fotia gorget",ear1="Friomisi Earring",ear2="Moonshade Earring",
-		body="Amalric Doublet",hands="Jhakri Cuffs +2",ring1="Acumen Ring",ring2="Archon Ring",
+		body="Amalric Doublet +1",hands="Jhakri Cuffs +2",ring1="Acumen Ring",ring2="Archon Ring",
 		back="Lugh's Cape",waist="Fotia belt",legs=MerlinicShalwar,feet=MerlinicCrackows}
 	sets.precast.WS['Cataclysm'] = 	sets.precast.WS['Omnicience']
 		
@@ -160,8 +160,8 @@ function init_gear_sets()
 
 	sets.midcast.Cure = set_combine(sets.midcast.FastRecast,{
 		neck="Phalaina locket",ear1="Mendicant's earring",--4 5
-        body="Vrikodara Jupon",ring1="ephedra ring",ring2="sirona's ring",--13					
-        back="Solemnity cape",legs="Gyve Trousers",feet="medium's sabots"})--6+10+12 = 50
+        body="Vrikodara Jupon",hands="Telchine Gloves",ring1="ephedra ring",ring2="sirona's ring",--13					
+        back="Solemnity cape",feet="medium's sabots"})--6+10+12 = 50
 
     sets.midcast.Curaga = sets.midcast.Cure
     sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {head="Telchine Cap",neck="Phalaina locket",ring1="Kunaji Ring",waist="Gishdubar Sash"})
@@ -173,8 +173,8 @@ function init_gear_sets()
 		waist="Olympus Sash",legs="Telchine Braconi",feet="Telchine Pigaches"})
 
     sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{main="Bolelabunga",head="Arbatel bonnet",back="Bookworm's Cape"})
-    sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{head="Amalric Coif",waist="Gishdubar Sash"})
-    sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{head="Amalric Coif"})
+    sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{head="Amalric Coif +1",waist="Gishdubar Sash"})
+    sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{head="Amalric Coif +1"})
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {})
 	sets.midcast.Haste = sets.midcast['Enhancing Magic']
     sets.midcast.Storm = set_combine(sets.midcast['Enhancing Magic'], {feet="Pedagogy Loafers"})
@@ -195,7 +195,7 @@ function init_gear_sets()
 		left_ear="Barkarole Earring",
 		right_ear="Dignitary's Earring",
 		left_ring="Metamorph Ring +1",
-		right_ring="Sangoma Ring",
+		right_ring="Kishar Ring",
         back="Lugh's Cape"}
 
 
@@ -206,7 +206,7 @@ function init_gear_sets()
 
     sets.midcast.Kaustra = set_combine(sets.midcast['Dark Magic'],{ammo="Pemphredo Tathlum",
         head="Pixie Hairpin +1",neck="Mizukage-no-Kubikazari",ear1="Barkarole Earring",ear2="Friomisi Earring",
-        body="Merlinic Jubbah",hands="Amalric Gages",ring1="Mujin Band",ring2="Archon Ring",
+        body="Merlinic Jubbah",hands="Amalric Gages +1",ring1="Mujin Band",ring2="Archon Ring",
 		back="Lugh's Cape",legs=MerlinicShalwarMBD,feet=MerlinicCrackows})
 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'],{
@@ -245,7 +245,7 @@ function init_gear_sets()
     -- Custom refinements for certain nuke tiers
 --    sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
 --    sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
-    sets.magic_burst = {head=MerlinicHoodMBD,hands="Amalric Gages",neck="Mizukage-no-Kubikazari",ring1="Mujin band",legs=MerlinicShalwarMBD} -- 10 9 10 10
+    sets.magic_burst = {head=MerlinicHoodMBD,hands="Amalric Gages +1",neck="Mizukage-no-Kubikazari",ring1="Mujin band",legs=MerlinicShalwarMBD} -- 10 9 10 10
 --	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 	
 	

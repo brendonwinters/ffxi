@@ -1,7 +1,7 @@
 --Herculean Gear--
  
 HercHelmMAB={ name="Herculean Helm", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic burst dmg.+6%','MND+10','"Mag.Atk.Bns."+14',}}
-HercHelmFC={ name="Herculean Helm", augments={'"Fast Cast"+5','MND+7','"Mag.Atk.Bns."+12',}}
+HercHelmFC={ name="Herculean Helm", augments={'Attack+2','"Fast Cast"+6','"Mag.Atk.Bns."+8',}}
 HercHelmDT={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+18','Magic Damage +12','Damage taken-4%','Accuracy+10 Attack+10',}}
 HercHelmWSD={ name="Herculean Helm",  augments={'Attack+22','Weapon skill damage +4%','DEX+8',}}
 HercHelmTA={ name="Herculean Helm", augments={'"Triple Atk."+4','STR+10','Attack+12',}}
@@ -35,8 +35,8 @@ MerlinicHoodBP={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+16','Blood
 MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
 
 MerlinicDastanasFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-MerlinicDastanasPBP={ name="Merlinic Dastanas",  augments={'Pet: Attack+28 Pet: Rng.Atk.+28','Blood Pact Dmg.+10','Pet: STR+4',}}
-MerlinicDastanasMBP={ name="Merlinic Dastanas", augments={'Blood Pact Dmg.+10','Pet: Mag. Acc.+6','Pet: "Mag.Atk.Bns."+11',}}
+MerlinicDastanasPBP={ name="Merlinic Dastanas", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Blood Pact Dmg.+9','Pet: DEX+8','Pet: Mag. Acc.+9','Pet: "Mag.Atk.Bns."+3',}}
+MerlinicDastanasMBP={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+10 Pet: "Mag.Atk.Bns."+10','Blood Pact Dmg.+10','Pet: INT+3','Pet: "Mag.Atk.Bns."+13',}}
 	
 MerlinicShalwarDrain={ name="Merlinic Shalwar", augments={'Mag. Acc.+26','"Drain" and "Aspir" potency +8','MND+3',}}
 MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
@@ -45,6 +45,7 @@ MerlinicShalwarTH={ name="Merlinic Shalwar", augments={'INT+9','Phys. dmg. taken
 
 MerlinicCrackows={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}}
 MerlinicCrackowsFC={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+30','"Fast Cast"+6','MND+3','Mag. Acc.+4',}}
+MerlinicCrackowsRefresh={ name="Merlinic Crackows", augments={'Attack+12','"Counter"+1','"Refresh"+1','Accuracy+3 Attack+3','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
 
 --Chironic Gear--
 
@@ -82,6 +83,8 @@ THfeet={ name="Odyssean Greaves", augments={'"Fast Cast"+1','Accuracy+20','"Trea
 ValorousMaskPhalanx={ name="Valorous Mask", augments={'Pet: INT+14','INT+2','Phalanx +4',}}
 ValorousMaskWSD={ name="Valorous Mask", augments={'Accuracy+24','Weapon skill damage +4%','STR+10',}}
 ValorousMaskQA={ name="Valorous Mask", augments={'"Mag.Atk.Bns."+3','Accuracy+24','Quadruple Attack +3','Accuracy+18 Attack+18',}}
+ValorousMaskDT={ name="Valorous Mask", augments={'Attack+24','Damage taken-3%','Accuracy+11',}}
+
 
 ValorousMailWSD={ name="Valorous Mail", augments={'Accuracy+5','Weapon skill damage +3%','STR+9',}}
 ValorousMailQA={ name="Valorous Mail", augments={'Mag. Acc.+1','"Dbl.Atk."+3','Quadruple Attack +1',}}
@@ -91,6 +94,7 @@ ValorousMittsWSD={ name="Valorous Mitts", augments={'Attack+27','Weapon skill da
 
 ValorousHoseRefresh={ name="Valor. Hose", augments={'Crit.hit rate+1','STR+6','"Refresh"+2','Accuracy+9 Attack+9',}}
 ValorousHoseWSD={ name="Valor. Hose", augments={'Accuracy+14','CHR+9','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
+ValorousHoseDT={ name="Valor. Hose", augments={'Accuracy+25 Attack+25','Damage taken-2%','VIT+4','Accuracy+5',}}
 
 ValorousFeetSTP={ name="Valorous Greaves", augments={'"Store TP"+5','STR+10','Accuracy+12','Attack+13',}}
 ValorousFeetWSD={ name="Valorous Greaves", augments={'Weapon skill damage +3%','STR+10','Accuracy+7','Attack+15',}}

@@ -483,7 +483,7 @@ function init_gear_sets()
 	sets.engaged = {ammo="Yetshila",
 		head=ValorousMaskQA,
 		body=ValorousMailQA, 
-		hands="Flamma Manopolas +1",
+		hands="Flamma Manopolas +2",
 		legs=OdysseanCuissesSTP,
 		feet=ValorousFeetQA,
 		neck="Ganesha's Mala",
@@ -504,7 +504,7 @@ function init_gear_sets()
 		back=AnkouDEX,})	
 	sets.engaged.Acc100 = set_combine(sets.engaged.Acc25, {
 		body="Flamma Korazin +1",
-		hands="Flamma Manopolas +1",
+		hands="Flamma Manopolas +2",
 		feet="Flamma Gambieras +1",
 		ring1="Flamma Ring",
 		back=AnkouDEX,
@@ -529,7 +529,7 @@ function init_gear_sets()
 	sets.engaged.GreatSword = {ammo="Yetshila",
 		head=ValorousMaskQA,
 		body=ValorousMailQA, 
-		hands="Flamma Manopolas +1",
+		hands="Flamma Manopolas +2",
 		legs=OdysseanCuissesSTP,
 		feet=ValorousFeetQA,
 		neck="Ganesha's Mala",
@@ -550,7 +550,7 @@ function init_gear_sets()
 		back=AnkouDEX,})	
 	sets.engaged.GreatSword.Acc100 =  set_combine(sets.engaged.GreatSword.Acc25, {
 		body="Flamma Korazin +1",
-		hands="Flamma Manopolas +1",
+		hands="Flamma Manopolas +2",
 		feet="Flamma Gambieras +1",
 		ring1="Flamma Ring",
 		back=AnkouDEX,
@@ -628,14 +628,14 @@ function init_gear_sets()
 		neck="Combatant's Torque",
 		ear1="Eabani earring",
 		ear2="suppanomimi",
-		waist="Shetal Stone"
+		waist="Reiki Yotai"
 	})
 	sets.engaged.DW.Acc25 = set_combine(sets.engaged.Acc25, {
 		legs="Carmine Cuisses +1",
 		neck="Combatant's Torque",
 		ear1="Eabani earring",
 		ear2="suppanomimi",
-		waist="Shetal Stone"})
+		waist="Reiki Yotai"})
 
 	-- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {back="Impassive Mantle"}
