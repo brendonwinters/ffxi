@@ -376,8 +376,9 @@ function job__post_midcast(spell, action, spellMap, eventArgs)
 		if state.Buff.Barrage then
 			equip(sets.buff.Barrage)
 			eventArgs.handled = true	
-		if buffactive['Double Shot'] then
+		elseif buffactive['Double Shot'] then
 			equip(sets.DoubleShot)
+		end	
 	end
 end
 
