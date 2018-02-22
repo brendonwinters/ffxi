@@ -154,6 +154,7 @@ function init_gear_sets()
 
     CampestresPhysical={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20',}}	
     CampestresMagical={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20',}}
+	
     --------------------------------------
     -- Precast Sets
     --------------------------------------
@@ -161,11 +162,16 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Astral Flow'] = {head="Glyphic Horn"}
     
-    sets.precast.JA['Elemental Siphon'] = {ammo="Sancus Sachet +1",
-		head="Convoker's horn +2",
-		body="Convoker's Doublet +3",
-		hands="Glyphic Bracers",
-		feet="Caller's Pigaches +2",
+    sets.precast.JA['Elemental Siphon'] = {
+		ammo="Sancus Sachet +1",
+		head="Beckoner's horn +1",
+		body="Baayami Robe +1",
+		hands="Baayami Cuffs +1",
+		legs="Baayami Slops +1",
+		feet="Baayami Sabots +1",
+		neck="Incanter's Torque",
+		left_ring="Evoker's Ring",
+		right_ring="Stikini Ring +1",
 		back="Conveyance Cape",
 	}
 
@@ -174,9 +180,18 @@ function init_gear_sets()
     -- Pact delay reduction gear
     sets.precast.BloodPactWard = { 
 		ammo="Sancus Sachet +1",
-		head="Convoker's horn +2",
-		body="Convoker's Doublet +3",
-		hands="Glyphic Bracers",
+--		head="Convoker's horn +2",
+		head="Beckoner's horn +1",
+		body="Baayami Robe +1",
+		hands="Baayami Cuffs +1",
+		legs="Baayami Slops +1",
+		feet="Baayami Sabots +1",
+		left_ear="Andoaa Earring",
+		neck="Incanter's Torque",
+		left_ring="Evoker's Ring",
+		right_ring="Stikini Ring +1",
+		waist="Kobo Obi",
+		back="Conveyance Cape",
 	}
 
     sets.precast.BloodPactRage = sets.precast.BloodPactWard
@@ -231,11 +246,11 @@ function init_gear_sets()
 	}
 	sets.precast.WS['Garland of Bliss'] = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','Magic Damage +5','Mag. Acc.+4','"Mag.Atk.Bns."+13',}},
-		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Drain" and "Aspir" potency +5','MND+10','"Mag.Atk.Bns."+12',}},
-		hands={ name="Amalric Gages +1", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}},
-		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic Damage +7','INT+7','"Mag.Atk.Bns."+14',}},
+		head="Amalric Coif +1",
+		body="Amalric Doublet +1",
+		hands="Amalric Gages +1",
+		legs="Amalric Slops +1", 
+		feet="Amalric Nails +1",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Friomisi Earring",
@@ -253,7 +268,7 @@ function init_gear_sets()
         head="merlinic hood",			--8
 		ear2="Loquacious Earring",		--2
 		neck="Incanter's torque",		--5
-        body="Vrikodara Jupon",			--5
+        body="Baayami Robe +1",			--5
 		ring1="Evanescence ring",
 		ring2="Weatherspoon Ring",		--5
 		waist="Witful Belt",			--3
@@ -277,9 +292,9 @@ function init_gear_sets()
 	
     sets.midcast['Enfeebling Magic'] = {ammo="Pemphredo Tathlum",
 		head="Amalric Coif +1",
-		body="Zendik Robe",
-		hands="Hagondes Cuffs +1",
-		legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}},
+		body="Amalric Doublet +1",
+		hands="Raetic Bangles",
+		legs="Amalric Slops +1", 
 		feet="Medium's Sabots", 
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
@@ -304,30 +319,45 @@ function init_gear_sets()
     sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'],{})
 	
     sets.midcast['Elemental Magic'] = {ammo="Pemphredo Tathlum",
-        head=MerlinicHood,neck="Sanctity necklace",ear1="Barkarole earring",ear2="Friomisi Earring",
-        body="Merlinic Jubbah",hands="Amalric Gages +1",ring1="Metamorph Ring +1",ring2="Acumen Ring",
-        back="Toro Cape",waist="Eschan stone",legs=MerlinicShalwar,feet=MerlinicCrackows}
+		head="Amalric Coif +1",
+		body="Amalric Doublet +1",
+		hands="Amalric Gages +1",
+		legs="Amalric Slops +1", 
+		feet="Amalric Nails +1",
+        neck="Sanctity necklace",ear1="Barkarole earring",ear2="Friomisi Earring",
+        ring1="Metamorph Ring +1",ring2="Acumen Ring",
+        back="Toro Cape",waist="Eschan stone"}
 
     sets.midcast['Summon Magic'] = {}
+	sets.midcast['Diaga']={head="White Rarab Cap +1",legs=MerlinicShalwarTH,waist="Chaac belt"}
+	sets.midcast['Dia II']=sets.midcast['Diaga']
 
 
     -- Avatar pact sets.  All pacts are Ability type.
     
     sets.midcast.Pet.BloodPactWard = {    ammo="Sancus Sachet +1",
 		head="Convoker's horn +2",
-		body="Beckoner's Doublet",
-		hands="Glyphic Bracers",
-		legs="Beckoner's Spats",
+		body="Baayami Robe +1",
+		hands="Baayami Cuffs +1",
+		legs="Baayami Slops +1",
+		feet="Baayami Sabots +1",
+		left_ear="Andoaa Earring",
 		neck="Incanter's Torque",
+		left_ring="Evoker's Ring",
+		right_ring="Stikini Ring +1",
 		back="Conveyance Cape",
-		ring2="Evoker's Ring",
+		waist="Kobo Obi",
 	}
 
     sets.midcast.Pet.DebuffBloodPactWard = {ammo="Sancus Sachet +1",
 		head="Convoker's horn +2",
-		hands="Glyphic Bracers",
+		body="Baayami Robe +1",
+		hands="Baayami Cuffs +1",
+		legs="Baayami Slops +1",
+		feet="Baayami Sabots +1",
 		neck="Incanter's Torque",
-		right_ring="Evoker's Ring",
+		ring1="Evoker's Ring",
+		ring2="Stikini Ring +1",
 		back=CampestresMagical
 	}
         
@@ -423,29 +453,30 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {ammo="Sancus Sachet +1",
         head="Convoker's horn +2",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Loquacious Earring",
-        body="Amalric Doublet +1",hands=MerlinicDastanasMBP,ring1="Defending Ring",ring2="Dark ring",
-        back="Moonbeam Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's gaiters"}
+        body="Amalric Doublet +1",hands=MerlinicDastanasMBP,ring1="Defending Ring",ring2="Stikini Ring +1",
+        back="Moonlight Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's gaiters"}
     
     -- Idle sets
-    sets.idle = {ammo="Staunch Tathlum",
+    sets.idle = {ammo="Staunch Tathlum +1",
 		head="Convoker's horn +2",
-		body="Vrikodara Jupon", 
+		body="Amalric Doublet +1", 
 		hands="Raetic Bangles", 
 		legs="Assid. Pants +1",
-		feet="Herald's Gaiters",
+		feet="Baayami Sabots +1",
+		--feet="Herald's Gaiters",
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Hearty Earring",
 		right_ear="Etiolation Earring",
 		left_ring="Defending Ring",
-		right_ring="Dark Ring",
-		back="Moonbeam Cape",
+		right_ring="Stikini Ring +1",
+		back="Moonlight Cape",
 	}
 
-    sets.idle.PDT = {ammo="Staunch Tathlum",
-        head="Convoker's horn +2",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Etiolation Earring",
-        body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",
-        back="Moonbeam Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's Gaiters"}
+    sets.idle.PDT = {ammo="Staunch Tathlum +1",
+        head="Convoker's horn +2",neck="Loricate torque +1",ear1="Gelos Earring",ear2="Etiolation Earring",        
+		body="Amalric Doublet +1", hands="Raetic Bangles",ring1="Defending Ring",
+        back="Moonlight Cape",waist="Fucho-no-Obi",legs="Lengo Pants",feet="Herald's Gaiters"}
 
     -- perp costs:
     -- spirits: 7
@@ -472,7 +503,8 @@ function init_gear_sets()
 		--sub="Niobid Strap",
 		ammo="Sancus Sachet +1",
 		head="Convoker's horn +2",
-		body="Vrikodara Jupon",
+		body="Amalric Doublet +1", 
+		hands="Baayami Cuffs +1", 
 		legs="Assid. Pants +1",			--3
 		feet="Convoker's Pigaches +2",	--5	
 		neck="Empath Necklace",
@@ -480,7 +512,7 @@ function init_gear_sets()
 		left_ear="Enmerkar Earring",
 		right_ear="Handler's Earring +1",
 		left_ring="Defending Ring",
-		right_ring="Evoker's Ring",		--1
+		right_ring="Stikini Ring +1",
 		back=CampestresPhysical,
 	}
 
@@ -489,22 +521,22 @@ function init_gear_sets()
 		--sub="Niobid Strap",
 		ammo="Sancus Sachet +1",
 		head="Convoker's horn +2",
-		body="Vrikodara Jupon",
-		hands=MerlinicDastanasMBP,
-		legs="Assid. Pants +1",
---		feet="Convoker's Pigaches +2",		
+		body="Amalric Doublet +1", 
+		hands="Baayami Cuffs +1", 
+		legs="Assid. Pants +1",			--3
+		feet="Convoker's Pigaches +2",	--5	
 		neck="Empath Necklace",
 		waist="Isa Belt",
 		left_ear="Enmerkar Earring",
 		right_ear="Handler's Earring +1",
 		left_ring="Defending Ring",
-		right_ring="Evoker's Ring",
-		back="Conveyance Cape",
+		right_ring="Stikini Ring +1",
+		back=CampestresPhysical,
 	}
 
 
     -- Favor uses Caller's Horn instead of Summoners Horn for refresh
-    sets.idle.Avatar.Favor = {head="Beckoner's horn"}
+    sets.idle.Avatar.Favor = {head="Beckoner's Horn +1"}
     sets.idle.Avatar.Melee = {waist="Incarnation Sash"}
         
     sets.perp = {}
@@ -524,8 +556,8 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {ammo="Sancus Sachet +1",
         neck="Loricate Torque +1",ear1="Hearty Earring",ear2="Odnowa Earring +1",
-		ring1="Defending Ring",ring2="Dark ring",
-        back="Moonbeam Cape",waist="Fucho-no-Obi"}
+		ring1="Defending Ring",ring2="Stikini Ring +1",
+        back="Moonlight Cape",waist="Fucho-no-Obi"}
 
     sets.defense.MDT = {
 		main="Keraunos", 
@@ -534,14 +566,14 @@ function init_gear_sets()
 		head="Inyanga Tiara +1",
 		body="Inyanga Jubbah +1",
 		hands=MerlinicDastanasMBP,
-		legs="Inyanga Shalwar +2",
+		legs="Inyanga Shalwar +1",
 		feet="Convoker's Pigaches +2",		
 		neck="Empath Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Eabani Earring",
 		right_ear="Handler's Earring +1",
 		left_ring="Defending Ring",
-		right_ring="Evoker's Ring",
+		right_ring="Stikini Ring +1",
 		back="Solemnity Cape",
 	}
 
@@ -570,7 +602,7 @@ function init_gear_sets()
 	}
 	sets.engaged.Perp = {
 		ammo="Sancus Sachet +1",
-		head="Beckoner's Horn",
+		head="Beckoner's Horn +1",
 		body="Convoker's Doublet +3",
 		hands="Tali'ah Gages +1",
 		legs="Assid. Pants +1",
@@ -580,7 +612,7 @@ function init_gear_sets()
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
 		left_ring="Defending Ring",
-		right_ring="Evoker's Ring",
+		right_ring="Stikini Ring +1",
 		back=CampestresPhysical}
 end
 

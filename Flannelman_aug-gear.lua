@@ -1,11 +1,13 @@
 --Herculean Gear--
  
-HercHelmMAB={ name="Herculean Helm", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','Magic burst dmg.+6%','MND+10','"Mag.Atk.Bns."+14',}}
+HercHelmMAB={ name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','STR+7','Mag. Acc.+12','"Mag.Atk.Bns."+15',}}
 HercHelmFC={ name="Herculean Helm", augments={'Attack+2','"Fast Cast"+6','"Mag.Atk.Bns."+8',}}
 HercHelmDT={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+18','Magic Damage +12','Damage taken-4%','Accuracy+10 Attack+10',}}
 HercHelmWSD={ name="Herculean Helm",  augments={'Attack+22','Weapon skill damage +4%','DEX+8',}}
 HercHelmTA={ name="Herculean Helm", augments={'"Triple Atk."+4','STR+10','Attack+12',}}
-
+HercHelmPhalanx={ name="Herculean Helm", augments={'Pet: DEX+1','"Subtle Blow"+1','Phalanx +5','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
+	
+HercVestPhalanx={ name="Herculean Vest", augments={'Pet: INT+9','"Mag.Atk.Bns."+24','Phalanx +2','Accuracy+15 Attack+15','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
 HercVestTH={ name="Herculean Vest", augments={'CHR+6','Weapon Skill Acc.+12','"Treasure Hunter"+1','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
 HercVestWSD={ name="Herculean Vest", augments={'Accuracy+21','Weapon skill damage +3%','STR+7','Attack+11',}}
 
@@ -35,8 +37,8 @@ MerlinicHoodBP={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+16','Blood
 MerlinicHoodFC={ name="Merlinic Hood", augments={'"Fast Cast"+6','MND+2','Mag. Acc.+2',}}
 
 MerlinicDastanasFC={ name="Merlinic Dastanas", augments={'Mag. Acc.+16','"Fast Cast"+6','"Mag.Atk.Bns."+4',}}
-MerlinicDastanasPBP={ name="Merlinic Dastanas", augments={'Pet: Accuracy+13 Pet: Rng. Acc.+13','Blood Pact Dmg.+9','Pet: DEX+8','Pet: Mag. Acc.+9','Pet: "Mag.Atk.Bns."+3',}}
-MerlinicDastanasMBP={ name="Merlinic Dastanas", augments={'Pet: Mag. Acc.+10 Pet: "Mag.Atk.Bns."+10','Blood Pact Dmg.+10','Pet: INT+3','Pet: "Mag.Atk.Bns."+13',}}
+MerlinicDastanasPBP={ name="Merlinic Dastanas",  augments={'Pet: Accuracy+14 Pet: Rng. Acc.+14','Blood Pact Dmg.+10','Pet: Mag. Acc.+4',}}
+MerlinicDastanasMBP={ name="Merlinic Dastanas", augments={'Pet: "Mag.Atk.Bns."+23','Blood Pact Dmg.+10','Pet: STR+10','Pet: Mag. Acc.+3',}}
 	
 MerlinicShalwarDrain={ name="Merlinic Shalwar", augments={'Mag. Acc.+26','"Drain" and "Aspir" potency +8','MND+3',}}
 MerlinicShalwar={ name="Merlinic Shalwar", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Mag. crit. hit dmg. +3%','Mag. Acc.+11','"Mag.Atk.Bns."+13',}}
@@ -63,7 +65,7 @@ OdysseanHelmWSD={ name="Odyssean Helm", augments={'Accuracy+17 Attack+17','Weapo
 OdysseanChestFC={ name="Odyssean Chestplate", augments={'"Fast Cast"+4','CHR+9',}}
 OdysseanChestSTP={ name="Odyssean Chestplate", augments={'Accuracy+14','"Store TP"+6','VIT+10','Attack+15',}}
 
-OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Weapon skill damage +4%','DEX+10','Accuracy+14','Attack+8',}}
+OdysseanGauntletsWSD={ name="Odyssean Gauntlets", augments={'Accuracy+5 Attack+5','Weapon skill damage +4%','STR+13','Attack+13',}}
 OdysseanGauntletsRefresh={ name="Odyssean Gauntlets", augments={'"Conserve MP"+3','Pet: "Dbl. Atk."+1','"Refresh"+1','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
 
 OdysseanCuissesSTP={ name="Odyssean Cuisses", augments={'Accuracy+14 Attack+14','Mag. Acc.+24','"Store TP"+10','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
@@ -87,7 +89,7 @@ ValorousMaskDT={ name="Valorous Mask", augments={'Attack+24','Damage taken-3%','
 
 
 ValorousMailWSD={ name="Valorous Mail", augments={'Accuracy+5','Weapon skill damage +3%','STR+9',}}
-ValorousMailQA={ name="Valorous Mail", augments={'Mag. Acc.+1','"Dbl.Atk."+3','Quadruple Attack +1',}}
+ValorousMailQA={ name="Valorous Mail", augments={'Pet: "Store TP"+6','CHR+7','Quadruple Attack +2','Accuracy+13 Attack+13',}}
 
 THhands={ name="Valorous Mitts", augments={'Pet: Mag. Acc.+22','Pet: MND+12','"Treasure Hunter"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
 ValorousMittsWSD={ name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +5%','STR+1','Accuracy+3',}}
