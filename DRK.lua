@@ -958,13 +958,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
 	if spell.en == 'Resolution' or spell.en == 'Torcleaver' or spell.en == 'Insurgency' or spell.en == 'Cross Reaper' then
 		if player.tp > 2999 then
+			equip(sets.BrutalIshvara)
+		end	
+		if world.time >= (17*60) or world.time <= (7*60) then
 			equip(sets.BrutalLugra)
-		else
-			if world.time >= (17*60) or world.time <= (7*60) then
-				equip(sets.Lugra)
-			else 
-				equip(sets.Brutal)
-			end				
 		end
 	end
 end

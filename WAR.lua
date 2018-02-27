@@ -63,17 +63,20 @@ function init_gear_sets()
      -- Augmented gear
 	include('Flannelman_aug-gear.lua')
 	
+    CicholWS={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    CicholDA={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 
 	-- Precast Sets
 	sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers"}
 	sets.precast.JA['Blood Rage'] = { body="Ravager's Lorica +2" }
 	sets.precast.JA['Aggressor'] = {body="Agoge Lorica"}
-	sets.precast.JA['Warcry'] = {head="Agoge Mask"}
-	sets.precast.JA['Berserk'] = {feet="Agoge Calligae"}
+	sets.precast.JA['Warcry'] = {head="Agoge Mask +1"}
+	sets.precast.JA['Berserk'] = {body="Pummeler's Lorica +3",feet="Agoge Calligae",back="Cichol's Mantle"}
 	sets.precast.JA['Tomahawk'] = {feet="Agoge Calligae"}
 
 	sets.CapacityMantle  = { back="Mecistopins Mantle" }
 	sets.BrutalLugra     = { ear1="Lugra Earring", ear2="Lugra Earring +1" }
+	sets.BrutalIshvara	 = { ear1="Brutal Earring", ear2="Ishvara Earring" }
 	sets.Lugra           = { ear1="Lugra Earring +1" }
 	sets.Brutal          = { ear1="Brutal Earring" }
 
@@ -108,49 +111,45 @@ function init_gear_sets()
 	-- WEAPONSKILL SETS
 	-- General sets
 	sets.precast.WS = {
-		ammo="Seething Bomblet +1",
+		ammo="Knobkierrie",
 		head=ValorousMaskWSD,
-		body="Argosy Hauberk +1",
+		body="Pummeler's Lorica +3",
 		hands=OdysseanGauntletsWSD,
-		legs=OdysseanCuissesWSD,
+		legs=ValorousHoseWSD,
 		feet="Sulevia's Leggings +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear="Brutal Earring",
+		left_ear="Ishvara Earring",
 		right_ear="Moonshade Earring",
 		left_ring="Niqmaddu Ring",
 		right_ring="Regal Ring",
+		back=CicholWS
 	}
 	sets.precast.WS.Acc50 = set_combine(sets.precast.WS, {
-		body="Sulevia's Plate. +1",
-		hands="Emicho Gauntlets",
-		legs=OdysseanCuissesAcc,
-		feet=OdysseanGreavesAcc,
 	})
 	sets.precast.WS.Acc100 = set_combine(sets.precast.WS.Acc50, {
-		ear1="Dignitary's Earring",
-		ear2="Telos Earring",
-	})
-		
+		head="Flamma Zucchetto +2",
+		body="Pummeler's Lorica +3",
+		hands="Flamma Manopolas +2",
+		legs="Pummeler's Cuisses +2",
+	})		
+	
 	-- RESOLUTION
-	-- 86-100% STR
-	sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
-		head="Argosy Celata +1", 
+	-- 73-85% STR
+	sets.precast.WS.Resolution = set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",
+		head="Flamma Zucchetto +2", 
 		body="Argosy Hauberk +1",
 		hands="Argosy Mufflers +1",
 		legs="Argosy Breeches +1",
-		feet="Argosy Sollerets +1",})
+		feet="Flamma Gambieras +2",
+		ear1="Brutal Earring",
+		back=CicholDA})
 	sets.precast.WS.Resolution.Acc50 = set_combine(sets.precast.WS.Resolution, {}) 
 	sets.precast.WS.Resolution.Acc100 = set_combine(sets.precast.WS.Resolution, {}) 
-	sets.precast.WS.Resolution.Acc150 = set_combine(sets.precast.WS.Acc150, {hands="Argosy Mufflers +1"}) 
 	
 	-- Scourge
 	-- 40$ STR/VIT
-	sets.precast.WS['Scourge'] = set_combine(sets.precast.WS, {
-		body=OdysseanChestSTP,
-		legs=OdysseanCuissesWSD,
-		feet=ValorousFeetWSD,
-	})
+	sets.precast.WS['Scourge'] = set_combine(sets.precast.WS, {	})
 	sets.precast.WS['Scourge'].Acc50 = set_combine(sets.precast.WS.Acc50, {})
 	sets.precast.WS['Scourge'].Acc100 = set_combine(sets.precast.WS.Acc100, {})
 	
@@ -160,14 +159,37 @@ function init_gear_sets()
 	
 	-- Upheaval
 	-- 73-85% VIT
-	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS.Resolution, {	})
+	sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Upheaval'].Acc50 = set_combine(sets.precast.WS.Acc50, {})
+	sets.precast.WS['Upheaval'].Acc100 = set_combine(sets.precast.WS.Acc100, {})
+	
 	-- Ukko's Fury
 	-- 80% STR Crit
-	sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS.Resolution, {})
+	sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {ammo="Yetshila",feet=ValorousFeetQA})
+	sets.precast.WS["Ukko's Fury"].Acc50 = set_combine(sets.precast.WS.Acc50, {ammo="Yetshila",feet=ValorousFeetQA})
+	sets.precast.WS["Ukko's Fury"].Acc100 = set_combine(sets.precast.WS.Acc100, {ammo="Yetshila",feet=ValorousFeetQA})
+	
+	sets.precast.WS["Full Break"] = set_combine(sets.precast.WS, {
+		ammo="Pemphredo Tathlum",
+		head="Flamma Zucchetto +2",
+		body="Founder's Breastplate", 
+		hands="Flammma Manopolas +2",
+		legs="Founder's Hose",
+		feet="Flamma Gambieras +2",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Dignitary's Earring",})	 
+	sets.precast.WS["Full Break"].Acc50 = sets.precast.WS["Full Break"]
+	sets.precast.WS["Full Break"].Acc100 = sets.precast.WS["Full Break"]
+	sets.precast.WS["Armor Break"] = sets.precast.WS["Full Break"]
+	sets.precast.WS["Armor Break"].Acc50 = sets.precast.WS["Full Break"]
+	sets.precast.WS["Armor Break"],Acc100 = sets.precast.WS["Full Break"]
 	
 	-- Savage Blade
 	-- 50% STR/MND
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
+	sets.precast.WS['Savage Blade'].Acc50 = set_combine(sets.precast.WS.Acc50, {})
+	sets.precast.WS['Savage Blade'].Acc100 = set_combine(sets.precast.WS.Acc100, {})
 	-- SANGUINE BLADE
 	-- 50% MND / 50% STR Darkness Elemental
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",
@@ -186,26 +208,18 @@ function init_gear_sets()
 	
 	-- Judgment
 	-- 50% STR/MND
-	sets.precast.WS['Judgment'] = set_combine(sets.precast.WS, {
-        head=ValorousMaskWSD, 
-		body=ValorousMailWSD,
-		hands=OdysseanGauntletsWSD,
-		legs=OdysseanCuissesWSD,
-		feet="Sulevia's Leggings +2",
-		ear1="Ishvara Earring",
-		ear2="Moonshade earring",
-	})
+	sets.precast.WS['Judgment'] = set_combine(sets.precast.WS, {	})
 	sets.precast.WS['Judgment'].Acc50 = set_combine(sets.precast.WS['Judgment'], {})
 	sets.precast.WS['Judgment'].Acc100 = set_combine(sets.precast.WS['Judgment'], sets.precast.WS.Acc100, {ear2="Moonshade earring"})
 	
 	-- Evisceration
 	-- 50% DEX
-	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS['Resolution'], {
-		hands="Emicho Gauntlets",
-		legs="Jokushu Haidate",
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS['Resolution'], {ammo="Yetshila",
+		legs="Lustratio Subligar +1",
 		feet="Thereoid Greaves"
 	})
-	
+	sets.precast.WS['Evisceration'].Acc50 = set_combine(sets.precast.WS.Acc50, {})
+	sets.precast.WS['Evisceration'].Acc100 = set_combine(sets.precast.WS.Acc100, {})
 	-- Cloudsplitter
 	-- 40% STR/MND Lightning
 	sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",
@@ -217,13 +231,7 @@ function init_gear_sets()
 	sets.precast.WS['Cloudsplitter'].Acc100 = set_combine(sets.precast.WS['Cloudsplitter'], {})
 	-- Calamity
 	-- 50% STR/VIT 
-	sets.precast.WS['Calamity'] = set_combine(sets.precast.WS, {
-        head=ValorousMaskWSD,
-		hands=OdysseanGauntletsWSD,
-		legs=OdysseanCuissesWSD,
-		feet="Sulevia's Leggings +2",
-		ear2="Moonshade earring",
-	})
+	sets.precast.WS['Calamity'] = set_combine(sets.precast.WS, {})
 	-- Ruinator
 	-- 73-85% STR 
 	sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS['Resolution'], {})
@@ -237,7 +245,7 @@ function init_gear_sets()
         body="Jumalik mail",			--cure 15
 		hands="Macabre gauntlets +1",	--cure 11
 		ring1="Kunaji Ring",			--curer 5
-		ring2="Sirona's Ring",
+		ring2="Stikini Ring +1",
 		back="Solemnity cape",			--cure 7
 		waist="Latria sash",
 		legs="Souveran Diechlings",		--curer17
@@ -250,22 +258,21 @@ function init_gear_sets()
 	-- Idle sets
 	
 
-	sets.idle = set_combine(sets.idle.Town, {ammo="Staunch Tathlum",
-		head=ValorousMaskWSD, 
-		body="Souveran Cuirass", 
+	sets.idle = {ammo="Staunch Tathlum +1",
+		head=ValorousMaskQA, 
+		body="Jumalik Mail", 
 		hands="Souv. Handschuhs",
-		legs="Souveran Diechlings", 
+		legs="Arke Cosciales", 
 		feet="Hermes' Sandals",
 		neck="Sanctity Necklace",
 		waist="Flume Belt +1",
 		left_ear="Hearty Earring",
 		right_ear="Odnowa Earring +1",
 		left_ring="Defending Ring",
-		right_ring="Regal Ring",
-		back="Moonbeam Cape",
-	})
+		right_ring="Moonbeam Ring",
+		back="Moonlight Cape",
+	}
 	
-	sets.idle.Regen = set_combine(sets.idle.Field, {})
 
 	sets.idle.Weak = {
 	 head="Twilight Helm",
@@ -273,11 +280,11 @@ function init_gear_sets()
 	}
 
 	-- Defense sets
-	sets.defense.PDT = {ammo="Staunch Tathlum",
-		head=ValorousMaskWSD, 
+	sets.defense.PDT = {ammo="Staunch Tathlum +1",
+		head="Arke Zucchetto", 
 		body="Souveran Cuirass", 
-		hands="Souv. Handschuhs",
-		legs="Souveran Diechlings", 
+		hands="Arke Manopolas",
+		legs="Arke Cosciales", 
 		feet="Amm Greaves",
 		neck="Sanctity Necklace",
 		waist="Flume Belt +1",
@@ -285,7 +292,7 @@ function init_gear_sets()
 		right_ear="Odnowa Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Regal Ring",
-		back="Moonbeam Cape",
+		back="Moonlight Cape",
 	}
 	sets.defense.Reraise = sets.idle.Weak
 
@@ -298,40 +305,52 @@ function init_gear_sets()
 
 	-- Defensive sets to combine with various weapon-specific sets below
 	-- These allow hybrid acc/pdt sets for difficult content
-	sets.Defensive = {ammo="Staunch Tathlum",
-		head=ValorousMaskWSD, 
-		body="Souveran Cuirass", 
-		hands="Souv. Handschuhs",
-		legs="Souveran Diechlings", 
-		feet="Amm Greaves",
+	sets.Defensive = {ammo="Staunch Tathlum +1",--3  3
+		head="Arke Zucchetto",					--8  8 
+		body="Souveran Cuirass", 				--9  9
+		hands="Arke Manopolas",					--6  6
+		legs="Pummeler's Cuisses +2", 			--4
+		feet="Amm Greaves",						--5  5
 		neck="Sanctity Necklace",
-		waist="Flume Belt +1",
+		waist="Ioskeha Belt",
 		left_ear="Hearty Earring",
-		right_ear="Odnowa Earring +1",
-		left_ring="Defending Ring",
+		right_ear="Odnowa Earring +1",			--   2
+		left_ring="Defending Ring",				--10 10
 		right_ring="Regal Ring",
-		back="Moonbeam Cape",
-	}
+		back="Moonlight Cape",					--6  6
+	}											--51 49
 
 	-- Engaged sets
-	sets.engaged = {ammo="Ginsen",		
-		head="Flamma Zucchetto +1",
-		body=OdysseanChestSTP, 
-		hands="Argosy Mufflers +1",
-		legs=OdysseanCuissesSTP,
-		feet="Flam. Gambieras +1",
+	sets.engaged = {ammo="Yetshila",		
+		head="Flamma Zucchetto +2",
+		body=ValorousMailQA, 
+		hands="Flamma Manopolas +2",
+		legs="Pummeler's Cuisses +2",
+		feet=ValorousFeetQA,
 		neck="Ainia Collar",
 		waist="Ioskeha Belt",
 		left_ear="Brutal Earring",
 		right_ear="Telos Earring",
 		left_ring="Niqmaddu Ring",
 		right_ring="Hetairoi Ring",
+		back=CicholDA,
 	}
 	sets.engaged.Acc50 = set_combine(sets.engaged, {
 		neck="Combatant's Torque",
-		right_ear="Digni. Earring",
+		left_ear="Cessance Earring",
 	})
 	sets.engaged.Acc100 = set_combine(sets.engaged.Acc50, {
+		head="Flamma Zucchetto +2",
+		body="Pummeler's Lorica +3",
+		hands="Flamma Manopolas +2",
+		legs="Pummeler's Cuisses +2",
+		feet="Flamma Gambieras +2",
+		neck="Combatant's Torque",
+		waist="Ioskeha Belt",
+		left_ear="Cessance Earring",
+		right_ear="Telos Earring",
+		left_ring="Niqmaddu Ring",
+		right_ring="Regal Ring",
 	})
 
 	sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
@@ -349,6 +368,7 @@ function init_gear_sets()
 	body="Twilight Mail"
 	})
     
+	sets.MightyStrikes = {ammo="Yetshila",feet="Boii Calligae +1"}
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
@@ -373,8 +393,27 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
-
-
+	if spell.type == 'WeaponSkill' then
+		if player.tp > 2499 then
+			equip(sets.BrutalIshvara)
+		end
+		if world.time >= (17*60) or world.time <= (7*60) then
+			equip(sets.BrutalLugra)
+		end	
+	end
+	
+	if buffactive['Warcry'] and spell.type == 'WeaponSkill' and player.tp > 1499 then
+		if world.time >= (17*60) or world.time <= (7*60) then
+			equip(sets.BrutalLugra)
+		else 
+			equip(sets.BrutalIshvara)			
+		end
+	end
+	
+	if buffactive['Mighty Strikes'] and spell.type == 'WeaponSkill' then
+		equip(sets.MightyStrikes)
+		--add_to_chat(122, "Mighty WS")
+	end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -423,6 +462,9 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
+	if buffactive['Mighty Strikes'] then
+		 meleeSet = set_combine(meleeSet, sets.MightyStrikes)
+	end	 
     return meleeSet
 end
  
