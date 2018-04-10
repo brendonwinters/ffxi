@@ -78,7 +78,7 @@ function init_gear_sets()
 
 	include('Flannelman_aug-gear.lua')
 
-    AnkouWSD={ name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    AnkouWSD={ name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
     AnkouDA={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
     AnkouDEX={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+6','"Dbl.Atk."+10',}}
 

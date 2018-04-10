@@ -65,7 +65,7 @@ function init_gear_sets()
 	
 	
 	belenus={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}}
-	belenuswsd={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+	belenuswsd={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20',,'AGI+10''Weapon skill damage +10%',}}
     belenusSnap={ name="Belenus's Cape", augments={'"Snapshot"+10',}}
 	
 	DefaultAmmo = {}
@@ -281,7 +281,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.engaged = {
-		head=HercHelmTA,
+		head="Adhemar Bonnet +1",
 		body="Adhemar Jacket +1",
 		hands="Adhemar Wristbands +1",
 		legs="Samnuha Tights",

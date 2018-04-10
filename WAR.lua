@@ -63,7 +63,7 @@ function init_gear_sets()
      -- Augmented gear
 	include('Flannelman_aug-gear.lua')
 	
-    CicholWS={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    CicholWS={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
     CicholDA={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 
 	-- Precast Sets
